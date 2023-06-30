@@ -1,0 +1,37 @@
+{
+	"@metadata": {
+		"authors": [
+			"Lt2818"
+		]
+	},
+	"hotcat-messages-commit": "保存",
+	"hotcat-messages-ok": "好哉",
+	"hotcat-messages-cancel": "取消",
+	"hotcat-messages-multi-error": "呒不办法从服务器拿着页面文本。所以，侬个分类改动弗能保存。阿拉对侬个弗方便表示抱歉。",
+	"hotcat-categories": "分类",
+	"hotcat-engine-names-searchindex": "搜寻索引",
+	"hotcat-engine-names-pagelist": "页面列表",
+	"hotcat-engine-names-combined": "合并搜寻",
+	"hotcat-engine-names-subcat": "下级分类",
+	"hotcat-engine-names-parentcat": "上级分类",
+	"hotcat-tooltips-change": "改动",
+	"hotcat-tooltips-remove": "拿脱",
+	"hotcat-tooltips-add": "加只新分类",
+	"hotcat-tooltips-restore": "撤销改动",
+	"hotcat-tooltips-undo": "撤销改动",
+	"hotcat-tooltips-down": "打开来修改，并显示下级分类",
+	"hotcat-tooltips-up": "打开来修改，并显示上级分类",
+	"hotcat-multi-tooltip": "改动多只分类",
+	"hotcat-messages-cat-removed": "拿脱[[Category:$1]]",
+	"hotcat-messages-template-removed": "拿脱{{[[Category:$1]]}}",
+	"hotcat-messages-cat-added": "加着[[Category:$1]]",
+	"hotcat-messages-cat-keychange": "[[Category:$1]]个新键是“$2”",
+	"hotcat-messages-cat-notFound": "寻弗着分类“$1”",
+	"hotcat-messages-cat-exists": "分类“$1”已经存在哉；朆再加。",
+	"hotcat-messages-cat-resolved": "（重定向[[Category:$1]]解决哉）",
+	"hotcat-messages-uncat-removed": "拿脱{{uncategorized}}",
+	"hotcat-messages-separator": "；",
+	"hotcat-messages-prefix": "[[Help:Gadget-HotCat|HotCat]]：",
+	"hotcat-messages-using": "",
+	"hotcat-messages-multi-change": "$1只分类"
+}

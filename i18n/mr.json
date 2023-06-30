@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"V.narsikar"
+		]
+	},
+	"hotcat-messages-commit": "जतन करा",
+	"hotcat-messages-ok": "ठिक आहे",
+	"hotcat-messages-cancel": "रद्द करा",
+	"hotcat-messages-multi-error": "विदागारातुन पृष्ठ मजकूर प्राप्त करु शकलो नाही. म्हणून आपले वर्ग बदल जतन करता आले नाही. झालेल्या गैरसोयीबद्दल आम्ही दिलगीर आहोत.",
+	"hotcat-categories": "वर्ग",
+	"hotcat-engine-names-searchindex": "अनुक्रमणिका शोधा",
+	"hotcat-engine-names-pagelist": "पान यादी",
+	"hotcat-engine-names-combined": "एकत्रित शोध",
+	"hotcat-engine-names-subcat": "उपवर्ग",
+	"hotcat-engine-names-parentcat": "सध्याचे वर्ग",
+	"hotcat-tooltips-change": "बदला",
+	"hotcat-tooltips-remove": "हटवा",
+	"hotcat-tooltips-add": "नविन वर्ग जोडा",
+	"hotcat-tooltips-restore": "बदल वगळा",
+	"hotcat-tooltips-undo": "बदल वगळा",
+	"hotcat-tooltips-down": "उपवर्ग बदलण्यासाठी व दर्शवण्यासाठी उघडा",
+	"hotcat-tooltips-up": "मूळवर्ग बदलण्यासाठी व दर्शवण्यासाठी उघडा",
+	"hotcat-multi-tooltip": "अनेक वर्ग बदला"
+}

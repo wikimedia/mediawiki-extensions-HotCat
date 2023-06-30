@@ -1,0 +1,30 @@
+{
+	"@metadata": {
+		"authors": [
+			"Iwan Novirion"
+		]
+	},
+	"hotcat-messages-multi-change": "$1 kategori",
+	"hotcat-messages-commit": "Simpan",
+	"hotcat-messages-ok": "OK",
+	"hotcat-messages-cancel": "Batal",
+	"hotcat-messages-multi-error": "Indak dapek manghubuangi server. Parubahan kategori Sanak indak dapek disimpan. Mohon maap ateh kaindaknyamanan ko.",
+	"hotcat-category-canonical": "Kategori",
+	"hotcat-categories": "Kategori",
+	"hotcat-disambig-category": "Disambiguasi",
+	"hotcat-redir-category": "Pangaliahan kategori",
+	"hotcat-tooltips-change": "Ubah",
+	"hotcat-tooltips-remove": "Hapuih",
+	"hotcat-tooltips-add": "Buek kategori baru",
+	"hotcat-tooltips-restore": "Baliakan parubahan",
+	"hotcat-tooltips-undo": "Batalan parubahan",
+	"hotcat-tooltips-down": "Klik untuak maubah jo manampilan subkategori",
+	"hotcat-tooltips-up": "Klik untuak maubah jo manampilan kategori induak",
+	"hotcat-multi-tooltip": "Mangganti babarapo kategori",
+	"hotcat-engine-names-searchindex": "Indeks pancarian",
+	"hotcat-engine-names-pagelist": "Daftar laman",
+	"hotcat-engine-names-combined": "Pancarian gabuangan",
+	"hotcat-engine-names-subcat": "Subkategori",
+	"hotcat-engine-names-parentcat": "Kategori induak",
+	"hotcat-suggestions": "Digabuangan"
+}

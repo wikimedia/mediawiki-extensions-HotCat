@@ -1,0 +1,24 @@
+{"@metadata": {
+	"authors": [
+		"Reza1615"
+	]
+	},
+	"hotcat-messages-commit": "ذخیره",
+	"hotcat-messages-ok": "تائید",
+	"hotcat-messages-cancel": "لغو",
+	"hotcat-messages-multi-error": "امکان ارتباط با سرور وجود ندارد. در نتیجه تغییرات شما ذخیره نخواهد شد. بابت این رخداد عذرخواهی می‌کنیم.",
+	"hotcat-categories": "رده‌ها",
+	"hotcat-engine-names-searchindex": "جستجوی فهرست",
+	"hotcat-engine-names-pagelist": "فهرست صفحه",
+	"hotcat-engine-names-combined": "جستجوی ترکیبی",
+	"hotcat-engine-names-subcat": "زیررده‌ها",
+	"hotcat-engine-names-parentcat": "ردهٔ مادر",
+	"hotcat-tooltips-change": "ویرایش",
+	"hotcat-tooltips-remove": "حذف",
+	"hotcat-tooltips-add": "افزودن ردهٔ جدید",
+	"hotcat-tooltips-restore": "واگردانی تغییرات",
+	"hotcat-tooltips-undo": "واگردانی تغییرات",
+	"hotcat-tooltips-down": "بازکردن برای ویرایش و نمایش زیررده‌ها",
+	"hotcat-tooltips-up": "بازکردن برای ویرایش و نمایش رده‌های مادر",
+	"hotcat-multi-tooltip": "ویرایش چندین رده"
+}

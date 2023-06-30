@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+	"authors": [
+		"Lupo"
+	]
+	},
+	"hotcat-messages-commit": "Αποθήκευση",
+	"hotcat-messages-ok": "OK",
+	"hotcat-messages-cancel": "Άκυρο",
+	"hotcat-messages-multi-error":  "Could not retrieve the page text from the server. Therefore, your category changes cannot be saved. We apologize for the inconvenience.",
+	"hotcat-categories": "Κατηγορίες",
+	"hotcat-engine-names-searchindex": "Ευρετήριο αναζήτησης",
+	"hotcat-engine-names-pagelist": "Κατάλογος σελίδων",
+	"hotcat-engine-names-combined": "Συνδυασμένη αναζήτηση",
+	"hotcat-engine-names-subcat": "Υποκατηγορίες",
+	"hotcat-engine-names-parentcat": "Μητρικές κατηγορίες",
+	"hotcat-tooltips-change": "Αλλαγή",
+	"hotcat-tooltips-remove": "Αφαίρεση",
+	"hotcat-tooltips-add": "Προσθήκη νέας κατηγορίας",
+	"hotcat-tooltips-restore": "Αναίρεση αλλαγών",
+	"hotcat-tooltips-undo": "Αναίρεση αλλαγών",
+	"hotcat-tooltips-down": "Άνοιγμα για αλλαγή και εμφάνιση υποκατηγοριών",
+	"hotcat-tooltips-up": "Άνοιγμα για αλλαγή και εμφάνιση μητρικών κατηγοριών",
+	"hotcat-multi-tooltip": "Αλλαγή πολλών κατηγοριών"
+}

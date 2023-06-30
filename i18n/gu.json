@@ -1,0 +1,37 @@
+{
+	"@metadata": {
+	"authors": [
+		"Dsvyas"
+	]
+	},
+	"hotcat-messages-cat-removed": " [[શ્રેણી:$1]] દૂર થઇ",
+	"hotcat-messages-template-removed": "{{[[શ્રેણી:$1]]}} દૂર થઇ",
+	"hotcat-messages-cat-added": " [[શ્રેણી:$1]] ઉમેરી",
+	"hotcat-messages-cat-keychange": " [[શ્રેણી:$1]]: \"$2\" માટે નવી ચાવી",
+	"hotcat-messages-cat-notFound": "શ્રેણી \"$1\" ના મળી",
+	"hotcat-messages-cat-exists": "શ્રેણી \"$1\" પહેલેથી હાજર છે: ફરીથી ના ઉમેરી",
+	"hotcat-messages-cat-resolved": " ( [[શ્રેણી:$1]] પુનઃદિશામાન ઉકેલાયું)",
+	"hotcat-messages-uncat-removed": "{{અવર્ગીકૃત}} દુર કરાયું",
+	"hotcat-messages-multi-change": "$1 શ્રેણીઓ",
+	"hotcat-messages-commit": "સાચવો",
+	"hotcat-messages-ok": "બરાબર છે.",
+	"hotcat-messages-cancel": "રદ કરો",
+	"hotcat-messages-multi-error": "સર્વર પરથી જવાબ મળ્યો નહિ તેથી આપના શ્રેણી ફેરફારો સાચવી શકાયા નહિ, તે બદલ માફ કરશો",
+	"hotcat-multi-tooltip": "એક કરતા વધારે શ્રેણીઓ સુધારો",
+	"hotcat-category-canonical": "શ્રેણી",
+	"hotcat-categories": "શ્રેણીઓ",
+	"hotcat-disambig-category": "વિભાવના",
+	"hotcat-redir-category": "શ્રેણી પુનઃદિશામાન થાય છે.",
+	"hotcat-engine-names-searchindex": "શોધ અનુક્રમણિકા",
+	"hotcat-engine-names-pagelist": "પૃષ્ઠ યાદી",
+	"hotcat-engine-names-combined": "સંયુક્ત શોધ",
+	"hotcat-engine-names-subcat": "ઉપશ્રેણીઓ",
+	"hotcat-engine-names-parentcat": "પિતૃશ્રેણીઓ",
+	"hotcat-tooltips-change": "સુધારો",
+	"hotcat-tooltips-remove": "દૂર કરો",
+	"hotcat-tooltips-add": "નવી શ્રેણી ઉમેરો",
+	"hotcat-tooltips-restore": "છેલ્લો ફેરફાર રદ કરો",
+	"hotcat-tooltips-undo": "છેલ્લો ફેરફાર રદ કરો",
+	"hotcat-tooltips-down": "ઉપશ્રેણીઓ જોવા અને સુધારવા ખોલો",
+	"hotcat-tooltips-up": "પિતૃશ્રેણીઓ જોવા અને સુધારવા ખોલો"
+}

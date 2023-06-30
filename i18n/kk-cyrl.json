@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Arystanbek"
+		]
+	},
+	"hotcat-messages-commit": "Сақтау",
+	"hotcat-messages-ok": "OK",
+	"hotcat-messages-cancel": "Болдырмау",
+	"hotcat-messages-multi-error": "Белгісіз қате туындады. Сіздің өңдемеңіз сақталмады.",
+	"hotcat-categories": "Санат",
+	"hotcat-engine-names-searchindex": "Іздестіру индексі",
+	"hotcat-engine-names-pagelist": "Беттер тізімі",
+	"hotcat-engine-names-combined": "Кеңейтілген іздестіру",
+	"hotcat-engine-names-subcat": "Ішкі санаттар",
+	"hotcat-engine-names-parentcat": "Сыртқы санаттар",
+	"hotcat-tooltips-change": "Санатты өзгерту",
+	"hotcat-tooltips-remove": "Санатты аластау",
+	"hotcat-tooltips-add": "Жаңа санат қосу",
+	"hotcat-tooltips-restore": "Қалпына келтіру",
+	"hotcat-tooltips-undo": "Болдырмау",
+	"hotcat-tooltips-down": "Бұл санаттың ішкі санатына өзгерту",
+	"hotcat-tooltips-up": "Бұл санаттың сыртқы санатына өзгерту",
+	"hotcat-multi-tooltip": "Басқа санаттарды да өзгерту"
+}

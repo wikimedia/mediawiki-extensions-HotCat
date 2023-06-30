@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Jarekt"
+		]
+	},
+	"hotcat-messages-commit": "သိမ်းမည်",
+	"hotcat-messages-ok": "OK",
+	"hotcat-messages-cancel": "မလုပ်တော့ပါ",
+	"hotcat-messages-multi-error": "ဆာဗာမှ စာသားများကို ရယူ၍ မရနိုင်ပါ။ ထို့ကြောင့် သင်၏ ကဏ္ဍပြောင်းလဲချက်များကို သိမ်းဆည်းခြင်း မပြုလုပ်နိုင်ပါ။ အဆင်မပြေဖြစ်ရခြင်းအတွက် တောင်းပန်ပါသည်။",
+	"hotcat-categories": "ကဏ္ဍများ",
+	"hotcat-engine-names-searchindex": "အက္ခရာစဉ် ရှာဖွေရန်",
+	"hotcat-engine-names-pagelist": "စာမျက်နှာ စာရင်း",
+	"hotcat-engine-names-combined": "ပေါင်းစပ်ရှာဖွေရန်",
+	"hotcat-engine-names-subcat": "ကဏ္ဍခွဲများ",
+	"hotcat-engine-names-parentcat": "ပင်မ ကဏ္ဍများ",
+	"hotcat-tooltips-change": "ပြောင်းလဲရန်",
+	"hotcat-tooltips-remove": "ဖယ်ရှားရန်",
+	"hotcat-tooltips-add": "ကဏ္ဍသစ် ပေါင်းထည့်ရန်",
+	"hotcat-tooltips-restore": "ပြောင်းလဲမှုများ နောက်ပြန်ပြင်ရန်",
+	"hotcat-tooltips-undo": "ပြောင်းလဲမှုများ နောက်ပြန်ပြင်ရန်",
+	"hotcat-tooltips-down": "ပြောင်းလဲနိုင်ရန် ဖွင့်ပြီး ကဏ္ဍခွဲများ ပြသရန်",
+	"hotcat-tooltips-up": "ပြောင်းလဲနိုင်ရန် ဖွင့်ပြီး ပင်မကဏ္ဍများ ပြသရန်",
+	"hotcat-multi-tooltip": "ကဏ္ဍများ တစ်ခုမက ထည့်သွင်းရန်"
+}

@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Leyo"
+		]
+	},
+	"hotcat-messages-commit": "Spichere",
+	"hotcat-messages-ok": "OK",
+	"hotcat-messages-cancel": "Abbreche",
+	"hotcat-messages-multi-error": "Sitetext het nid von Server chönne glade wärde. D´ Änderungen chöi leider nid gspicheret wärde.",
+	"hotcat-categories": "Kategorie",
+	"hotcat-engine-names-searchindex": "Suechindex",
+	"hotcat-engine-names-pagelist": "Sitelischte",
+	"hotcat-engine-names-combined": "Kombinierti Suechi",
+	"hotcat-engine-names-subcat": "Unterkategorie",
+	"hotcat-engine-names-parentcat": "Übergordneti Kategorie",
+	"hotcat-tooltips-change": "Ändere",
+	"hotcat-tooltips-remove": "Lösche",
+	"hotcat-tooltips-add": "Kategorie ergänze",
+	"hotcat-tooltips-restore": "Rückgängig mache",
+	"hotcat-tooltips-undo": "Änderige verwärfe",
+	"hotcat-tooltips-down": "Uftue und Unterkategorien anzeigen",
+	"hotcat-tooltips-up": "Uftue und übergordneti Kategorie anzeige",
+	"hotcat-multi-tooltip": "Mehreri Änderige mache"
+}

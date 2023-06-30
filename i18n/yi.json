@@ -1,0 +1,26 @@
+{
+	"@metadata": {
+		"authors": [
+			"Sealle",
+			"פוילישע"
+		]
+	},
+	"hotcat-messages-commit": "אויפהיטן",
+	"hotcat-messages-ok": "באשטעטיקונג",
+	"hotcat-messages-cancel": "אנולירן",
+	"hotcat-messages-multi-error": "ליידער האט עפעס פאסירט, און מען קען נישט אויפהיטן אייערע ענדערונגען. אנטשולדיגט.",
+	"hotcat-categories": "קאטעגאריעס",
+	"hotcat-engine-names-searchindex": "זוכן",
+	"hotcat-engine-names-pagelist": "רשימה פון בלעטער",
+	"hotcat-engine-names-combined": "קאמפליצירטע זוך",
+	"hotcat-engine-names-subcat": "אונטער־קאטעגאריעס",
+	"hotcat-engine-names-parentcat": "עלטערן קאטעגאריעס",
+	"hotcat-tooltips-change": "ענדערן",
+	"hotcat-tooltips-remove": "אראפנעמען",
+	"hotcat-tooltips-add": "צולייגן קאטעגאריע",
+	"hotcat-tooltips-restore": "אנולירן ענדערונגען",
+	"hotcat-tooltips-undo": "אנולירן ענדערונגען",
+	"hotcat-tooltips-down": "עפענען צו רעדאקטירן און ווייזן אונטער־קאטעגאריעס",
+	"hotcat-tooltips-up": "עפענען צו רעדאקטירן און ווייזן אייבער־קאטעגאריעס",
+	"hotcat-multi-tooltip": "ענדערן עטלעכע קאטעגאריעס"
+}

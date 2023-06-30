@@ -1,0 +1,26 @@
+
+{
+	"@metadata": {
+	"authors": [
+		"Lupo"
+	]
+	},
+	"hotcat-messages-commit": "Uložit",
+	"hotcat-messages-ok": "OK",
+	"hotcat-messages-cancel": "Zrušit",
+	"hotcat-messages-multi-error": "Není možné získat text stránky ze serveru, tudíž vaše změny nemohou být uloženy. Omlouváme se za vzniklé potíže.",
+	"hotcat-categories": "Kategorie",
+	"hotcat-engine-names-searchindex": "Vyhledávací index",
+	"hotcat-engine-names-pagelist": "Seznam stránek",
+	"hotcat-engine-names-combined": "Kombinované hledání",
+	"hotcat-engine-names-subcat": "Podkategorie",
+	"hotcat-engine-names-parentcat": "Nadkategorie",
+	"hotcat-tooltips-change": "Změnit",
+	"hotcat-tooltips-remove": "Odebrat",
+	"hotcat-tooltips-add": "Přidat novou kategorii",
+	"hotcat-tooltips-restore": "Vrátit změny",
+	"hotcat-tooltips-undo": "Vrátit změny",
+	"hotcat-tooltips-down": "Otevřít pro změnu a zobrazení podkategorií",
+	"hotcat-tooltips-up": "Otevřít pro změnu a zobrazení nadkategorií",
+	"hotcat-multi-tooltip": "Změnit vícero kategorií"
+}

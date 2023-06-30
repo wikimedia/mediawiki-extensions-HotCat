@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"BáthoryPéter"
+		]
+	},
+	"hotcat-messages-commit": "Mentés",
+	"hotcat-messages-ok": "OK",
+	"hotcat-messages-cancel": "Mégsem",
+	"hotcat-messages-multi-error": "Nem sikerült a lap tartamát a szerverhez továbbítani, ezért a kategóriaváltoztatásod nem lett elmentve. Elnézést kérünk a kellemetlenségért.",
+	"hotcat-categories": "Kategóriák",
+	"hotcat-engine-names-searchindex": "Keresési index",
+	"hotcat-engine-names-pagelist": "Laplista",
+	"hotcat-engine-names-combined": "Kombinált keresés",
+	"hotcat-engine-names-subcat": "Alkategóriák",
+	"hotcat-engine-names-parentcat": "Szülőkategóriák",
+	"hotcat-tooltips-change": "Módosítás",
+	"hotcat-tooltips-remove": "Eltávolítás",
+	"hotcat-tooltips-add": "Új kategória",
+	"hotcat-tooltips-restore": "Változások visszaállítása",
+	"hotcat-tooltips-undo": "Változások elvetése",
+	"hotcat-tooltips-down": "Megnyitás módosításra és alkategóriák megjelenítése",
+	"hotcat-tooltips-up": "Megnyitás módosításra és szülőkategóriák megjelenítése",
+	"hotcat-multi-tooltip": "Több kategória módosítása"
+}

@@ -1,0 +1,37 @@
+{
+	"@metadata": {
+		"authors": [
+			"Vajotwo"
+		]
+	},
+	"hotcat-messages-commit": "Salva",
+	"hotcat-messages-ok": "OK",
+	"hotcat-messages-cancel": "Descanseła",
+	"hotcat-messages-multi-error": "No xè stà posibiłe otegnere el testo de ła pajina da el server. De conseguensa, i tò canbiamenti no i poe mìa esare salvài. Çe scuxemo pà l'inconveniente.",
+	"hotcat-categories": "Categorie",
+	"hotcat-engine-names-searchindex": "Indexe de riçerca",
+	"hotcat-engine-names-pagelist": "Lista de łe pajine",
+	"hotcat-engine-names-combined": "Riçerca conbinà",
+	"hotcat-engine-names-subcat": "Sotocategorie",
+	"hotcat-engine-names-parentcat": "Categorie parenti",
+	"hotcat-tooltips-change": "Modifega",
+	"hotcat-tooltips-remove": "Cava",
+	"hotcat-tooltips-add": "Zonta na categoria",
+	"hotcat-tooltips-restore": "Anuła modifeghe",
+	"hotcat-tooltips-undo": "Anuła modifeghe",
+	"hotcat-tooltips-down": "Verxi en modifega e mostra łe sotocategorie",
+	"hotcat-tooltips-up": "Verxi en modifega e mostra łe soracategorie",
+	"hotcat-multi-tooltip": "Modifega pì categorie",
+	"hotcat-messages-cat-removed": "cavà [[Categoria:$1]]",
+	"hotcat-messages-template-removed": "cavà {{[[Categoria:$1]]}}",
+	"hotcat-messages-cat-added": "zontà [[Categoria:$1]]",
+	"hotcat-messages-cat-keychange": "nova ciave pà [[Categoria:$1]] = \"$2\"",
+	"hotcat-messages-cat-notFound": "Categoria \"$1\" mìa trovà",
+	"hotcat-messages-cat-exists": "Categoria \"$1\" zà esistente, mìa zontà.",
+	"hotcat-messages-cat-resolved": " (redirect [[Categoria:$1]] risolto)",
+	"hotcat-messages-uncat-removed": "cavà {{mìa categorixà}}",
+	"hotcat-messages-separator": ", ",
+	"hotcat-messages-prefix": "",
+	"hotcat-messages-using": " using [[Ajuto:HotCat|HotCat]]",
+	"hotcat-messages-multi-change": "$1 categorie"
+}

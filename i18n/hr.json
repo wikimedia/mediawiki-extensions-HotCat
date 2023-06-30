@@ -1,0 +1,26 @@
+{
+	"@metadata": {
+		"authors": [
+			"Lupo",
+			"MaGa"
+		]
+	},
+	"hotcat-messages-commit": "Sačuvaj",
+	"hotcat-messages-ok": "U redu",
+	"hotcat-messages-cancel": "Otkaži",
+	"hotcat-messages-multi-error": "Nije moguće dohvatiti tekst stranice sa poslužitelja. Zbog toga, promjena kategorije ne može biti sačuvana. Ispričavamo se zbog neugodnosti.",
+	"hotcat-categories": "Kategorije",
+	"hotcat-engine-names-searchindex": "Indeks traženja",
+	"hotcat-engine-names-pagelist": "Popis stranica",
+	"hotcat-engine-names-combined": "Traženje",
+	"hotcat-engine-names-subcat": "Potkategorije",
+	"hotcat-engine-names-parentcat": "Natkategorije",
+	"hotcat-tooltips-change": "Promijeni",
+	"hotcat-tooltips-remove": "Ukloni",
+	"hotcat-tooltips-add": "Dodaj novu kategoriju",
+	"hotcat-tooltips-restore": "Poništi izmjene",
+	"hotcat-tooltips-undo": "Poništi izmjene",
+	"hotcat-tooltips-down": "Otvori za promjenu i prikaz potkategorija",
+	"hotcat-tooltips-up": "Otvori za promjenu i prikaz natkategorija",
+	"hotcat-multi-tooltip": "Promijeni više kategorija"
+}

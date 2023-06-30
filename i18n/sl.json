@@ -1,0 +1,27 @@
+{
+	"@metadata": {
+		"authors": [
+			"Lupo"
+		]
+	},
+	"hotcat-messages-cat-notFound": "Kategorija »$1« ni najdena",
+	"hotcat-messages-cat-exists": "Stran je že v kategoriji »$1«, ni dodana.",
+	"hotcat-messages-commit": "Shrani",
+	"hotcat-messages-ok": "OK",
+	"hotcat-messages-cancel": "Prekliči",
+	"hotcat-messages-multi-error": "Besedila strani ni bilo mogoče naložiti s strežnika. Zato vaših sprememb kategorij ni bilo mogoče shraniti. Opravičujemo se za nevšečnosti.",
+	"hotcat-categories": "Kategorije",
+	"hotcat-engine-names-searchindex": "Iskalni indeks",
+	"hotcat-engine-names-pagelist": "Seznam strani",
+	"hotcat-engine-names-combined": "Kombinirano iskanje",
+	"hotcat-engine-names-subcat": "Podkategorije",
+	"hotcat-engine-names-parentcat": "Starševske kategorije",
+	"hotcat-tooltips-change": "Spremeni",
+	"hotcat-tooltips-remove": "Odstrani",
+	"hotcat-tooltips-add": "Dodaj novo kategorijo",
+	"hotcat-tooltips-restore": "Uveljavi spremembe",
+	"hotcat-tooltips-undo": "Razveljavi spremembe",
+	"hotcat-tooltips-down": "Odpri za spreminjanje in prikaz podkategorij",
+	"hotcat-tooltips-up": "Odpri za spreminjanje in prikaz starševskih kategorij",
+	"hotcat-multi-tooltip": "Spremeni več kategorij"
+}

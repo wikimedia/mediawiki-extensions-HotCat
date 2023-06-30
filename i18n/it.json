@@ -1,0 +1,28 @@
+{
+	"@metadata": {
+		"authors": [
+			"DieBuche",
+			"Lupo"
+		]
+	},
+	"hotcat-messages-cat-notFound": "Categoria \"$1\" non trovata",
+	"hotcat-messages-cat-exists": "La categoria \"$1\" esiste, non è stata aggiunta.",
+	"hotcat-messages-commit": "Salva",
+	"hotcat-messages-ok": "OK",
+	"hotcat-messages-cancel": "Annulla",
+	"hotcat-messages-multi-error": "Non è stato possibile ottenere il testo della pagina dal server. Di conseguenza, i tuoi cambiamenti non possono essere salvati. Ci scusiamo per l'inconveniente.",
+	"hotcat-categories": "Categorie",
+	"hotcat-tooltips-change": "Modifica",
+	"hotcat-tooltips-remove": "Rimuovi",
+	"hotcat-tooltips-add": "Aggiungi una categoria",
+	"hotcat-tooltips-restore": "Annulla modifiche",
+	"hotcat-tooltips-undo": "Annulla modifiche",
+	"hotcat-tooltips-down": "Apri in modifica e mostra le sottocategorie",
+	"hotcat-tooltips-up": "Apri in modifica e mostra le categorie superiori",
+	"hotcat-multi-tooltip": "Modifica più categorie",
+	"hotcat-engine-names-searchindex": "Motore di ricerca",
+	"hotcat-engine-names-pagelist": "Lista di pagine",
+	"hotcat-engine-names-combined": "Ricerca combinata",
+	"hotcat-engine-names-subcat": "Sottocategorie",
+	"hotcat-engine-names-parentcat": "Categorie superiori"
+}

@@ -1,0 +1,38 @@
+{
+	"@metadata": {
+		"authors": [
+			"Winston Sung"
+		]
+	},
+	"hotcat-desc": "{{desc|name=HotCat|url=https://www.mediawiki.org/wiki/Extension:HotCat}}",
+	"hotcat-messages-commit": "Save your changes",
+	"hotcat-messages-ok": "OK",
+	"hotcat-messages-cancel": "Cancel your changes",
+	"hotcat-messages-multi-error": "Cannot retrieve page text and didn't save changes",
+	"hotcat-categories": "Categories",
+	"hotcat-engine-names-searchindex": "Search index",
+	"hotcat-engine-names-pagelist": "List of pages",
+	"hotcat-engine-names-combined": "Combined search",
+	"hotcat-engine-names-subcat": "Subcategories",
+	"hotcat-engine-names-parentcat": "Parent categories",
+	"hotcat-tooltips-change": "Modify a category",
+	"hotcat-tooltips-remove": "Remove a category",
+	"hotcat-tooltips-add": "Add a new category",
+	"hotcat-tooltips-restore": "Undo changes",
+	"hotcat-tooltips-undo": "Undo changes",
+	"hotcat-tooltips-down": "Open for modifying and display subcategories",
+	"hotcat-tooltips-up": "Open for modifying and display parent categories",
+	"hotcat-multi-tooltip": "Modifying several categories",
+	"hotcat-messages-cat-removed": "Removed a certain category",
+	"hotcat-messages-template-removed": "Removed a certain category template",
+	"hotcat-messages-cat-added": "Added certain category",
+	"hotcat-messages-cat-keychange": "Changed a key for a category",
+	"hotcat-messages-cat-notFound": "Certain category not found",
+	"hotcat-messages-cat-exists": "Certain category already exists, not added",
+	"hotcat-messages-cat-resolved": "Resolved redirect of a category",
+	"hotcat-messages-uncat-removed": "Removed the {{uncategorized}} template",
+	"hotcat-messages-separator": "",
+	"hotcat-messages-prefix": "",
+	"hotcat-messages-using": "Using this gadget",
+	"hotcat-messages-multi-change": "Multiple categories"
+}

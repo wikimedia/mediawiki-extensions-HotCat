@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kwj2772"
+		]
+	},
+	"hotcat-messages-commit": "저장",
+	"hotcat-messages-ok": "완료",
+	"hotcat-messages-cancel": "취소",
+	"hotcat-messages-multi-error": "서버로부터 문서 내용을 불러오지 못했기 때문에 편집 결과를 저장하지 못했습니다. 불편을 드려 죄송합니다.",
+	"hotcat-categories": "분류",
+	"hotcat-engine-names-searchindex": "검색 색인",
+	"hotcat-engine-names-pagelist": "문서 목록",
+	"hotcat-engine-names-combined": "결합 검색",
+	"hotcat-engine-names-subcat": "하위 분류",
+	"hotcat-engine-names-parentcat": "상위 분류",
+	"hotcat-tooltips-change": "수정",
+	"hotcat-tooltips-remove": "삭제",
+	"hotcat-tooltips-add": "새 분류 추가",
+	"hotcat-tooltips-restore": "편집 결과 되돌리기",
+	"hotcat-tooltips-undo": "편집 결과 되돌리기",
+	"hotcat-tooltips-down": "하위 분류 표시 및 분류 수정",
+	"hotcat-tooltips-up": "상위 분류 표시 및 분류 수정",
+	"hotcat-multi-tooltip": "여러 분류 수정"
+}

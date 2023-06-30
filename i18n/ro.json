@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Andrei Stroe"
+		]
+	},
+	"hotcat-messages-commit": "Salvează",
+	"hotcat-messages-ok": "OK",
+	"hotcat-messages-cancel": "Anulează",
+	"hotcat-messages-multi-error": "Nu s-a putut aduce textul paginii de la server. De aceea, modificările din categorii nu pot fi salvate. Ne cerem scuze.",
+	"hotcat-categories": "Categorii",
+	"hotcat-engine-names-searchindex": "Căutare",
+	"hotcat-engine-names-pagelist": "Listă pagini",
+	"hotcat-engine-names-combined": "Căutare combinată",
+	"hotcat-engine-names-subcat": "Subcategorii",
+	"hotcat-engine-names-parentcat": "Categorii-părinte",
+	"hotcat-tooltips-change": "Modifică",
+	"hotcat-tooltips-remove": "Şterge",
+	"hotcat-tooltips-add": "Adaugă o categorie",
+	"hotcat-tooltips-restore": "Anulează modificări",
+	"hotcat-tooltips-undo": "Anulează modificări",
+	"hotcat-tooltips-down": "Deschide pentru modificare şi afişează subcategorii",
+	"hotcat-tooltips-up": "Deschide pentru modificare şi afişează categorii părinte",
+	"hotcat-multi-tooltip": "Modifică mai multe categorii"
+}

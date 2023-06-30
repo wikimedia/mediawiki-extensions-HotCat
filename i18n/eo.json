@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+	"authors": [
+		"Lupo"
+	]
+	},
+	"hotcat-messages-commit": "Konservi",
+	"hotcat-messages-ok": "OK",
+	"hotcat-messages-cancel": "Nuligi",
+	"hotcat-messages-multi-error": "Ne povis obteni la tekston de la paĝo el serviloj. Do, viajn ŝanĝojn al kategorioj ne eblas konservi. Pardonu por la problemo.",
+	"hotcat-categories": "Kategorioj",
+	"hotcat-engine-names-searchindex": "Serĉindekso",
+	"hotcat-engine-names-pagelist": "Paĝlisto",
+	"hotcat-engine-names-combined": "Kombina serĉo",
+	"hotcat-engine-names-subcat": "Subkategorioj",
+	"hotcat-engine-names-parentcat": "Patraj kategorioj",
+	"hotcat-tooltips-change": "Ŝanĝi",
+	"hotcat-tooltips-remove": "Forigi",
+	"hotcat-tooltips-add": "Aldoni novan kategorion",
+	"hotcat-tooltips-restore": "Mafari ŝanĝojn",
+	"hotcat-tooltips-undo": "Mafari ŝanĝojn",
+	"hotcat-tooltips-down": "Malfermi por ŝanĝi kaj montri subkategoriojn",
+	"hotcat-tooltips-up": "Malfermi por ŝanĝi kaj montri patrajn kategoriojn",
+	"hotcat-multi-tooltip": "Ŝanĝi plurajn kategoriojn"
+}

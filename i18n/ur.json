@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Lupo"
+		]
+	},
+	"hotcat-messages-commit": "محفوظ",
+	"hotcat-messages-ok": "ٹھیک",
+	"hotcat-messages-cancel": "منسوخ",
+	"hotcat-messages-multi-error": "سرور سے صفحے کے متن کو دوبارہ حاصل نہیں کیا جا سکا۔محفوظ نہیں ہو سکا۔ ہم تکلیف کے لیے معذرت خواہ ہیں۔",
+	"hotcat-categories": "زمرہ جات",
+	"hotcat-engine-names-searchindex": "اشاریہ تلاش",
+	"hotcat-engine-names-pagelist": "فہرست صفحات",
+	"hotcat-engine-names-combined": "مربوط تلاش",
+	"hotcat-engine-names-subcat": "ذیلی زمرہ جات",
+	"hotcat-engine-names-parentcat": "اساسی زمرہ جات",
+	"hotcat-tooltips-change": "درست کریں",
+	"hotcat-tooltips-remove": "ہٹائیں",
+	"hotcat-tooltips-add": "نئے زمرہ کا اضافہ کریں",
+	"hotcat-tooltips-restore": "استرجع کریں",
+	"hotcat-tooltips-undo": "استرجع کریں",
+	"hotcat-tooltips-down": "تبدیلی کے لیے کھولیں اور ذیلی زمرہ جات دکھائیں",
+	"hotcat-tooltips-up": "تبدیلی کے لیے کھولیں اور اساسی زمرہ جات دکھائیں",
+	"hotcat-multi-tooltip": "متعدد زمرہ جات کی درست کریں"
+}

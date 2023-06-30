@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"WikiPhoenix"
+		]
+	},
+	"hotcat-messages-commit": "Spara",
+	"hotcat-messages-ok": "OK",
+	"hotcat-messages-cancel": "Avbryt",
+	"hotcat-messages-multi-error": "Sidans text kunde inte hämtas från servern. Dina kategoriändringar sparades inte. Vi beklagar för besväret.",
+	"hotcat-categories": "Kategorier",
+	"hotcat-engine-names-searchindex": "Sökindex",
+	"hotcat-engine-names-pagelist": "Lista över sidor",
+	"hotcat-engine-names-combined": "Kombinerad sökning",
+	"hotcat-engine-names-subcat": "Underkategorier",
+	"hotcat-engine-names-parentcat": "Överordnade kategorier",
+	"hotcat-tooltips-change": "Ändra",
+	"hotcat-tooltips-remove": "Ta bort",
+	"hotcat-tooltips-add": "Lägg till en ny kategori",
+	"hotcat-tooltips-restore": "Ångra ändringar",
+	"hotcat-tooltips-undo": "Ångra ändringar",
+	"hotcat-tooltips-down": "Öppen för ändring och visar underkategorier",
+	"hotcat-tooltips-up": "Öppen för ändring och visar överordnade kategorier",
+	"hotcat-multi-tooltip": "Ändra flera kategorier"
+}

@@ -1,0 +1,26 @@
+{
+	"@metadata": {
+		"authors": [
+			"Lupo"
+		]
+	},
+	"hotcat-messages-commit": "Saglabāt",
+	"hotcat-messages-ok": "OK",
+	"hotcat-messages-cancel": "Atcelt",
+	"hotcat-messages-multi-error": "Could not retrieve the page text from the server. Therefore, your category changes cannot be saved. We apologize for the inconvenience.",
+
+	"hotcat-categories": "Kategorijas",
+	"hotcat-engine-names-searchindex": "Meklēšanas indekss",
+	"hotcat-engine-names-pagelist": "Lapu saraksts",
+	"hotcat-engine-names-combined": "Kombinētā meklēšana",
+	"hotcat-engine-names-subcat": "Apakškategorijas",
+	"hotcat-engine-names-parentcat": "Kategorijas",
+	"hotcat-tooltips-change": "Izmainīt",
+	"hotcat-tooltips-remove": "Noņemt",
+	"hotcat-tooltips-add": "Pievienot jaunu kategoriju",
+	"hotcat-tooltips-restore": "Atcelt izmaiņas",
+	"hotcat-tooltips-undo": "Atcelt izmaiņas",
+	"hotcat-tooltips-down": "Open for modifying and display subcategories",
+	"hotcat-tooltips-up": "Open for modifying and display parent categories",
+	"hotcat-multi-tooltip": "Izmainīt vairākas kategorijas"
+}

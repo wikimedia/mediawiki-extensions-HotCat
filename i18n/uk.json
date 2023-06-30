@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Lupo"
+		]
+	},
+	"hotcat-messages-commit": "Зберегти",
+	"hotcat-messages-ok": "Гаразд",
+	"hotcat-messages-cancel": "Скасувати",
+	"hotcat-messages-multi-error": "Виникли невідомі помилки. Ваші зміни не збережено.",
+	"hotcat-categories": "Категорії",
+	"hotcat-engine-names-searchindex": "Пошуковий індекс",
+	"hotcat-engine-names-pagelist": "Список сторінок",
+	"hotcat-engine-names-combined": "Розширений пошук",
+	"hotcat-engine-names-subcat": "Підкатегорії",
+	"hotcat-engine-names-parentcat": "Надкатегорії",
+	"hotcat-tooltips-change": "Змінити категорію",
+	"hotcat-tooltips-remove": "Вилучити категорію",
+	"hotcat-tooltips-add": "Додати категорію",
+	"hotcat-tooltips-restore": "Відновити",
+	"hotcat-tooltips-undo": "Скасувати",
+	"hotcat-tooltips-down": "Замінити підкатегорією",
+	"hotcat-tooltips-up": "Замінити надкатегорією",
+	"hotcat-multi-tooltip": "Увімкнути режим редагування (без автоматичного збереження)"
+}

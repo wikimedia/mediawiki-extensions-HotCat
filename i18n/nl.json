@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+	"authors": [
+		"Multichill"
+	]
+	},
+	"hotcat-messages-commit": "Opslaan",
+	"hotcat-messages-ok": "OK",
+	"hotcat-messages-cancel": "Annuleren",
+	"hotcat-messages-multi-error": "Kon de text van de pagina niet ophalen van de server. Daardoor kunnen de veranderingen niet opgeslagen worden.",
+	"hotcat-categories": "Categorieën",
+	"hotcat-engine-names-searchindex": "Zoekindex",
+	"hotcat-engine-names-pagelist": "Pagina lijst",
+	"hotcat-engine-names-combined": "Gecombineerd zoeken",
+	"hotcat-engine-names-subcat": "Subcategorieën",
+	"hotcat-engine-names-parentcat": "Bovenliggende categorieën",
+	"hotcat-tooltips-change": "Aanpassen",
+	"hotcat-tooltips-remove": "Verwijderen",
+	"hotcat-tooltips-add": "Een nieuwe categorie toevoegen",
+	"hotcat-tooltips-restore": "Ongedaan maken",
+	"hotcat-tooltips-undo": "Ongedaan maken",
+	"hotcat-tooltips-down": "Openen en subcategorieën tonen",
+	"hotcat-tooltips-up": "Openen en bovenliggende categorieën tonen",
+	"hotcat-multi-tooltip": "Meerdere categorieën aanpassen"
+}

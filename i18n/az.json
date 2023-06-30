@@ -1,0 +1,26 @@
+{
+	"@metadata": {
+		"authors": [
+			"Lupo",
+			"Vago"
+		]
+	},
+	"hotcat-messages-commit": "Saxla",
+	"hotcat-messages-ok": "Oldu",
+	"hotcat-messages-cancel": "İmtina",
+	"hotcat-messages-multi-error": "Səhifənin mətni serverdən əldə oluna bilinmədiyindən kateqoriya dəyişikliyi saxlanılmadı. Çatışmazlığa görə üzr istəyirik.",
+	"hotcat-categories": "Kateqoriyalar",
+	"hotcat-engine-names-searchindex": "Axtarış indeksi",
+	"hotcat-engine-names-pagelist": "Səhifə siyahısı",
+	"hotcat-engine-names-combined": "Qarışıq axtarış",
+	"hotcat-engine-names-subcat": "Alt kateqoriyalar",
+	"hotcat-engine-names-parentcat": "Əsas kateqoriyalar",
+	"hotcat-tooltips-change": "Dəyişmək",
+	"hotcat-tooltips-remove": "Silmək",
+	"hotcat-tooltips-add": "Yeni kateqoriya əlavə et",
+	"hotcat-tooltips-restore": "Dəyişiklikləri geri qaytar",
+	"hotcat-tooltips-undo": "Dəyişiklikləri geri qaytar",
+	"hotcat-tooltips-down": "Alt kateqoriyaları dəyişmək üçün aç",
+	"hotcat-tooltips-up": "Əsas kateqoriyaları dəyişmək üçün aç",
+	"hotcat-multi-tooltip": "Bir neçə kateqoriyanın dəyişdirilməsi"
+}

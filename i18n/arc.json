@@ -1,0 +1,17 @@
+{
+	"@metadata": {
+		"authors": [
+			"Lupo"
+		]
+	},
+	"hotcat-messages-commit": "ܠܒܘܟ",
+	"hotcat-messages-ok": "ܠܒܘܟ",
+	"hotcat-messages-cancel": "ܒܛܘܠ",
+	"hotcat-messages-multi-error": "ܦܘܕܐ",
+	"hotcat-categories": "ܣܕܪ̈ܐ",
+	"hotcat-engine-names-searchindex": "ܡܚܘܝܢܐ ܕܒܨܝܐ",
+	"hotcat-engine-names-pagelist": "ܡܚܘܝܢܐ ܕܣܕܪ̈ܐ",
+	"hotcat-engine-names-combined": "ܒܨܝ ܥܡ ܐܚܕܕܐ",
+	"hotcat-engine-names-subcat": "ܣܕܪ̈ܐ ܬܚܬܝ̈ܐ",
+	"hotcat-engine-names-parentcat": "ܣܕܪ̈ܐ ܥܠܝ̈ܐ"
+}

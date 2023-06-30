@@ -1,0 +1,38 @@
+{
+	"@metadata": {
+		"authors": [
+			"Automatik",
+			"Dr Brains",
+			"Lupo",
+			"Solitarius"
+		]
+	},
+	"hotcat-messages-commit": "Valider",
+	"hotcat-messages-ok": "OK",
+	"hotcat-messages-cancel": "Annuler",
+	"hotcat-messages-multi-error": "Impossible de récupérer le texte depuis le serveur. Par conséquent, vos changements de catégories ne peuvent être enregistrés. Nous nous excusons pour la gêne occasionnée.",
+	"hotcat-categories": "Catégories",
+	"hotcat-engine-names-searchindex": "Recherche par préfixe",
+	"hotcat-engine-names-pagelist": "Liste de suggestions",
+	"hotcat-engine-names-combined": "Recherche combinée",
+	"hotcat-engine-names-subcat": "Sous-catégories",
+	"hotcat-engine-names-parentcat": "Catégories parentes",
+	"hotcat-tooltips-change": "Modifier",
+	"hotcat-tooltips-remove": "Supprimer",
+	"hotcat-tooltips-add": "Ajouter une catégorie",
+	"hotcat-tooltips-restore": "Annuler les changements",
+	"hotcat-tooltips-undo": "Annuler les changements",
+	"hotcat-tooltips-down": "Ouvrir pour modifier et afficher les sous-catégories",
+	"hotcat-tooltips-up": "Ouvrir pour modifier et afficher les catégories parentes",
+	"hotcat-multi-tooltip": "Modifier plusieurs catégories",
+	"hotcat-messages-cat-added": "[[Category:$1]] ajoutée",
+	"hotcat-messages-cat-removed": "[[Category:$1]] retirée",
+	"hotcat-messages-template-removed": "{{[[Category:$1]]}} retirée",
+	"hotcat-messages-cat-keychange": "Nouvelle clé pour [[Category:$1]]: \"$2\"",
+	"hotcat-messages-cat-notFound": "Catégorie \"$1\" introuvable",
+	"hotcat-messages-cat-exists": "La catégorie \"$1\" existe déjà, aucun ajout",
+	"hotcat-messages-cat-resolved": " (redirection [[Category:$1]] résolue)",
+	"hotcat-messages-uncat-removed": "{{uncategorized}} retiré",
+	"hotcat-messages-using": " avec [[Help:Gadget-hotcat|hotcat]]",
+	"hotcat-messages-multi-change": "$1 catégories"
+}

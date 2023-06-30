@@ -1,0 +1,38 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ciphers",
+			"Mohanad"
+		]
+	},
+	"hotcat-messages-commit": "حفظ",
+	"hotcat-messages-ok": "موافق",
+	"hotcat-messages-cancel": "إلغاء",
+	"hotcat-messages-multi-error": "لا يمكن حفظ التغييرات، فقد تعذّر جلب نص الصفحة من الخادم. عُذرًا للإزعاج.",
+	"hotcat-categories": "تصنيفات",
+	"hotcat-engine-names-searchindex": "فهرس البحث",
+	"hotcat-engine-names-pagelist": "قائمة الصفحات",
+	"hotcat-engine-names-combined": "بحث متراكب",
+	"hotcat-engine-names-subcat": "تصنيفات فرعية",
+	"hotcat-engine-names-parentcat": "تصنيفات أعلى",
+	"hotcat-tooltips-change": "تعديل",
+	"hotcat-tooltips-remove": "إزالة",
+	"hotcat-tooltips-add": "إضافة تصنيف جديد",
+	"hotcat-tooltips-restore": "استعادة التغيير",
+	"hotcat-tooltips-undo": "استرجاع التغيير",
+	"hotcat-tooltips-down": "استعرض التصنيفات الفرعية",
+	"hotcat-tooltips-up": "استعرض التصنيفات الأعلى",
+	"hotcat-multi-tooltip": "تعديل عدّة تصنيفات",
+	"hotcat-messages-cat-removed": "إزالة [[تصنيف:$1]]",
+	"hotcat-messages-template-removed": "إزالة {{[[تصنيف:$1]]}}",
+	"hotcat-messages-cat-added": "اضافة [[تصنيف:$1]]",
+	"hotcat-messages-cat-keychange": "اضافة مفتاح جديد ل[[تصنيف:$1]]: \"$2\"",
+	"hotcat-messages-cat-notFound": "التصنيف \"$1\" غير موجود",
+	"hotcat-messages-cat-exists": "التصنيف \"$1\" موجود بالفعل.",
+	"hotcat-messages-cat-resolved": " (التحويلة [[تصنيف:$1]] جرى معالجتها)",
+	"hotcat-messages-uncat-removed": "إزالة {{غير مصنفة}}",
+	"hotcat-messages-separator": "، ",
+	"hotcat-messages-prefix": "",
+	"hotcat-messages-using": " باستعمال [[Help:Gadget-hotcat|hotcat]]",
+	"hotcat-messages-multi-change": "$1 تصنيفات"
+}

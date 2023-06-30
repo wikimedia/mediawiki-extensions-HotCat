@@ -1,0 +1,27 @@
+{
+	"@metadata": {
+		"authors": [
+			"Lupo",
+			"Renessaince",
+			"Zedlik"
+		]
+	},
+	"hotcat-messages-commit": "Захаваць",
+	"hotcat-messages-ok": "Так",
+	"hotcat-messages-cancel": "Скасаваць",
+	"hotcat-messages-multi-error": "Немагчыма было атрымаць тэкст старонкі з сэрвэра, таму вашыя зьмены ня могуць быць захаваныя. Выбачаемся за нязручнасьці.",
+	"hotcat-categories": "Катэгорыі",
+	"hotcat-tooltips-change": "Зьмяніць",
+	"hotcat-tooltips-remove": "Выдаліць",
+	"hotcat-tooltips-add": "Дадаць новую катэгорыю",
+	"hotcat-tooltips-restore": "Скасаваць зьмены",
+	"hotcat-tooltips-undo": "Скасаваць зьмены",
+	"hotcat-tooltips-down": "Адкрыць для зьмяненьня і паказаць падкатэгорыі",
+	"hotcat-tooltips-up": "Адкрыць для зьмяненьня і паказаць бацькоўскія катэгорыі",
+	"hotcat-multi-tooltip": "Зьмяніць некалькі катэгорыяў",
+	"hotcat-engine-names-searchindex": "Індэксаваны пошук",
+	"hotcat-engine-names-pagelist": "Сьпіс старонак",
+	"hotcat-engine-names-combined": "Камбінаваны пошук",
+	"hotcat-engine-names-subcat": "Падкатэгорыі",
+	"hotcat-engine-names-parentcat": "Бацькоўскія катэгорыі"
+}

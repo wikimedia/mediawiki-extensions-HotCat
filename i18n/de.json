@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Lupo"
+		]
+	},
+	"hotcat-messages-commit": "Speichern",
+	"hotcat-messages-ok": "OK",
+	"hotcat-messages-cancel": "Abbrechen",
+	"hotcat-messages-multi-error": "Seitentext konnte nicht vom Server geladen werden. Die Änderungen können '+'leider nicht gespeichert werden.",
+	"hotcat-categories": "Kategorien",
+	"hotcat-engine-names-searchindex": "Suchindex",
+	"hotcat-engine-names-pagelist": "Seitenliste",
+	"hotcat-engine-names-combined": "Kombinierte Suche",
+	"hotcat-engine-names-subcat": "Unterkategorien",
+	"hotcat-engine-names-parentcat": "Übergeordnete Kategorien",
+	"hotcat-tooltips-change": "Ändern",
+	"hotcat-tooltips-remove": "Entfernen",
+	"hotcat-tooltips-add": "Kategorie hinzufügen",
+	"hotcat-tooltips-restore": "Rückgängig machen",
+	"hotcat-tooltips-undo": "Änderungen verwerfen",
+	"hotcat-tooltips-down": "Öffnen und Unterkategorien anzeigen",
+	"hotcat-tooltips-up": "Öffnen und übergeordnete Kategorien anzeigen",
+	"hotcat-multi-tooltip": "Mehrere Änderungen vornehmen"
+}

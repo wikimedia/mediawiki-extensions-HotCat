@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Lupo"
+		]
+	},
+	"hotcat-messages-commit": "Zapisz",
+	"hotcat-messages-ok": "OK",
+	"hotcat-messages-cancel": "Anuluj",
+	"hotcat-messages-multi-error": "Nie udało się wczytać tekstu źródłowego. Zmiany nie zostały zapisane.",
+	"hotcat-categories": "Kategorie",
+	"hotcat-engine-names-searchindex": "Indeks wyszukiwania",
+	"hotcat-engine-names-pagelist": "Lista stron",
+	"hotcat-engine-names-combined": "Wyszukiwanie złożone",
+	"hotcat-engine-names-subcat": "Podkategorie",
+	"hotcat-engine-names-parentcat": "Nadkategorie",
+	"hotcat-tooltips-change": "Zmień",
+	"hotcat-tooltips-remove": "Usuń",
+	"hotcat-tooltips-add": "Dodaj kategorię",
+	"hotcat-tooltips-restore": "Cofnij",
+	"hotcat-tooltips-undo": "Wycofaj zmiany",
+	"hotcat-tooltips-down": "Otwórz i pokaż podkategorie",
+	"hotcat-tooltips-up": "Otwórz i pokaż nadkategorie",
+	"hotcat-multi-tooltip": "Wykonaj kilka zmian"
+}

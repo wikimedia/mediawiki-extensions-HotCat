@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Lupo"
+		]
+	},
+	"hotcat-messages-commit": "Simpan",
+	"hotcat-messages-ok": "OK",
+	"hotcat-messages-cancel": "Walang",
+	"hotcat-messages-multi-error": "Kada kawa mahubungi peladen. Parubahan tumbung Pian kada kawa disimpan. Muhun maap atas kakadanyamanan ini.",
+	"hotcat-categories": "Kategori",
+	"hotcat-engine-names-searchindex": "Indeks panggagaian",
+	"hotcat-engine-names-pagelist": "Daptar tungkaran",
+	"hotcat-engine-names-combined": "Panggagaian gabungan",
+	"hotcat-engine-names-subcat": "Subtumbung",
+	"hotcat-engine-names-parentcat": "Supertumbung",
+	"hotcat-tooltips-change": "Ubah",
+	"hotcat-tooltips-remove": "Hapus",
+	"hotcat-tooltips-add": "Tambah tumbung hanyar",
+	"hotcat-tooltips-restore": "Walangakan parubahan",
+	"hotcat-tooltips-undo": "Walangakan parubahan",
+	"hotcat-tooltips-down": "Klik gasan malihat subtumbung",
+	"hotcat-tooltips-up": "Klik gasan malihat supertumbung",
+	"hotcat-multi-tooltip": "Mangganti babarapa tumbung"
+}

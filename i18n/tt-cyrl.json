@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Lupo"
+		]
+	},
+	"hotcat-messages-commit": "Сакларга",
+	"hotcat-messages-ok": "OK",
+	"hotcat-messages-cancel": "Кире кайтару",
+	"hotcat-messages-multi-error": "Билгеле булмаган хата. Үзгәрешләр сакланмаячак.",
+	"hotcat-categories": "Төркем",
+	"hotcat-engine-names-searchindex": "Эзләү индексы",
+	"hotcat-engine-names-pagelist": "Битләр исемлеге",
+	"hotcat-engine-names-combined": "Өстәмә эзләү",
+	"hotcat-engine-names-subcat": "астөркемнәр",
+	"hotcat-engine-names-parentcat": "өстөркемнәр",
+	"hotcat-tooltips-change": "Төркемне үзгәртергә",
+	"hotcat-tooltips-remove": "Төркемне бетерергә",
+	"hotcat-tooltips-add": "Яңа төркем өстәргә",
+	"hotcat-tooltips-restore": "Торгызырга",
+	"hotcat-tooltips-undo": "Кире кайтарырга",
+	"hotcat-tooltips-down": "Астөркемгә алыштырырга",
+	"hotcat-tooltips-up": "Өстөркемгә алыштырырга",
+	"hotcat-multi-tooltip": "Башка төркемнәрне алыштырырга"
+}

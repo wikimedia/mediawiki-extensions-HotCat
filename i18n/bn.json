@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Wikitanvir"
+		]
+	},
+	"hotcat-messages-commit": "সংরক্ষণ",
+	"hotcat-messages-ok": "ঠিক",
+	"hotcat-messages-cancel": "বাতিল",
+	"hotcat-messages-multi-error": "সার্ভার থেকে পাতার লেখাগুলো পাওয়া সম্ভব হয়নি। এজন্য আপনার বিষয়শ্রেণী পরিবতন সংরক্ষণ করা সম্ভব হয়নি। এই সমস্যার জন্য আমরা দুঃখিত।",
+	"hotcat-categories": "বিষয়শ্রেণী",
+	"hotcat-engine-names-searchindex": "সূচিতে খুঁজুন",
+	"hotcat-engine-names-pagelist": "পাতার তালিকা",
+	"hotcat-engine-names-combined": "সংযুক্ত অনুসন্ধান",
+	"hotcat-engine-names-subcat": "উপবিষয়শ্রেণী",
+	"hotcat-engine-names-parentcat": "অধি-বিষয়শ্রেণী",
+	"hotcat-tooltips-change": "পরিবর্তন",
+	"hotcat-tooltips-remove": "অপসারণ",
+	"hotcat-tooltips-add": "নতুন বিষয়শ্রেণী যোগ করুন",
+	"hotcat-tooltips-restore": "পূর্বের পরিবর্তনটি বাতিল করুন",
+	"hotcat-tooltips-undo": "পূর্বের পরিবর্তনটি বাতিল করুন",
+	"hotcat-tooltips-down": "উপবিষয়শ্রেণী পরিবর্তন ও প্রদর্শন সক্রিয়",
+	"hotcat-tooltips-up": "অধি-বিষয়শ্রেণী পরিবর্তন ও প্রদর্শন সক্রিয়",
+	"hotcat-multi-tooltip": "একাধিক বিষয়শ্রেণী পরিবর্তন করুন"
+}

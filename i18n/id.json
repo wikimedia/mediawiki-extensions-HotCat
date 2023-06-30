@@ -1,0 +1,27 @@
+{
+	"@metadata": {
+		"authors": [
+			"Lupo"
+		]
+	},
+	"hotcat-messages-cat-notFound": "Kategori \"$1\" tidak ditemukan",
+	"hotcat-messages-cat-exists": "Kategori \"$1\" sudah ada, tidak ditambahkan.",
+	"hotcat-messages-commit": "Simpan",
+	"hotcat-messages-ok": "OK",
+	"hotcat-messages-cancel": "Batal",
+	"hotcat-messages-multi-error": "Tidak bisa menghubungi peladen. Perubahan kategori Anda tidak dapat disimpan. Mohon maaf atas ketidaknyamanan ini.",
+	"hotcat-categories": "Kategori",
+	"hotcat-engine-names-searchindex": "Indeks pencarian",
+	"hotcat-engine-names-pagelist": "Daftar halaman",
+	"hotcat-engine-names-combined": "Pencarian gabungan",
+	"hotcat-engine-names-subcat": "Subkategori",
+	"hotcat-engine-names-parentcat": "Superkategori",
+	"hotcat-tooltips-change": "Ubah",
+	"hotcat-tooltips-remove": "Hapus",
+	"hotcat-tooltips-add": "Tambahkan kategori baru",
+	"hotcat-tooltips-restore": "Batalkan perubahan",
+	"hotcat-tooltips-undo": "Batalkan perubahan",
+	"hotcat-tooltips-down": "Klik untuk mengubah dan menampilkan subkategori",
+	"hotcat-tooltips-up": "Klik untuk mengubah dan menampilkan superkategori",
+	"hotcat-multi-tooltip": "Mengganti beberapa kategori"
+}

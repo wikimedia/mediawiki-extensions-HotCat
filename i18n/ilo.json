@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Lam-ang"
+		]
+	},
+	"hotcat-messages-commit": "Idulin",
+	"hotcat-messages-ok": "SIGE",
+	"hotcat-messages-cancel": "Ukasen",
+	"hotcat-messages-multi-error": "Saan a maala ti testo ti panid manipud idiay server. Isu a, dagiti panagsukatmo ti kategoria ket saan a maidulin. Dumawat kami ti pammakawan para iti pannakasipar.",
+	"hotcat-categories": "Katkategoria",
+	"hotcat-engine-names-searchindex": "Agbiruk idiay pagsurutan",
+	"hotcat-engine-names-pagelist": "Listaan ti panid",
+	"hotcat-engine-names-combined": "Naitipon a panagbiruk",
+	"hotcat-engine-names-subcat": "Apo ti katkategoria",
+	"hotcat-engine-names-parentcat": "Nagannak a katkategoria ",
+	"hotcat-tooltips-change": "Baliwan",
+	"hotcat-tooltips-remove": "Ikkaten",
+	"hotcat-tooltips-add": "Agnayon ti baro a kategoria",
+	"hotcat-tooltips-restore": "Isubli dagiti sinukatan",
+	"hotcat-tooltips-undo": "Isubli dagiti sinukatan",
+	"hotcat-tooltips-down": "Lukatan para iti panagibaliw ken panangiparang ti apo a katkategoria",
+	"hotcat-tooltips-up": "Lukatan para iti panagibaliw ken panangiparang ti nagannak a katkategoria",
+	"hotcat-multi-tooltip": "Agbaliw kadagiti nadumaduma a kategoria"
+}

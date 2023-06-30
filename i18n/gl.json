@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+	"authors": [
+		"Lupo"
+	]
+	},
+	"hotcat-messages-commit": "Gardar",
+	"hotcat-messages-ok": "Aceptar",
+	"hotcat-messages-cancel": "Cancelar",
+	"hotcat-messages-multi-error": "Non se puido obter o texto da páxina do servidor. Por ese motivo, os cambios feitos nas categorías non poden gardarse. Sentimos as molestias-",
+	"hotcat-categories": "Categorías",
+	"hotcat-engine-names-searchindex": "Índice da procura",
+	"hotcat-engine-names-pagelist": "Lista de páxinas",
+	"hotcat-engine-names-combined": "Procura combinada",
+	"hotcat-engine-names-subcat": "Subcategorías",
+	"hotcat-engine-names-parentcat": "Categorías raíz",
+	"hotcat-tooltips-change": "Modificar",
+	"hotcat-tooltips-remove": "Eliminar",
+	"hotcat-tooltips-add": "Engadir unha nova categoría",
+	"hotcat-tooltips-restore": "Desfacer os cambios",
+	"hotcat-tooltips-undo": "Desfacer os cambios",
+	"hotcat-tooltips-down": "Abrir para modificar e mostrar as subcategorías",
+	"hotcat-tooltips-up": "Abrir para modificar e mostrar as categorías raíz",
+	"hotcat-multi-tooltip": "Modificar varias categorías"
+}

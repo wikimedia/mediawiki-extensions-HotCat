@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Mormegil"
+		]
+	},
+	"hotcat-messages-commit": "Desa",
+	"hotcat-messages-ok": "OK",
+	"hotcat-messages-cancel": "Canceŀla",
+	"hotcat-messages-multi-error": "No s’ha pogut recuperar la pàgina del servidor. Els vostres canvis no s’han pogut desat. Disculpes per aquest problema.",
+	"hotcat-categories": "Categories",
+	"hotcat-engine-names-searchindex": "Cerca indexada",
+	"hotcat-engine-names-pagelist": "Llista de pàgines",
+	"hotcat-engine-names-combined": "Cerca combinada",
+	"hotcat-engine-names-subcat": "Subcategories",
+	"hotcat-engine-names-parentcat": "Categories superiors",
+	"hotcat-tooltips-change": "Modifica",
+	"hotcat-tooltips-remove": "Suprimeix",
+	"hotcat-tooltips-add": "Afegeix una categoria",
+	"hotcat-tooltips-restore": "Desfés els canvis",
+	"hotcat-tooltips-undo": "Desfés els canvis",
+	"hotcat-tooltips-down": "Obre per modificar i mostrar subcategories",
+	"hotcat-tooltips-up": "Obre per modificar i mostrar categories superiors",
+	"hotcat-multi-tooltip": "Modifica diverses categories"
+}

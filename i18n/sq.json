@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Olsi"
+		]
+	},
+	"hotcat-messages-commit": "Ruaj",
+	"hotcat-messages-ok": "Në rregull",
+	"hotcat-messages-cancel": "Anulo",
+	"hotcat-messages-multi-error": "Nuk mund të merret teksti i faqes nga serveri. Prandaj, ndryshimet tuaja të kategorive nuk mund të ruhen. Kërkojmë ndjesë për ketë problem.",
+	"hotcat-categories": "Kategoritë",
+	"hotcat-engine-names-searchindex": "Kërko indeksin",
+	"hotcat-engine-names-pagelist": "Lista e faqeve",
+	"hotcat-engine-names-combined": "Kërkim i kombinuar",
+	"hotcat-engine-names-subcat": "Nënkategoritë",
+	"hotcat-engine-names-parentcat": "Kategoritë prindërore",
+	"hotcat-tooltips-change": "Modifiko",
+	"hotcat-tooltips-remove": "Hiq",
+	"hotcat-tooltips-add": "Shto një kategori të re",
+	"hotcat-tooltips-restore": "Kthe ndryshimet",
+	"hotcat-tooltips-undo": "Kthe ndryshimet",
+	"hotcat-tooltips-down": "Hape për modifikim dhe shfaq nënkategoritë",
+	"hotcat-tooltips-up": "Hape për modifikim dhe shfaq kategoritë prindërore",
+	"hotcat-multi-tooltip": "Modifiko shumë kategori"
+}

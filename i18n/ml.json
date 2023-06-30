@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Mormegil"
+		]
+	},
+	"hotcat-messages-commit": "സേവ് ചെയ്യുക",
+	"hotcat-messages-ok": "ശരി",
+	"hotcat-messages-cancel": "റദ്ദാക്കുക",
+	"hotcat-messages-multi-error": "സെർവറിൽ നിന്നും എഴുത്തുകൾ എടുക്കാനാവുന്നില്ല. അതുകൊണ്ട് താങ്കൾ വരുത്തിയ മാറ്റങ്ങൾ സേവ് ചെയ്യാനാവുന്നില്ല. അസൗകര്യം നേരിട്ടതിൽ ഖേദിക്കുന്നു.",
+	"hotcat-categories": "വർഗ്ഗങ്ങൾ",
+	"hotcat-engine-names-searchindex": "തിരച്ചിൽ സൂചിക",
+	"hotcat-engine-names-pagelist": "താളുകളുടെ പട്ടിക",
+	"hotcat-engine-names-combined": "സംയോജിത തിരച്ചിൽ",
+	"hotcat-engine-names-subcat": "ഉപവർഗ്ഗങ്ങൾ",
+	"hotcat-engine-names-parentcat": "താവഴി വർഗ്ഗങ്ങൾ",
+	"hotcat-tooltips-change": "മാറ്റംവരുത്തുക",
+	"hotcat-tooltips-remove": "ഒഴിവാക്കുക",
+	"hotcat-tooltips-add": "പുതിയൊരു വർഗ്ഗം ചേർക്കുക",
+	"hotcat-tooltips-restore": "പുനഃസ്ഥാപിക്കുക",
+	"hotcat-tooltips-undo": "മാറ്റം തിരസ്കരിക്കുക",
+	"hotcat-tooltips-down": "ഉപവർഗ്ഗങ്ങൾ മാറ്റം വരുത്തുവാനും കാണാനുമായി തുറക്കുന്നു",
+	"hotcat-tooltips-up": "താവഴി വർഗ്ഗങ്ങൾ മാറ്റം വരുത്തുവാനും കാണാനുമായി തുറക്കുന്നു",
+	"hotcat-multi-tooltip": "ഒന്നിലധികം വർഗ്ഗങ്ങളിൽ മാറ്റം വരുത്തുക"
+}

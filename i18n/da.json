@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+	"authors": [
+		"Common Good"
+	]
+	},
+	"hotcat-messages-commit": "Gem",
+	"hotcat-messages-ok": "OK",
+	"hotcat-messages-cancel": "Afbryd",
+	"hotcat-messages-multi-error": "Kunne ikke hente sidens tekst fra serveren. Derfor var det ikke muligt at gemme dine ændringer til kategorierne. Vi beklager.",
+	"hotcat-categories": "Kategorier",
+	"hotcat-engine-names-searchindex": "Søgeindeks",
+	"hotcat-engine-names-pagelist": "Sideliste",
+	"hotcat-engine-names-combined": "Kombineret søgning",
+	"hotcat-engine-names-subcat": "Underkategorier",
+	"hotcat-engine-names-parentcat": "Forældrekategorier",
+	"hotcat-tooltips-change": "Ændr",
+	"hotcat-tooltips-remove": "Fjern",
+	"hotcat-tooltips-add": "Tilføj en ny kategori",
+	"hotcat-tooltips-restore": "Fortryd ændringer",
+	"hotcat-tooltips-undo": "Fortryd",
+	"hotcat-tooltips-down": "Åbn for ændringer og vis underkategorier",
+	"hotcat-tooltips-up": "Åbn for ændringer og vis forældrekategorier",
+	"hotcat-multi-tooltip": "Ændr flere kategorier"
+}

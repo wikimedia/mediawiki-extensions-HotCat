@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Aurora"
+		]
+	},
+	"hotcat-messages-commit": "Simpan",
+	"hotcat-messages-ok": "OK",
+	"hotcat-messages-cancel": "Batal",
+	"hotcat-messages-multi-error": "Tidak dapat menghubungi pelayan. Perubahan kategori anda tidak dapat disimpan. Harap maaf atas gangguan ini.",
+	"hotcat-categories": "Kategori",
+	"hotcat-engine-names-searchindex": "Indeks gelintar",
+	"hotcat-engine-names-pagelist": "Senarai laman",
+	"hotcat-engine-names-combined": "Gelintar gabungan",
+	"hotcat-engine-names-subcat": "Subkategori",
+	"hotcat-engine-names-parentcat": "Kategori induk",
+	"hotcat-tooltips-change": "Ubah",
+	"hotcat-tooltips-remove": "Hapus",
+	"hotcat-tooltips-add": "Tambah kategori baharu",
+	"hotcat-tooltips-restore": "Kembalikan semula",
+	"hotcat-tooltips-undo": "Batalkan perubahan",
+	"hotcat-tooltips-down": "Buka untuk melihat/mengubah subkategori",
+	"hotcat-tooltips-up": "Buka untuk melihat/mengubah kategori induk",
+	"hotcat-multi-tooltip": "Mengubah beberapa kategori"
+}

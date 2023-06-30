@@ -1,0 +1,37 @@
+{"@metadata": {
+	"authors": [
+		"Jon Harald Søby",
+		"Lupo"
+	]
+	},
+	"hotcat-messages-commit": "Lagre",
+	"hotcat-messages-ok": "OK",
+	"hotcat-messages-cancel": "Avbryt",
+	"hotcat-messages-multi-error": "Kunne ikke hente kildetekst fra tjeneren, så endringene dine ble ikke lagret.",
+	"hotcat-categories": "Kategorier",
+	"hotcat-engine-names-searchindex": "Søkeindeks",
+	"hotcat-engine-names-pagelist": "Sideliste",
+	"hotcat-engine-names-combined": "Kombinert søk",
+	"hotcat-engine-names-subcat": "Underkategorier",
+	"hotcat-engine-names-parentcat": "Foreldrekategorier",
+	"hotcat-tooltips-change": "Endre",
+	"hotcat-tooltips-remove": "Fjern",
+	"hotcat-tooltips-add": "Legg til ny kategori",
+	"hotcat-tooltips-restore": "Forkast endring",
+	"hotcat-tooltips-undo": "Angre",
+	"hotcat-tooltips-down": "Åpne for redigering og vis underkategorier",
+	"hotcat-tooltips-up": "Åpne for redigering og vis foreldrekategorier",
+	"hotcat-multi-tooltip": "Endre flere kategorier",
+	"hotcat-messages-cat-removed": "fjernet [[Kategori:$1]]",
+	"hotcat-messages-template-removed": "fjernet {{[[Kategori:$1]]}}",
+	"hotcat-messages-cat-added": "la til [[Kategori:$1]]",
+	"hotcat-messages-cat-keychange": "ny sorteringsnøkkel for [[Kategori:$1]] = «$2»",
+	"hotcat-messages-cat-notFound": "Kategorien «$1» ikke funnet",
+	"hotcat-messages-cat-exists": "Kategorien «$1» finnes allerede, ikke lagt til.",
+	"hotcat-messages-cat-resolved": " (omdirigeringen [[Kategori:$1]] fikset)",
+	"hotcat-messages-uncat-removed": "fjernet {{ukategorisert}}",
+	"hotcat-messages-separator": ", ",
+	"hotcat-messages-prefix": "",
+	"hotcat-messages-using": " via [[Help:Gadget-HotCat|HotCat]]",
+	"hotcat-messages-multi-change": "$1 kategorier"
+}

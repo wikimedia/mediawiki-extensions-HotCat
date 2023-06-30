@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"ArchiverBot"
+		]
+	},
+	"hotcat-messages-commit": "Pré-bisualizar",
+	"hotcat-messages-ok": "OK",
+	"hotcat-messages-cancel": "Cancelar",
+	"hotcat-messages-multi-error": "Nun fui possible oubter l cuntenido desta páigina a partir de l serbidor. Las sues mudanças nas catadories nun podírun ser grabadas- Pedimos çculpa pul anconbeniente.",
+	"hotcat-categories": "Catadories",
+	"hotcat-engine-names-searchindex": "Índice de la pesquisa",
+	"hotcat-engine-names-pagelist": "Lhista de páiginas",
+	"hotcat-engine-names-combined": "Pesquisa cumbinada",
+	"hotcat-engine-names-subcat": "Subcatadories",
+	"hotcat-engine-names-parentcat": "Supra-catadories",
+	"hotcat-tooltips-change": "Modificar",
+	"hotcat-tooltips-remove": "Remober",
+	"hotcat-tooltips-add": "Adicionar ua nuoba catadorie",
+	"hotcat-tooltips-restore": "Anular altaraçones",
+	"hotcat-tooltips-undo": "Anular altaraçones",
+	"hotcat-tooltips-down": "Abrir para modificaçon i amostrar subcatadories",
+	"hotcat-tooltips-up": "Abrir para modificaçon i amostrar supra-catadories",
+	"hotcat-multi-tooltip": "Modificar múltiplas catadories"
+}

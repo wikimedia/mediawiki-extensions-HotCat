@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+	"authors": [
+		"Lupo"
+	]
+	},
+	"hotcat-messages-commit": "Lagra",
+	"hotcat-messages-ok": "Greitt",
+	"hotcat-messages-cancel": "Bryt av",
+	"hotcat-messages-multi-error": "Kunne ikkje henta kjeldeteksten frå tenaren. Kategoriendringane vart difor ikkje lagra.",
+	"hotcat-categories": "Kategoriar",
+	"hotcat-engine-names-searchindex": "Søkjeindeks",
+	"hotcat-engine-names-pagelist": "Sideliste",
+	"hotcat-engine-names-combined": "Samsøk",
+	"hotcat-engine-names-subcat": "Underkategoriar",
+	"hotcat-engine-names-parentcat": "Foreldrekategoriar",
+	"hotcat-tooltips-change": "Endra",
+	"hotcat-tooltips-remove": "Fjerna",
+	"hotcat-tooltips-add": "Legg til ein ny kategori",
+	"hotcat-tooltips-restore": "Angra endringane",
+	"hotcat-tooltips-undo": "Angra",
+	"hotcat-tooltips-down": "Opna for endring og syn underkategoriar ",
+	"hotcat-tooltips-up": "Opna for endring og syn foreldrekatoriar",
+	"hotcat-multi-tooltip": "Endra fleire kategoriar"
+}

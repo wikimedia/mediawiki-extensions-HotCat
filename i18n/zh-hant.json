@@ -1,0 +1,26 @@
+{
+	"@metadata": {
+		"authors": [
+			"LNDDYL",
+			"Lupo"
+		]
+	},
+	"hotcat-messages-commit": "儲存",
+	"hotcat-messages-ok": "確定",
+	"hotcat-messages-cancel": "取消",
+	"hotcat-messages-multi-error": "無法從伺服器取得頁面文字。因此，您的分類變更無法儲存。我們為此不便表示抱歉。",
+	"hotcat-categories": "分類",
+	"hotcat-engine-names-searchindex": "搜尋索引",
+	"hotcat-engine-names-pagelist": "頁面清單",
+	"hotcat-engine-names-combined": "合併搜尋",
+	"hotcat-engine-names-subcat": "子分類",
+	"hotcat-engine-names-parentcat": "上層分類",
+	"hotcat-tooltips-change": "變更",
+	"hotcat-tooltips-remove": "移除",
+	"hotcat-tooltips-add": "新增一個新分類",
+	"hotcat-tooltips-restore": "撤銷變更",
+	"hotcat-tooltips-undo": "撤銷變更",
+	"hotcat-tooltips-down": "開啟以變更並顯示子分類",
+	"hotcat-tooltips-up": "開啟以變更並顯示上層分類",
+	"hotcat-multi-tooltip": "變更多個分類"
+}

@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Tlustulimu"
+		]
+	},
+	"hotcat-messages-commit": "Składować",
+	"hotcat-messages-ok": "OK",
+	"hotcat-messages-cancel": "Přetorhnyć",
+	"hotcat-messages-multi-error": "Stronowy tekst so njeje wot serwera nakładować móhł. Změny so njemóžeja bohužel składować.",
+	"hotcat-categories": "Kategorije",
+	"hotcat-engine-names-searchindex": "Pytanski indeks",
+	"hotcat-engine-names-pagelist": "Stronowa lista",
+	"hotcat-engine-names-combined": "Kombinowane pytanje",
+	"hotcat-engine-names-subcat": "Podkategorije",
+	"hotcat-engine-names-parentcat": "Nadrjadowane kategorije",
+	"hotcat-tooltips-change": "Změnić",
+	"hotcat-tooltips-remove": "Wotstronić",
+	"hotcat-tooltips-add": "Kategoriju přidać",
+	"hotcat-tooltips-restore": "Wróćić",
+	"hotcat-tooltips-undo": "Změny zaćisnyć",
+	"hotcat-tooltips-down": "Wotewrić a podkategorije pokazać",
+	"hotcat-tooltips-up": "Wotewrić a nadrjadowane kategorije pokazać",
+	"hotcat-multi-tooltip": "Wšelakore změny činić"
+}

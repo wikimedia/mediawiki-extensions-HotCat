@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Lupo"
+		]
+	},
+	"hotcat-messages-commit": "భద్రపరచు",
+	"hotcat-messages-ok": "సరే",
+	"hotcat-messages-cancel": "రద్దు",
+	"hotcat-messages-multi-error": " సర్వర్ నుండి పేజీ పాఠ్యాన్ని పొందలేకపోయాను.  మీ వర్గాల మార్పులు భద్రపరచటం వీలవలేదు. మీకు కలిగిన అసౌకర్యానికి క్షమించండి.",
+	"hotcat-categories": "వర్గాలు",
+	"hotcat-engine-names-searchindex": " వెతుకు సూచి",
+	"hotcat-engine-names-pagelist": "పేజీ జాబితా",
+	"hotcat-engine-names-combined": "మొత్తంలో వెతుకు",
+	"hotcat-engine-names-subcat": "ఉపవర్గాలు",
+	"hotcat-engine-names-parentcat": "మాతృ వర్గాలు",
+	"hotcat-tooltips-change": "మార్చు",
+	"hotcat-tooltips-remove": "తొలగించు",
+	"hotcat-tooltips-add": "కొత్త వర్గం చేర్చు",
+	"hotcat-tooltips-restore": "మార్పులు రద్దు",
+	"hotcat-tooltips-undo": "మార్పులు రద్దు",
+	"hotcat-tooltips-down": " ఉపవర్గాలను చూపించు మార్చుటకు",
+	"hotcat-tooltips-up": "మాతృవర్గాలను చూపించు మార్చుటకు ",
+	"hotcat-multi-tooltip": "చాలా వర్గాలు మార్చు"
+}

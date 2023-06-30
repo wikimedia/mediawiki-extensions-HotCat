@@ -1,0 +1,27 @@
+{
+	"@metadata": {
+	"authors": [
+		"Str4nd"
+	]
+	},
+	"hotcat-messages-cat-notFound": "Luokkaa ”$1” ei löytynyt",
+	"hotcat-messages-cat-exists": "Luokka ”$1” on jo olemassa, ei lisätty.",
+	"hotcat-messages-commit": "Tallenna",
+	"hotcat-messages-ok": "OK",
+	"hotcat-messages-cancel": "Peruuta",
+	"hotcat-messages-multi-error": "Sivun tekstiä ei voitu vastaanottaa. Tämän takia luokkamuutoksiasi ei voitu tallentaa. Pahoittelemme häiriötä.",
+	"hotcat-categories": "Luokat",
+	"hotcat-engine-names-searchindex": "Hakuindeksi",
+	"hotcat-engine-names-pagelist": "Sivulista",
+	"hotcat-engine-names-combined": "Yhdistetty haku",
+	"hotcat-engine-names-subcat": "Alaluokat",
+	"hotcat-engine-names-parentcat": "Pääluokat",
+	"hotcat-tooltips-change": "Muuta",
+	"hotcat-tooltips-remove": "Poista",
+	"hotcat-tooltips-add": "Lisää uusi luokka",
+	"hotcat-tooltips-restore": "Palauta muutokset",
+	"hotcat-tooltips-undo": "Kumoa muutokset",
+	"hotcat-tooltips-down": "Avaa muutoksille ja näytä alaluokat",
+	"hotcat-tooltips-up": "Avaa muutoksille ja näytä pääluokat",
+	"hotcat-multi-tooltip": "Muuta useita luokkia"
+}

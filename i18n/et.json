@@ -1,0 +1,27 @@
+{
+	"@metadata": {
+	"authors": [
+		"Lupo"
+	]
+	},
+	"hotcat-messages-cat-notFound": "Kategooriat \"$1\" ei leidu",
+	"hotcat-messages-cat-exists": "Kategooria \"$1\" on juba olemas, ei lisatud",
+	"hotcat-messages-commit": "Salvesta",
+	"hotcat-messages-ok": "Sobib",
+	"hotcat-messages-cancel": "Loobu",
+	"hotcat-messages-multi-error": "Lehekülje teksti ei õnnestu hankida. Seetõttu ei saa kategooriatele tehtud muudatusi salvestada.",
+	"hotcat-categories": "Kategooriad",
+	"hotcat-engine-names-searchindex": "Registriotsing",
+	"hotcat-engine-names-pagelist": "Lehekülgede loend",
+	"hotcat-engine-names-combined": "Ühendotsing",
+	"hotcat-engine-names-subcat": "Alamkategooriad",
+	"hotcat-engine-names-parentcat": "Ülemkategooriad",
+	"hotcat-tooltips-change": "Muuda",
+	"hotcat-tooltips-remove": "Eemalda",
+	"hotcat-tooltips-add": "Lisa uus kategooria",
+	"hotcat-tooltips-restore": "Võta tagasi",
+	"hotcat-tooltips-undo": "Võta tagasi",
+	"hotcat-tooltips-down": "Ava muutmiseks ja näita alamkategooriaid",
+	"hotcat-tooltips-up": "Ava muutmiseks ja näita ülemkategooriaid",
+	"hotcat-multi-tooltip": "Muuda mitut kategooriat"
+}

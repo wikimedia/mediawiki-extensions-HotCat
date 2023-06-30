@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Otogi"
+		]
+	},
+	"hotcat-messages-commit": "შენახვა",
+	"hotcat-messages-ok": "კარგი",
+	"hotcat-messages-cancel": "გაუქმება",
+	"hotcat-messages-multi-error": "გაურკვეველი შეცდომა. თქვენი ცვლილებები არ იყო შენახული.",
+	"hotcat-categories": "კატეგორიები",
+	"hotcat-engine-names-searchindex": "საძიებო ინდექსი",
+	"hotcat-engine-names-pagelist": "გვერდის სია",
+	"hotcat-engine-names-combined": "გაფართოებული ძიება",
+	"hotcat-engine-names-subcat": "ქვეკატეგორიები",
+	"hotcat-engine-names-parentcat": "დედაკატეგორიები",
+	"hotcat-tooltips-change": "მოდიფიცირება",
+	"hotcat-tooltips-remove": "წაშლა",
+	"hotcat-tooltips-add": "ახალი კატეგორიის დამატება",
+	"hotcat-tooltips-restore": "აღდგენა",
+	"hotcat-tooltips-undo": "გაუქმება",
+	"hotcat-tooltips-down": "ქვეკატეგორიაზე შეცვლა",
+	"hotcat-tooltips-up": "დედაკატეგორიაზე შეცვლა",
+	"hotcat-multi-tooltip": "რამდენიმე კატეგორიის მოდიფიცირება"
+}

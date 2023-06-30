@@ -1,0 +1,27 @@
+{
+	"@metadata": {
+		"authors": [
+			"Lupo"
+		]
+	},
+	"hotcat-messages-cat-notFound":  "ප්‍රවර්ගය\"$1\" සොයා ගැනීමට නොහැකි විය.",
+	"hotcat-messages-cat-exists":  "ප්‍රවර්ගය\"$1\"  දැනටමත් ඇත, නැවත එක් නොකරන ලදී.",
+	"hotcat-messages-commit": "සුරකින්න",
+	"hotcat-messages-ok": "එක් කරන්න",
+	"hotcat-messages-cancel": "අත් හරින්න",
+	"hotcat-messages-multi-error": " පිටුව සේවාදායකය වෙතින් ලබා ගැනීමට නොහැකි විය. ඔබේ ප්‍රවර්ග වෙනස සුරැකීමට නොහැක . අපහසුතාවය ගැන අපගේ බලවත්  කණගාටුව.",
+	"hotcat-categories": "ප්‍රවර්ග",
+	"hotcat-engine-names-searchindex": "ගවේෂණ සුචිය",
+	"hotcat-engine-names-pagelist": "පිටු ලැයිස්තුව",
+	"hotcat-engine-names-combined": "සංයුක්ත ගවේෂණය",
+	"hotcat-engine-names-subcat": "උප ප්‍රවර්ග",
+	"hotcat-engine-names-parentcat": "ජනක ප්‍රවර්ග",
+	"hotcat-tooltips-change": "වෙනස් කරන්න",
+	"hotcat-tooltips-remove": "ඉවත් කරන්න",
+	"hotcat-tooltips-add": "නව ප්‍රවර්ගයක් එක් කරන්න",
+	"hotcat-tooltips-restore": "වෙනස නිෂ්ප්‍රභ කරන්න",
+	"hotcat-tooltips-undo": "වෙනස නිෂ්ප්‍රභ කරන්න",
+	"hotcat-tooltips-down": "උප ප්‍රවර්ග විදහා පෙන්වීමට හා සංස්කරණයට විවෘත කරන්න",
+	"hotcat-tooltips-up": "ජනක ප්‍රවර්ග විදහා පෙන්වීමට හා සංස්කරණයට විවෘත කරන්න",
+	"hotcat-multi-tooltip": "ප්‍රවර්ග කිහිපයක් එක් වර වෙනස් කරන්න"
+}

@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Lupo"
+		]
+	},
+	"hotcat-messages-commit": "保存",
+	"hotcat-messages-ok": "确定",
+	"hotcat-messages-cancel": "取消",
+	"hotcat-messages-multi-error": "无法从服务器取得页面文字。因此，您的分类变更无法保存。我们为此不便表示抱歉。",
+	"hotcat-categories": "分类",
+	"hotcat-engine-names-searchindex": "搜索索引",
+	"hotcat-engine-names-pagelist": "页面列表",
+	"hotcat-engine-names-combined": "合并搜索",
+	"hotcat-engine-names-subcat": "子分类",
+	"hotcat-engine-names-parentcat": "上层分类",
+	"hotcat-tooltips-change": "修改",
+	"hotcat-tooltips-remove": "移除",
+	"hotcat-tooltips-add": "增加一个新分类",
+	"hotcat-tooltips-restore": "撤销变更",
+	"hotcat-tooltips-undo": "撤销变更",
+	"hotcat-tooltips-down": "打开以修改并显示子分类",
+	"hotcat-tooltips-up": "打开以修改并显示上层分类",
+	"hotcat-multi-tooltip": "修改多个分类"
+}

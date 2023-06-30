@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+	"authors": [
+		"Lupo"
+	]
+	},
+	"hotcat-messages-commit": "Seekre",
+	"hotcat-messages-ok": "OK",
+	"hotcat-messages-cancel": "Ufbreeg",
+	"hotcat-messages-multi-error": "Sidjentekst küd ei faan a server looset wurd. A feranrangen kön spiitagernooch ei seekert wurd.",
+	"hotcat-categories": "Kategoriin",
+	"hotcat-engine-names-searchindex": "Schükindeks",
+	"hotcat-engine-names-pagelist": "Sidjenlist",
+	"hotcat-engine-names-combined": "Kombiniaret schüken",
+	"hotcat-engine-names-subcat": "Onerkategoriin",
+	"hotcat-engine-names-parentcat": "Auerkategoriin",
+	"hotcat-tooltips-change": "Feranre",
+	"hotcat-tooltips-remove": "Wechnem",
+	"hotcat-tooltips-add": "Kategorii diartudu",
+	"hotcat-tooltips-restore": "Turagnem",
+	"hotcat-tooltips-undo": "Feranrangen turagnem",
+	"hotcat-tooltips-down": "Eeben maage an onerkategoriin uunwise",
+	"hotcat-tooltips-up": "Eeben maage an auerkategoriin uunwise",
+	"hotcat-multi-tooltip": "Flook feranrangen föörnem"
+}

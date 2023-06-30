@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Lupo"
+		]
+	},
+	"hotcat-messages-commit": "Kaydet",
+	"hotcat-messages-ok": "Tamam",
+	"hotcat-messages-cancel": "İptal",
+	"hotcat-messages-multi-error": "Sunucudan sayfa metni alınamadı. Bu nedenle kategori değişiklikleriniz kaydedilemedi. Rahatsızlıktan dolayı özür dileriz.",
+	"hotcat-categories": "Kategoriler",
+	"hotcat-engine-names-searchindex": "Arama dizini",
+	"hotcat-engine-names-pagelist": "Sayfa listesi",
+	"hotcat-engine-names-combined": "Birleşik arama",
+	"hotcat-engine-names-subcat": "Alt kategoriler",
+	"hotcat-engine-names-parentcat": "Üst kategoriler",
+	"hotcat-tooltips-change": "Değiştir",
+	"hotcat-tooltips-remove": "Kaldır",
+	"hotcat-tooltips-add": "Yeni bir kategori ekle",
+	"hotcat-tooltips-restore": "Değişiklikleri geri yükle",
+	"hotcat-tooltips-undo": "Değişiklikleri geri al",
+	"hotcat-tooltips-down": "Alt kategorileri değiştirme ve görüntüleme için aç",
+	"hotcat-tooltips-up": "Üst kategorileri değiştirme ve görüntüleme için aç",
+	"hotcat-multi-tooltip": "Birden fazla kategori değiştir"
+}

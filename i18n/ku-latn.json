@@ -1,0 +1,26 @@
+{
+	"@metadata": {
+		"authors": [
+			"Guherto",
+			"Şêr"
+		]
+	},
+	"hotcat-messages-commit": "Tomar bike",
+	"hotcat-messages-ok": "Baş e",
+	"hotcat-messages-cancel": "Betal bike",
+	"hotcat-messages-multi-error": "Nivîsa rûpelê ji aliyê serverê nikare bê barkirin. Mixabin, guhertin nikarin bên tomarkirin.",
+	"hotcat-categories": "Kategorî",
+	"hotcat-engine-names-searchindex": "Nimînoka lêgerînê",
+	"hotcat-engine-names-pagelist": "Lîsteya rûpelê",
+	"hotcat-engine-names-combined": "Lêgerîna bihevxistî",
+	"hotcat-engine-names-subcat": "Binkategorî",
+	"hotcat-engine-names-parentcat": "Serkategorî",
+	"hotcat-tooltips-change": "Biguherîne",
+	"hotcat-tooltips-remove": "Jê bibe",
+	"hotcat-tooltips-add": "Kategoriyê lê zêde bike",
+	"hotcat-tooltips-restore": "Bizivirîne pêş",
+	"hotcat-tooltips-undo": "Guhertinan betal bike",
+	"hotcat-tooltips-down": "Veke û binkategoriyan nîşan bide",
+	"hotcat-tooltips-up": "Veke û serkategoriyan nîşan bide",
+	"hotcat-multi-tooltip": "Gelek guhertinan bike"
+}

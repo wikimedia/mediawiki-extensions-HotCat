@@ -1,0 +1,26 @@
+{
+	"@metadata": {
+		"authors": [
+			"ネイ",
+			"Lupo"
+		]
+	},
+	"hotcat-messages-commit": "保存",
+	"hotcat-messages-ok": "OK",
+	"hotcat-messages-cancel": "キャンセル",
+	"hotcat-messages-multi-error": "サーバーからページテキストの取得に失敗したため変更内容を保存できませんでした。ご不便をおかけして申し訳ありません。",
+	"hotcat-categories": "カテゴリ",
+	"hotcat-tooltips-change": "このカテゴリを変更",
+	"hotcat-tooltips-remove": "このカテゴリを除去",
+	"hotcat-tooltips-add": "新しいカテゴリを追加",
+	"hotcat-tooltips-restore": "変更を元に戻す",
+	"hotcat-tooltips-undo": "変更を元に戻す",
+	"hotcat-tooltips-down": "下位カテゴリを表示",
+	"hotcat-tooltips-up": "上位カテゴリを表示",
+	"hotcat-multi-tooltip": "複数のカテゴリを一気に編集",
+	"hotcat-engine-names-searchindex": "検索インデックス",
+	"hotcat-engine-names-pagelist": "ページリスト",
+	"hotcat-engine-names-combined": "併用検索",
+	"hotcat-engine-names-subcat": "下位カテゴリ",
+	"hotcat-engine-names-parentcat": "上位カテゴリ"
+}

@@ -1,0 +1,26 @@
+
+{
+	"@metadata": {
+	"authors": [
+		"Lupo"
+	]
+	},
+	"hotcat-messages-commit": "Ӏалашдан",
+	"hotcat-messages-ok": "OK",
+	"hotcat-messages-cancel": "Юхаяккха",
+	"hotcat-messages-multi-error": "Цадевза гӀалат. Хьан хьийцамаш дӀа ца язйина",
+	"hotcat-categories": "Категори",
+	"hotcat-engine-names-searchindex": "Лехаман индекс",
+	"hotcat-engine-names-pagelist": "АгӀонан список",
+	"hotcat-engine-names-combined": "Шорбина лехам",
+	"hotcat-engine-names-subcat": "КӀелара категориш",
+	"hotcat-engine-names-parentcat": "ТӀехула категориш",
+	"hotcat-tooltips-change": "Хьийца категори",
+	"hotcat-tooltips-remove": "ДӀаяккха категори",
+	"hotcat-tooltips-add": "ТӀетоха керла категори",
+	"hotcat-tooltips-restore": "МеттахӀоттае",
+	"hotcat-tooltips-undo": "Юхаяккха",
+	"hotcat-tooltips-down": "Хьийца оцу кӀелара категорица",
+	"hotcat-tooltips-up": "Хьийца оцу тӀехула категорица",
+	"hotcat-multi-tooltip": "Хьийца кхин категориш"
+}

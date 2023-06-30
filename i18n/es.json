@@ -1,0 +1,31 @@
+{
+	"@metadata": {
+	"authors": [
+		"Bachinchi",
+		"Common Good",
+		"Lupo",
+		"Manuelt15",
+		"MarcoAurelio"
+	]
+	},
+	"hotcat-messages-cat-notFound": "Categoría \"$1\" no encontrada",
+	"hotcat-messages-cat-exists": "Categoría \"$1\" ya existe, no ha sido añadida.",
+	"hotcat-messages-commit": "Guardar",
+	"hotcat-messages-ok": "OK",
+	"hotcat-messages-cancel": "Cancelar",
+	"hotcat-messages-multi-error": "No se pudo obtener el texto de la página del servidor. Por lo tanto, tus cambios de categoría no pueden ser guardados. Disculpa los inconvenientes.",
+	"hotcat-categories": "Categorías",
+	"hotcat-tooltips-change": "Modificar",
+	"hotcat-tooltips-remove": "Retirar",
+	"hotcat-tooltips-add": "Añadir una nueva categoría",
+	"hotcat-tooltips-restore": "Restaurar cambios",
+	"hotcat-tooltips-undo": "Deshacer cambios",
+	"hotcat-tooltips-down": "Abrir para modificar y mostrar subcategorías",
+	"hotcat-tooltips-up": "Abrir para modificar y mostrar categorías superiores",
+	"hotcat-multi-tooltip": "Modificar varias categorías",
+	"hotcat-engine-names-searchindex": "Motor de búsqueda",
+	"hotcat-engine-names-pagelist": "Lista de páginas",
+	"hotcat-engine-names-combined": "Búsqueda combinada",
+	"hotcat-engine-names-subcat": "Subcategorías",
+	"hotcat-engine-names-parentcat": "Categorías superiores"
+}

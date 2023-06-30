@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Xelgen"
+		]
+	},
+	"hotcat-messages-commit": "Հիշել",
+	"hotcat-messages-ok": "Լավ",
+	"hotcat-messages-cancel": "Չեղարկել",
+	"hotcat-messages-multi-error": "Ցավոք չհաջողվեց սպասարկչից բեռնել էջի տեքստը, այդ պատճառով անհնար է հիշել արված փոփոխությունները։",
+	"hotcat-categories": "Կատեգորիաներ",
+	"hotcat-engine-names-searchindex": "Որոնման ցուցակ",
+	"hotcat-engine-names-pagelist": "Էջերի ցանկ",
+	"hotcat-engine-names-combined": "Համատեղված որոնում",
+	"hotcat-engine-names-subcat": "Ենթակատեգորիաներ",
+	"hotcat-engine-names-parentcat": "Մայր կատեգորիա",
+	"hotcat-tooltips-change": "Փոփոխել",
+	"hotcat-tooltips-remove": "Հեռացնել",
+	"hotcat-tooltips-add": "Ավելացնել նոր կատեգորիա",
+	"hotcat-tooltips-restore": "Ետարկել փոփոխությունները",
+	"hotcat-tooltips-undo": "Ետարկել փոփոխությունները",
+	"hotcat-tooltips-down": "Փոփոխել և ցուցադրել ենթակատեգորիաները",
+	"hotcat-tooltips-up": "Փոփոխել և ցուցադրել մայր կատեգորիան",
+	"hotcat-multi-tooltip": "Փոփոխել մի քանի կատեգորիա"
+}

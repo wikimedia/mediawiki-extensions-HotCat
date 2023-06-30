@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Lupo"
+		]
+	},
+	"hotcat-messages-commit": "Previsualizar",
+	"hotcat-messages-ok": "OK",
+	"hotcat-messages-cancel": "Cancelar",
+	"hotcat-messages-multi-error": "Não foi possível obter o conteúdo desta página a partir do servidor. As suas mudanças nas categorias não puderam ser gravadas. Pedimos desculpa pelo inconveniente.",
+	"hotcat-categories": "Categorias",
+	"hotcat-engine-names-searchindex": "Índice da pesquisa",
+	"hotcat-engine-names-pagelist": "Lista de páginas",
+	"hotcat-engine-names-combined": "Pesquisa combinada",
+	"hotcat-engine-names-subcat": "Subcategorias",
+	"hotcat-engine-names-parentcat": "Supra-categorias",
+	"hotcat-tooltips-change": "Modificar",
+	"hotcat-tooltips-remove": "Remover",
+	"hotcat-tooltips-add": "Adicionar uma nova categoria",
+	"hotcat-tooltips-restore": "Anular alterações",
+	"hotcat-tooltips-undo": "Anular alterações",
+	"hotcat-tooltips-down": "Abrir para modificação e mostrar subcategorias",
+	"hotcat-tooltips-up": "Abrir para modificação e mostrar supra-categorias",
+	"hotcat-multi-tooltip": "Modificar múltiplas categorias"
+}

@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Przemub"
+		]
+	},
+	"hotcat-messages-commit": "Spamjyntej",
+	"hotcat-messages-ok": "OK",
+	"hotcat-messages-cancel": "Uodćepej",
+	"hotcat-messages-multi-error": "Ńy załadowano zdrzůdłowyj treści, ńy spamjyntano.",
+	"hotcat-categories": "Kategoryje",
+	"hotcat-engine-names-searchindex": "Indeks sznupańo",
+	"hotcat-engine-names-pagelist": "Lista zajt",
+	"hotcat-engine-names-combined": "Sznupańy rozszerzůne",
+	"hotcat-engine-names-subcat": "Podkategoryje",
+	"hotcat-engine-names-parentcat": "Nadkategoryje",
+	"hotcat-tooltips-change": "Sprowjej",
+	"hotcat-tooltips-remove": "Wyćep",
+	"hotcat-tooltips-add": "Dodaj kategoryje",
+	"hotcat-tooltips-restore": "Uodćepej",
+	"hotcat-tooltips-undo": "Uodćepej",
+	"hotcat-tooltips-down": "Otwórz i pokaż podkategorie",
+	"hotcat-tooltips-up": "Otwórz i pokaż nadkategorie",
+	"hotcat-multi-tooltip": "Spamyjntej wjyncyj půmjyńań"
+}

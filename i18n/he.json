@@ -1,0 +1,25 @@
+{
+	 "@metadata": {
+		"authors": [
+			"Lupo"
+		]
+	},
+	"hotcat-messages-commit": "שמירה",
+	"hotcat-messages-ok": "אישור",
+	"hotcat-messages-cancel": "ביטול",
+	"hotcat-messages-multi-error": "למרבה הצער ארעה תקלה, והשינויים שביצעת לא נשמרו. אתך הסליחה.",
+	"hotcat-categories": "קטגוריות",
+	"hotcat-engine-names-searchindex": "חיפוש",
+	"hotcat-engine-names-pagelist": "רשימת דפים",
+	"hotcat-engine-names-combined": "חיפוש מורכב",
+	"hotcat-engine-names-subcat": "תת קטגוריות",
+	"hotcat-engine-names-parentcat": "קטגוריות אב",
+	"hotcat-tooltips-change": "שינוי",
+	"hotcat-tooltips-remove": "הסרה",
+	"hotcat-tooltips-add": "הוספת קטגוריה",
+	"hotcat-tooltips-restore": "ביטול שינויים",
+	"hotcat-tooltips-undo": "ביטול שינויים",
+	"hotcat-tooltips-down": "פתיחה לעריכה והצגת תת קטגוריות",
+	"hotcat-tooltips-up": "פתיחה לעריכה והצגת קטגוריות אב",
+	"hotcat-multi-tooltip": "עריכת מספר קטגוריות"
+}

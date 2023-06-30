@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Sevela.p"
+		]
+	},
+	"hotcat-messages-commit": "Uložiť",
+	"hotcat-messages-ok": "OK",
+	"hotcat-messages-cancel": "Zrušiť",
+	"hotcat-messages-multi-error": "Nie je možné získať text stránky zo servera, preto vaše zmeny nemôžu byť uložené. Ospravedlňujeme sa za vzniknuté problémy.",
+	"hotcat-categories": "Kategórie",
+	"hotcat-engine-names-searchindex": "Vyhľadávací index",
+	"hotcat-engine-names-pagelist": "Zoznam stránok",
+	"hotcat-engine-names-combined": "Kombinované hľadanie",
+	"hotcat-engine-names-subcat": "Podkategórie",
+	"hotcat-engine-names-parentcat": "Nadkategórie",
+	"hotcat-tooltips-change": "Zmeniť",
+	"hotcat-tooltips-remove": "Odobrať",
+	"hotcat-tooltips-add": "Pridať novú kategóriu",
+	"hotcat-tooltips-restore": "Vrátiť zmeny",
+	"hotcat-tooltips-undo": "Vrátiť zmeny",
+	"hotcat-tooltips-down": "Otvoriť pre zmenu a zobrazenie podkategórií",
+	"hotcat-tooltips-up": "Otvoriť pre zmenu a zobrazenie nadkategórií",
+	"hotcat-multi-tooltip": "Zmeniť viacero kategórií"
+}

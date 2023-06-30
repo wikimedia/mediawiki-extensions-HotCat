@@ -1,0 +1,27 @@
+{
+	"@metadata": {
+		"authors": [
+			"Lupo"
+		]
+	},
+	"hotcat-messages-cat-notFound": "Nerasta kategorija \"$1\"",
+	"hotcat-messages-cat-exists": "Kategorija \"$1\" jau yra, neįtraukta",
+	"hotcat-messages-commit": "Išsaugoti",
+	"hotcat-messages-ok": "Saugoti",
+	"hotcat-messages-cancel": "Atsisakyti",
+	"hotcat-messages-multi-error": "Negalima ištraukti puslapio teksto iš serverio. Apgailestaujame, bet Jūsų pakeitimai negali būti išsaugoti.",
+	"hotcat-categories": "Kategorijos",
+	"hotcat-engine-names-searchindex": "Paieškos indeksas",
+	"hotcat-engine-names-pagelist": "Puslapių sąrašas",
+	"hotcat-engine-names-combined": "Kombinuota paieška",
+	"hotcat-engine-names-subcat": "Smulkesnės kategorijos",
+	"hotcat-engine-names-parentcat": "Stambesnių kategorijos",
+	"hotcat-tooltips-change": "Keisti",
+	"hotcat-tooltips-remove": "Naikinti",
+	"hotcat-tooltips-add": "Įtraukti naują kategoriją",
+	"hotcat-tooltips-restore": "Atstatyti",
+	"hotcat-tooltips-undo": "Atšaukti pakeitimą",
+	"hotcat-tooltips-down": "Atidaryti smulkesnių kategorijų peržiūrą ir pakeitimą",
+	"hotcat-tooltips-up": "Atidaryti stambesnių kategorijų peržiūrą ir pakeitimą",
+	"hotcat-multi-tooltip": "Keisti keletą kategorijų"
+}

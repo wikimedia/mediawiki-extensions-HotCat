@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Lupo"
+		]
+	},
+	"hotcat-messages-commit": "Сохранить",
+	"hotcat-messages-ok": "OK",
+	"hotcat-messages-cancel": "Отмена",
+	"hotcat-messages-multi-error": "Неизвестные ошибки. Ваши изменения не были сохранены.",
+	"hotcat-categories": "Категории",
+	"hotcat-engine-names-searchindex": "Поисковый индекс",
+	"hotcat-engine-names-pagelist": "Список страниц",
+	"hotcat-engine-names-combined": "Расширенный поиск",
+	"hotcat-engine-names-subcat": "Подкатегории",
+	"hotcat-engine-names-parentcat": "Надкатегории",
+	"hotcat-tooltips-change": "Изменить категорию",
+	"hotcat-tooltips-remove": "Удалить категорию",
+	"hotcat-tooltips-add": "Добавить новую категорию",
+	"hotcat-tooltips-restore": "Восстановить",
+	"hotcat-tooltips-undo": "Отменить",
+	"hotcat-tooltips-down": "Заменить на подкатегорию",
+	"hotcat-tooltips-up": "Заменить надкатегорией",
+	"hotcat-multi-tooltip": "Изменить другие категории"
+}

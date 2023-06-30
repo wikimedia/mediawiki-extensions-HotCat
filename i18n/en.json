@@ -1,0 +1,39 @@
+{
+	"@metadata": {
+		"authors": [
+			"Lupo",
+			"Perhelion"
+		]
+	},
+	"hotcat-desc": "Simple Category manager that allows adding/removing/changing categories with name suggestions when viewing pages",
+	"hotcat-messages-commit": "Save",
+	"hotcat-messages-ok": "OK",
+	"hotcat-messages-cancel": "Cancel",
+	"hotcat-messages-multi-error": "Could not retrieve the page text from the server. Therefore, your category changes cannot be saved. We apologize for the inconvenience.",
+	"hotcat-categories": "Categories",
+	"hotcat-engine-names-searchindex": "Search index",
+	"hotcat-engine-names-pagelist": "Page list",
+	"hotcat-engine-names-combined": "Combined search",
+	"hotcat-engine-names-subcat": "Subcategories",
+	"hotcat-engine-names-parentcat": "Parent categories",
+	"hotcat-tooltips-change": "Modify",
+	"hotcat-tooltips-remove": "Remove",
+	"hotcat-tooltips-add": "Add a new category",
+	"hotcat-tooltips-restore": "Undo changes",
+	"hotcat-tooltips-undo": "Undo changes",
+	"hotcat-tooltips-down": "Open for modifying and display subcategories",
+	"hotcat-tooltips-up": "Open for modifying and display parent categories",
+	"hotcat-multi-tooltip": "Modify several categories",
+	"hotcat-messages-cat-removed": "removed [[Category:$1]]",
+	"hotcat-messages-template-removed": "removed {{[[Category:$1]]}}",
+	"hotcat-messages-cat-added": "added [[Category:$1]]",
+	"hotcat-messages-cat-keychange": "new key for [[Category:$1]] = \"$2\"",
+	"hotcat-messages-cat-notFound": "Category \"$1\" not found",
+	"hotcat-messages-cat-exists": "Category \"$1\" already exists, not added.",
+	"hotcat-messages-cat-resolved": " (redirect [[Category:$1]] resolved)",
+	"hotcat-messages-uncat-removed": "removed {{uncategorized}}",
+	"hotcat-messages-separator": ", ",
+	"hotcat-messages-prefix": "",
+	"hotcat-messages-using": " using [[Help:Gadget-hotcat|hotcat]]",
+	"hotcat-messages-multi-change": "$1 categories"
+}
