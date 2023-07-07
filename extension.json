@@ -12,5 +12,8 @@
 			"i18n"
 		]
 	},
+	"Hooks": {
+		"GetPreferences": "MediaWiki\\Extension\\HotCat\\Hooks::onGetPreferences"
+	},
 	"manifest_version": 2
 }
