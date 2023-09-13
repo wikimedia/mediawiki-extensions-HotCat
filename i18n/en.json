@@ -5,6 +5,8 @@
 			"Perhelion"
 		]
 	},
+	"hotcat-title": "HotCat",
+	"tog-hotcat": "Use HotCat for semi-automated categorization",
 	"hotcat-desc": "Simple Category manager that allows adding/removing/changing categories with name suggestions when viewing pages",
 	"hotcat-messages-commit": "Save",
 	"hotcat-messages-ok": "OK",

@@ -6,14 +6,91 @@
 	"url": "https://www.mediawiki.org/wiki/Extension:HotCat",
 	"descriptionmsg": "hotcat-desc",
 	"version": "2.43",
-	"license": "GFDL OR GPL OR LGPL OR CC-BY-3.0",
+	"license-name": "GFDL",
+	"type": "editor",
 	"MessagesDirs": {
 		"HotCat": [
 			"i18n"
 		]
 	},
+	"requires": {
+		"MediaWiki": ">=1.35"
+	},
+	"AutoloadNamespaces": {
+		"MediaWiki\\HotCat\\": "src/"
+	},
+	"DefaultUserOptions": {
+		"hotcat-switch": 0
+	},
 	"Hooks": {
-		"GetPreferences": "MediaWiki\\Extension\\HotCat\\Hooks::onGetPreferences"
+		"GetPreferences": "preferences",
+		"GetBetaFeaturePreferences": "betaFeature",
+		"SaveUserOptions": "preferences"
+	},
+	"HookHandlers": {
+		"preferences": {
+			"class": "MediaWiki\\HotCat\\HookHandler\\PreferencesHandler",
+			"services": [
+				"PermissionManager",
+				"UserOptionsLookup",
+				"UserGroupManager"
+			]
+		},
+		"betaFeature": {
+			"class": "MediaWiki\\HotCat\\HookHandler\\BetaFeaturePreferencesHandler",
+			"services": [
+				"MainConfig",
+				"PermissionManager"
+			]
+		}
+	},
+	"ResourceModules": {
+		"ext.hotCat": {
+			"localBasePath": "modules/ext.hotCat",
+			"remoteExtPath": "HotCat/modules/ext.hotCat",
+			"packageFiles": [
+				"hotcat.js"
+			],
+			"dependencies": [
+				"mediawiki.api",
+				"mediawiki.user"
+			],
+			"messages": [
+				"hotcat-title",
+				"tog-hotcat",
+				"hotcat-desc",
+				"hotcat-messages-commit",
+				"hotcat-messages-ok",
+				"hotcat-messages-cancel",
+				"hotcat-messages-multi-error",
+				"hotcat-categories",
+				"hotcat-engine-names-searchindex",
+				"hotcat-engine-names-pagelist",
+				"hotcat-engine-names-combined",
+				"hotcat-engine-names-subcat",
+				"hotcat-engine-names-parentcat",
+				"hotcat-tooltips-change",
+				"hotcat-tooltips-remove",
+				"hotcat-tooltips-add",
+				"hotcat-tooltips-restore",
+				"hotcat-tooltips-undo",
+				"hotcat-tooltips-down",
+				"hotcat-tooltips-up",
+				"hotcat-multi-tooltip",
+				"hotcat-messages-cat-removed",
+				"hotcat-messages-template-removed",
+				"hotcat-messages-cat-added",
+				"hotcat-messages-cat-keychange",
+				"hotcat-messages-cat-notFound",
+				"hotcat-messages-cat-exists",
+				"hotcat-messages-cat-resolved",
+				"hotcat-messages-uncat-removed",
+				"hotcat-messages-separator",
+				"hotcat-messages-prefix",
+				"hotcat-messages-using",
+				"hotcat-messages-multi-change"
+			]
+		}
 	},
 	"manifest_version": 2
 }

@@ -15,10 +15,7 @@ Choose whichever license of these you like best :-)
 
 This code should run on any MediaWiki installation >= MW 1.27.
 
-For use with older versions of MediaWiki, use the archived versions below:
 
-<=1.26: https://commons.wikimedia.org/w/index.php?title=MediaWiki:Gadget-HotCat.js&oldid=211134664
-*/
 // <nowiki>
 /* eslint-disable vars-on-top, one-var, camelcase, no-alert, curly */
 /* global jQuery, mediaWiki, UFUI, JSconfig, UploadForm */
@@ -136,8 +133,8 @@ For use with older versions of MediaWiki, use the archived versions below:
 		// If not, set it to null.
 		uncat_regexp: /\{\{\s*[Uu]ncategorized\s*[^}]*\}\}\s*(<!--.*?-->\s*)?/g,
 		// The images used for the little indication icon. Should not need changing.
-		existsYes: '//upload.wikimedia.org/wikipedia/commons/thumb/b/be/P_yes.svg/20px-P_yes.svg.png',
-		existsNo: '//upload.wikimedia.org/wikipedia/commons/thumb/4/42/P_no.svg/20px-P_no.svg.png',
+		existsYes: '..src/images/Feather-core-check.svg',
+		existsNo: '..src/images/Feather-core-x.svg',
 		// a list of categories which can be removed by removing a template
 		// key: the category without namespace
 		// value: A regexp matching the template name, again without namespace
@@ -278,7 +275,7 @@ For use with older versions of MediaWiki, use the archived versions below:
 	// Load local configurations, overriding the pre-set default values in the HotCat object above. This is always loaded
 	// from the wiki where this script is executing, even if this script itself is hotlinked from Commons. This can
 	// be used to change the default settings, or to provide localized interface texts for edit summaries and so on.
-	loadJS( 'MediaWiki:Gadget-HotCat.js/local_defaults', loadTrigger.loaded );
+	loadJS( 'i18n/local_defaults', loadTrigger.loaded );
 
 	// Load localized UI texts. These are the texts that HotCat displays on the page itself. Texts shown in edit summaries
 	// should be localized in /local_defaults above.
@@ -289,12 +286,10 @@ For use with older versions of MediaWiki, use the archived versions below:
 
 		// Localization hook to localize HotCat messages, tooltips, and engine names for wgUserLanguage.
 		if ( window.hotcat_translations_from_commons && conf.wgServer.indexOf( '//commons' ) < 0 ) {
-			loadURI( '//commons.wikimedia.org/w/index.php?title=' +
-		'MediaWiki:Gadget-HotCat.js/' + conf.wgUserLanguage +
-		'&action=raw&ctype=text/javascript', loadTrigger.loaded );
+			loadURI( 'i18n/' + conf.wgUserLanguage, loadTrigger.loaded );
 		} else {
 			// Load translations locally
-			loadJS( 'MediaWiki:Gadget-HotCat.js/' + conf.wgUserLanguage, loadTrigger.loaded );
+			loadJS( 'i18n/' + conf.wgUserLanguage, loadTrigger.loaded );
 		}
 	} else {
 		loadTrigger.loaded();
