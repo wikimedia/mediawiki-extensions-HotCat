@@ -133,8 +133,8 @@ This code should run on any MediaWiki installation >= MW 1.27.
 		// If not, set it to null.
 		uncat_regexp: /\{\{\s*[Uu]ncategorized\s*[^}]*\}\}\s*(<!--.*?-->\s*)?/g,
 		// The images used for the little indication icon. Should not need changing.
-		existsYes: '..src/images/Feather-core-check.svg',
-		existsNo: '..src/images/Feather-core-x.svg',
+		existsYes: '../src/images/Feather-core-check.svg',
+		existsNo: '../src/images/Feather-core-x.svg',
 		// a list of categories which can be removed by removing a template
 		// key: the category without namespace
 		// value: A regexp matching the template name, again without namespace

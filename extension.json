@@ -23,6 +23,7 @@
 		"hotcat-switch": 0
 	},
 	"Hooks": {
+		"BeforePageDisplay": "pageDisplay",
 		"GetPreferences": "preferences",
 		"GetBetaFeaturePreferences": "betaFeature",
 		"SaveUserOptions": "preferences"
@@ -42,53 +43,20 @@
 				"MainConfig",
 				"PermissionManager"
 			]
+		},
+		"pageDisplay": {
+			"class": "MediaWiki\\HotCat\\HookHandler\\PageDisplayHandler",
+			"services": [
+				"PermissionManager",
+				"UserOptionsLookup"
+			]
 		}
 	},
 	"ResourceModules": {
-		"ext.hotCat": {
-			"localBasePath": "modules/ext.hotCat",
-			"remoteExtPath": "HotCat/modules/ext.hotCat",
+		"ext.hotcat": {
+			"localBasePath": "resources",
 			"packageFiles": [
-				"hotcat.js"
-			],
-			"dependencies": [
-				"mediawiki.api",
-				"mediawiki.user"
-			],
-			"messages": [
-				"hotcat-title",
-				"tog-hotcat",
-				"hotcat-desc",
-				"hotcat-messages-commit",
-				"hotcat-messages-ok",
-				"hotcat-messages-cancel",
-				"hotcat-messages-multi-error",
-				"hotcat-categories",
-				"hotcat-engine-names-searchindex",
-				"hotcat-engine-names-pagelist",
-				"hotcat-engine-names-combined",
-				"hotcat-engine-names-subcat",
-				"hotcat-engine-names-parentcat",
-				"hotcat-tooltips-change",
-				"hotcat-tooltips-remove",
-				"hotcat-tooltips-add",
-				"hotcat-tooltips-restore",
-				"hotcat-tooltips-undo",
-				"hotcat-tooltips-down",
-				"hotcat-tooltips-up",
-				"hotcat-multi-tooltip",
-				"hotcat-messages-cat-removed",
-				"hotcat-messages-template-removed",
-				"hotcat-messages-cat-added",
-				"hotcat-messages-cat-keychange",
-				"hotcat-messages-cat-notFound",
-				"hotcat-messages-cat-exists",
-				"hotcat-messages-cat-resolved",
-				"hotcat-messages-uncat-removed",
-				"hotcat-messages-separator",
-				"hotcat-messages-prefix",
-				"hotcat-messages-using",
-				"hotcat-messages-multi-change"
+				"ext.hotcat.js"
 			]
 		}
 	},
