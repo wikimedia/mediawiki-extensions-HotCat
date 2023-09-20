@@ -16,7 +16,6 @@ Choose whichever license of these you like best :-)
 This code should run on any MediaWiki installation >= MW 1.27.
 
 
-// <nowiki>
 /* eslint-disable vars-on-top, one-var, camelcase, no-alert, curly */
 /* global jQuery, mediaWiki, UFUI, JSconfig, UploadForm */
 /* jslint strict:false, nonew:false, bitwise:true */
@@ -35,42 +34,24 @@ This code should run on any MediaWiki installation >= MW 1.27.
 		conf.wgAction === 'edit' ) // Not on edit mode
 		return;
 
+	var existsYes = new OO.ui.IconWidget( {
+		icon: 'check'
+		} ),
+			iconLabel = new OO.ui.LabelWidget( {
+		label: ''
+		} );
+
+	var existsNo = new OO.ui.IconWidget( {
+		icon: 'close'
+		} ),
+			iconLabel = new OO.ui.LabelWidget( {
+		label: ''
+		} );
+
 	// Configuration stuff.
 	var HC = window.HotCat = {
 		// Localize these messages to the main language of your wiki.
 		messages: {
-			cat_removed: 'removed [[Category:$1]]',
-			template_removed: 'removed {{[[Category:$1]]}}',
-			cat_added: 'added [[Category:$1]]',
-			cat_keychange: 'new key for [[Category:$1]]: "$2"', // $2 is the new key
-			cat_notFound: 'Category "$1" not found',
-			cat_exists: 'Category "$1" already exists; not added.',
-			cat_resolved: ' (redirect [[Category:$1]] resolved)',
-			uncat_removed: 'removed {{uncategorized}}',
-			separator: '; ',
-			// Some text to prefix to the edit summary.
-			prefix: '',
-			// Some text to append to the edit summary. Named 'using' for historical reasons. If you prefer
-			// to have a marker at the front, use prefix and set this to the empty string.
-			using: ' using [[Help:Gadget-HotCat|HotCat]]',
-			// $1 is replaced by a number. If your language has several plural forms (c.f. [[:en:Dual (grammatical form)]]),
-			// you can set this to an array of strings suitable for passing to mw.language.configPlural().
-			// If that function doesn't exist, HotCat will simply fall back to using the last
-			// entry in the array.
-			multi_change: '$1 categories',
-			// Button text. Localize to wgContentLanguage here; localize to wgUserLanguage in a subpage,
-			// see localization hook below.
-			commit: 'Save',
-			// Button text. Localize to wgContentLanguage here; localize to wgUserLanguage in a subpage,
-			// see localization hook below.
-			ok: 'OK',
-			// Button text. Localize to wgContentLanguage here; localize to wgUserLanguage in a subpage,
-			// see localization hook below.
-			cancel: 'Cancel',
-			// Localize to wgContentLanguage here; localize to wgUserLanguage in a subpage,
-			// see localization hook below.
-			multi_error: 'Could not retrieve the page text from the server. Therefore, your category changes ' +
-			'cannot be saved. We apologize for the inconvenience.',
 			// Defaults to '[[' + category_canonical + ':$1]]'. Can be overridden if in the short edit summaries
 			// not the standard category name should be used but, say, a shorter namespace alias. $1 is replaced
 			// by a category name.
@@ -99,16 +80,6 @@ This code should run on any MediaWiki installation >= MW 1.27.
 			up: '(\u2191)'
 		},
 		changeTag: conf.wgUserName ? 'HotCat' : '', // if tag is missing, edit is rejected
-		// The tooltips for the above links
-		tooltips: {
-			change: 'Modify',
-			remove: 'Remove',
-			add: 'Add a new category',
-			restore: 'Undo changes',
-			undo: 'Undo changes',
-			down: 'Open for modifying and display subcategories',
-			up: 'Open for modifying and display parent categories'
-		},
 		// The HTML content of the "enter multi-mode" link at the front.
 		addmulti: '<span>+<sup>+</sup></span>',
 		// Tooltip for the "enter multi-mode" link
@@ -133,8 +104,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 		// If not, set it to null.
 		uncat_regexp: /\{\{\s*[Uu]ncategorized\s*[^}]*\}\}\s*(<!--.*?-->\s*)?/g,
 		// The images used for the little indication icon. Should not need changing.
-		existsYes: '../src/images/Feather-core-check.svg',
-		existsNo: '../src/images/Feather-core-x.svg',
+
 		// a list of categories which can be removed by removing a template
 		// key: the category without namespace
 		// value: A regexp matching the template name, again without namespace
@@ -522,8 +492,8 @@ This code should run on any MediaWiki installation >= MW 1.27.
 				if ( !interlanguageRE ) {
 				// Approximation without API: interlanguage links start with 2 to 3 lower case letters, optionally followed by
 				// a sequence of groups consisting of a dash followed by one or more lower case letters. Exceptions are "simple"
-				// and "tokipona".
-					match = /((^|\n\r?)(\[\[\s*(([a-z]{2,3}(-[a-z]+)*)|simple|tokipona)\s*:[^\]]+\]\]\s*))+$/.exec( copiedtext );
+				// and "tok".
+					match = /((^|\n\r?)(\[\[\s*(([a-z]{2,3}(-[a-z]+)*)|simple|tok)\s*:[^\]]+\]\]\s*))+$/.exec( copiedtext );
 				} else {
 					match = interlanguageRE.exec( copiedtext );
 				}
@@ -553,7 +523,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 				return {
 					text: wikitext,
 					summary: summary,
-					error: HC.messages.cat_notFound.replace( /\$1/g, toRemove )
+					error: mw.msg( 'hotcat-messages-cat-notFound', toRemove )
 				};
 			} else {
 				var before = wikitext.substring( 0, matches[ 0 ].match.index ),
@@ -595,7 +565,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 
 				wikitext = before + after;
 				if ( !keyChange ) {
-					if ( HC.template_categories[ toRemove ] ) { summary.push( HC.messages.template_removed.replace( /\$1/g, toRemove ) ); } else { summary.push( HC.messages.cat_removed.replace( /\$1/g, toRemove ) ); }
+					if ( HC.template_categories[ toRemove ] ) { summary.push( mw.msg ( 'hotcat-messages-template-removed', toRemove ) ); } else { summary.push( mw.msg( 'hotcat-messages-cat-removed', toRemove ) ); }
 				}
 
 			}
@@ -608,7 +578,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 				return {
 					text: wikitext,
 					summary: summary,
-					error: HC.messages.cat_exists.replace( /\$1/g, toAdd )
+					error: mw.msg( 'hotcat-messages-cat-exists', toAdd )
 				};
 			} else {
 				var onCat = false;
@@ -633,15 +603,15 @@ This code should run on any MediaWiki installation >= MW 1.27.
 					var k = key || '';
 					if ( k.length ) k = k.substr( 1 );
 
-					summary.push( substitute( HC.messages.cat_keychange, [ null, toAdd, k ] ) );
+					summary.push( substitute( mw.msg( 'hotcat-messages-cat-keychange', toAdd, k ) ) );
 				} else {
-					summary.push( HC.messages.cat_added.replace( /\$1/g, toAdd ) );
+					summary.push( mw.msg( 'hotcat-messages-cat-added', toAdd ) );
 				}
 				if ( HC.uncat_regexp && !is_hidden ) {
 					var txt = wikitext.replace( HC.uncat_regexp, '' ); // Remove "uncat" templates
 					if ( txt.length !== wikitext.length ) {
 						wikitext = txt;
-						summary.push( HC.messages.uncat_removed );
+						summary.push( mw.msg( 'hotcat-messages-uncat-removed' ) );
 					}
 				}
 			}
@@ -786,7 +756,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 	}
 
 	function multiChangeMsg( count ) {
-		var msg = HC.messages.multi_change;
+		var msg = mw.msg ( 'hotcat-messages-multi-change' );
 		if ( typeof msg !== 'string' && msg.length )
 			if ( mw.language && mw.language.convertPlural ) { msg = mw.language.convertPlural( count, msg ); } else { msg = msg[ msg.length - 1 ]; }
 
@@ -810,11 +780,11 @@ This code should run on any MediaWiki installation >= MW 1.27.
 
 	function performChanges( failure, singleEditor ) {
 		if ( pageText === null ) {
-			failure( HC.messages.multi_error );
+			failure( mw.msg( 'hotcat-messages-multi-error' ) );
 			return;
 		}
 		// Backwards compatibility after message change (added $2 to cat_keychange)
-		if ( HC.messages.cat_keychange.indexOf( '$2' ) < 0 ) HC.messages.cat_keychange += '"$2"';
+		if ( mw.msg( 'hotcat-messages-cat-keychange' ).indexOf( '$2' ) < 0 ) mw.msg( 'hotcat-messages-cat-keychange' ) += '"$2"';
 
 		// More backwards-compatibility with earlier HotCat versions:
 		if ( !HC.messages.short_catchange ) HC.messages.short_catchange = '[[' + HC.category_canonical + ':$1]]';
@@ -903,14 +873,14 @@ This code should run on any MediaWiki installation >= MW 1.27.
 			if ( action && action.value === 'wpSave' ) {
 				if ( HC.changeTag ) {
 					commitForm.wpChangeTags.value = HC.changeTag;
-					HC.messages.using = '';
-					HC.messages.prefix = '';
+					mw.msg( 'hotcat-messages-using' ) = '';
+					mw.msg( 'hotcat-messages-prefix' ) = '';
 				}
 			} else {
 				commitForm.wpAutoSummary.value = HC.changeTag;
 			}
 			if ( changes === 1 ) {
-				if ( result.summary && result.summary.length ) commitForm.wpSummary.value = HC.messages.prefix + result.summary.join( HC.messages.separator ) + HC.messages.using;
+				if ( result.summary && result.summary.length ) commitForm.wpSummary.value = mw.msg( 'hotcat-messages-prefix' ) + result.summary.join( mw.msg( 'hotcat-messages-separator' ) ) + mw.msg( 'hotcat-messages-using' );
 				commitForm.wpMinoredit.checked = HC.single_minor || minorEdits;
 			} else if ( changes ) {
 				var summary = [];
@@ -950,10 +920,10 @@ This code should run on any MediaWiki installation >= MW 1.27.
 					shortSummary.push( '± ' + multiChangeMsg( changed.length ) );
 				}
 				if ( summary.length ) {
-					summary = summary.join( HC.messages.separator );
-					if ( summary.length > 200 - HC.messages.prefix.length - HC.messages.using.length ) summary = shortSummary.join( HC.messages.separator );
+					summary = summary.join( mw.msg( 'hotcat-messages-separator' ) );
+					if ( summary.length > 200 - mw.msg( 'hotcat-messages-prefix' ).length - mw.msg( 'hotcat-messages-using' ).length ) summary = shortSummary.join( mw.msg( 'hotcat-messages-separator' ) );
 
-					commitForm.wpSummary.value = HC.messages.prefix + summary + HC.messages.using;
+					commitForm.wpSummary.value = mw.msg( 'hotcat-messages-prefix' ) + summary + mw.msg( 'hotcat-messages-using' );
 				}
 			}
 		}
@@ -981,7 +951,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 			// any entry here. If we have only one editor to resolve (the most common case, I presume), we may simply skip the check.
 			toResolve[ i ].currentHidden = is_hidden;
 			toResolve[ i ].inputExists = !is_missing;
-			toResolve[ i ].icon.src = ( is_missing ? HC.existsNo : HC.existsYes );
+			toResolve[ i ].icon.src = ( is_missing ? existsNo : existsYes );
 		}
 		if ( is_missing ) return;
 		if ( !is_redir && cats && ( HC.disambig_category || HC.redir_category ) ) {
@@ -1021,7 +991,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 		for ( i = 0; i < toResolve.length; i++ ) {
 			if ( i && toResolve[ i ].dabInputCleaned !== page.title.substring( page.title.indexOf( ':' ) + 1 ) ) continue;
 			toResolve[ i ].inputExists = true; // Might actually be wrong if it's a redirect pointing to a non-existing category
-			toResolve[ i ].icon.src = HC.existsYes;
+			toResolve[ i ].icon.src = existsYes;
 			if ( titles.length > 1 ) {
 				toResolve[ i ].dab = titles;
 			} else {
@@ -1167,9 +1137,15 @@ This code should run on any MediaWiki installation >= MW 1.27.
 
 	function setMultiInput() {
 		if ( commitButton || onUpload ) return;
+		/* var commitButton = OO.ui.ButtonWidget( {
+			label: 
+		} ).on( "click", function() {
+			multiSubmit;
+			
+		} ) */
 		commitButton = make( 'input' );
 		commitButton.type = 'button';
-		commitButton.value = HC.messages.commit;
+		commitButton.value = mw.msg( 'hotcat-messages-commit' );
 		commitButton.onclick = multiSubmit;
 		if ( multiSpan ) multiSpan.parentNode.replaceChild( commitButton, multiSpan ); else catLine.appendChild( commitButton );
 	}
@@ -1381,7 +1357,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 				lk.href = '#catlinks';
 				lk.onclick = this.open.bind( this );
 				lk.appendChild( make( HC.links.add, true ) );
-				lk.title = HC.tooltips.add;
+				lk.title = mw.msg( 'hotcat-tooltips-add' );
 				this.linkSpan.appendChild( lk );
 				span = make( newDOM ? 'li' : 'span' );
 				span.className = 'noprint';
@@ -1438,7 +1414,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 				lk.href = '#catlinks';
 				lk.onclick = this.remove.bind( this );
 				lk.appendChild( make( HC.links.remove, true ) );
-				lk.title = HC.tooltips.remove;
+				lk.title = mw.msg( 'hotcat-tooltips-remove' );
 				this.normalLinks.appendChild( make( ' ', true ) );
 				this.normalLinks.appendChild( lk );
 			}
@@ -1447,7 +1423,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 				lk.href = '#catlinks';
 				lk.onclick = this.open.bind( this );
 				lk.appendChild( make( HC.links.change, true ) );
-				lk.title = HC.tooltips.change;
+				lk.title = mw.msg( 'hotcat-tooltips-change' );
 				this.normalLinks.appendChild( make( ' ', true ) );
 				this.normalLinks.appendChild( lk );
 				if ( !noSuggestions && HC.use_up_down ) {
@@ -1456,14 +1432,14 @@ This code should run on any MediaWiki installation >= MW 1.27.
 					lk.href = '#catlinks';
 					lk.onclick = this.down.bind( this );
 					lk.appendChild( make( HC.links.down, true ) );
-					lk.title = HC.tooltips.down;
+					lk.title = mw.msg( 'hotcat-tooltips-down' );
 					this.upDownLinks.appendChild( make( ' ', true ) );
 					this.upDownLinks.appendChild( lk );
 					lk = make( 'a' );
 					lk.href = '#catlinks';
 					lk.onclick = this.up.bind( this );
 					lk.appendChild( make( HC.links.up, true ) );
-					lk.title = HC.tooltips.up;
+					lk.title = mw.msg( 'hotcat-tooltips-up' );
 					this.upDownLinks.appendChild( make( ' ', true ) );
 					this.upDownLinks.appendChild( lk );
 					this.normalLinks.appendChild( this.upDownLinks );
@@ -1479,7 +1455,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 			lk.href = '#catlinks';
 			lk.onclick = this.restore.bind( this );
 			lk.appendChild( make( HC.links.restore, true ) );
-			lk.title = HC.tooltips.restore;
+			lk.title = mw.msg( 'hotcat-tooltips-restore' );
 			this.undelLink.appendChild( make( ' ', true ) );
 			this.undelLink.appendChild( lk );
 			this.linkSpan.appendChild( this.undelLink );
@@ -1673,17 +1649,32 @@ This code should run on any MediaWiki installation >= MW 1.27.
 			}
 
 			// Do not use type 'submit'; we cannot detect modifier keys if we do
+			/* var OK = new OO.ui.ButtonWidget( {
+				label: mw.msg( 'hotcat-messages-ok' )
+			} ).on( 'click', function() {
+				this.accept.bind( this );
+				this.ok = OK;
+			} ) */
+
 			var OK = make( 'input' );
 			OK.type = 'button';
-			OK.value = button_label( 'wpOkUploadLbl', HC.messages.ok );
+			OK.value = button_label( 'wpOkUploadLbl', mw.msg( 'hotcat-messages-ok' ) );
 			OK.onclick = this.accept.bind( this );
 			this.ok = OK;
 
+			/* var cancel = new OO.ui.ButtonWidget( {
+				label: mw.msg( 'hotcat-messages-cancel' )
+			} ).on( 'click', function() {
+				this.cancel.bind( this );
+				this.cancelButton = cancel;
+			} ) */
+
 			var cancel = make( 'input' );
 			cancel.type = 'button';
-			cancel.value = button_label( 'wpCancelUploadLbl', HC.messages.cancel );
+			cancel.value = button_label( 'wpCancelUploadLbl', mw.msg( 'hotcat-messages-cancel' ) );
 			cancel.onclick = this.cancel.bind( this );
 			this.cancelButton = cancel;
+			
 
 			var span = make( 'span' );
 			span.className = 'hotcatinput';
@@ -1733,7 +1724,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 			this.currentExists = this.lastSavedExists;
 			this.currentHidden = this.lastSavedHidden;
 			this.currentKey = this.lastSavedKey;
-			this.icon.src = ( this.currentExists ? HC.existsYes : HC.existsNo );
+			this.icon.src = ( this.currentExists ? existsYes : existsNo );
 			this.text.value = this.currentCategory + ( this.currentKey !== null ? '|' + this.currentKey : '' );
 			this.originalState = this.state;
 			this.lastInput = this.currentCategory;
@@ -1909,7 +1900,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 						if ( resolved[ 0 ].acceptCheck( true ) ) {
 							resolved[ 0 ].commit(
 								( resolved[ 0 ].currentCategory !== original ) ?
-									HC.messages.cat_resolved.replace( /\$1/g, original ) :
+									mw.msg( 'hotcat-messages-cat-resolved', original ) :
 									null );
 						}
 					}
@@ -1956,7 +1947,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 				lk.href = '#catlinks';
 				lk.onclick = this.rollback.bind( this );
 				lk.appendChild( make( HC.links.undo, true ) );
-				lk.title = HC.tooltips.undo;
+				lk.title = mw.msg( 'hotcat-tooltips-undo' );
 				span.appendChild( make( ' ', true ) );
 				span.appendChild( lk );
 				this.normalLinks.appendChild( span );
@@ -2297,7 +2288,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 				if ( this.engineSelector ) this.engineSelector.style.display = 'none';
 
 				if ( engineName && suggestionConfigs[ engineName ] && !suggestionConfigs[ engineName ].temp ) {
-					if ( this.icon ) this.icon.src = HC.existsNo;
+					if ( this.icon ) this.icon.src = existsNo;
 
 					this.inputExists = false;
 				}
@@ -2308,7 +2299,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 			var completed = this.autoComplete( firstTitle, v, vNormalized, key, dontAutocomplete );
 			var existing = completed || knownToExist || firstTitle === replaceShortcuts( v, HC.shortcuts );
 			if ( engineName && suggestionConfigs[ engineName ] && !suggestionConfigs[ engineName ].temp ) {
-				this.icon.src = ( existing ? HC.existsYes : HC.existsNo );
+				this.icon.src = ( existing ? existsYes : existsNo );
 				this.inputExists = existing;
 			}
 			if ( completed ) {
@@ -2632,7 +2623,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 				}
 				this.lastInput = this.list.options[ tgt ].text;
 				this.inputExists = true; // Might be wrong if from a dab list...
-				if ( this.icon ) this.icon.src = HC.existsYes;
+				if ( this.icon ) this.icon.src = existsYes;
 
 				this.state = CategoryEditor.CHANGE_PENDING;
 			}
@@ -2761,7 +2752,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 					oldTxt = eForm.wpTextbox1.value;
 					$( '#wpSave' ).one( 'click', function () {
 						if ( $ct.val() )
-							sum.value = sum.value.replace( ( HC.messages.using || HC.messages.prefix ), '' );
+							sum.value = sum.value.replace( ( mw.msg( 'hotcat-messages-using' ) || mw.msg( 'hotcat-messages-prefix' ) ), '' );
 
 					} );
 					var removeChangeTag = function () {
@@ -3293,4 +3284,3 @@ This code should run on any MediaWiki installation >= MW 1.27.
 	// Use always() instead of then() to also start HotCat if the user module has problems.
 	$.when( mw.loader.using( 'user' ), $.ready ).always( run );
 }( jQuery, mediaWiki ) );
-// </nowiki>
