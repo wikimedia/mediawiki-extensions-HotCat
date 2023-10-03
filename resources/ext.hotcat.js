@@ -22,8 +22,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 ( function ( $, mw ) {
 	// Don't use mw.config.get() as that takes a copy of the config, and so doesn't
 	// account for values changing, e.g. wgCurRevisionId after a VE edit
-	var
-        conf = $.extend( {}, mw.config.values, {
+	var conf = $.extend( {}, mw.config.values, {
             // when running on mobile domain - do not use wgServer.
             wgServer: window.location.host.indexOf('.m.') > -1 ?
                 '//' + window.location.host : mw.config.get( 'wgServer' )
@@ -35,28 +34,18 @@ This code should run on any MediaWiki installation >= MW 1.27.
 		return;
 
 	var existsYes = new OO.ui.IconWidget( {
-		icon: 'check'
-		} ),
-			iconLabel = new OO.ui.LabelWidget( {
-		label: ''
+		icon: 'check',
+		label: 'Exists'
 		} );
 
 	var existsNo = new OO.ui.IconWidget( {
-		icon: 'close'
-		} ),
-			iconLabel = new OO.ui.LabelWidget( {
-		label: ''
+		icon: 'close',
+		label: 'Not exist'
 		} );
 
 	// Configuration stuff.
 	var HC = window.HotCat = {
 		// Localize these messages to the main language of your wiki.
-		messages: {
-			// Defaults to '[[' + category_canonical + ':$1]]'. Can be overridden if in the short edit summaries
-			// not the standard category name should be used but, say, a shorter namespace alias. $1 is replaced
-			// by a category name.
-			short_catchange: null
-		},
 		// Plural of category_canonical.
 		categories: 'Categories',
 		// Any category in this category is deemed a disambiguation category; i.e., a category that should not contain
@@ -232,41 +221,17 @@ This code should run on any MediaWiki installation >= MW 1.27.
 	}
 
 	function loadJS( page, callback ) {
-		load( conf.wgServer + conf.wgScript + '?title=' + encodeURIComponent( page ) + '&action=raw&ctype=text/javascript', callback );
-	}
-
-	function loadURI( href, callback ) {
-		var url = href;
-		if ( url.substring( 0, 2 ) === '//' ) url = window.location.protocol + url; else if ( url.substring( 0, 1 ) === '/' ) url = conf.wgServer + url;
-
-		load( url, callback );
+		load( conf.wgScript + '?title=' + encodeURIComponent( page ) + '&action=raw&ctype=text/javascript', callback );
 	}
 
 	// Load local configurations, overriding the pre-set default values in the HotCat object above. This is always loaded
 	// from the wiki where this script is executing, even if this script itself is hotlinked from Commons. This can
 	// be used to change the default settings, or to provide localized interface texts for edit summaries and so on.
 	loadJS( 'i18n/local_defaults', loadTrigger.loaded );
-
-	// Load localized UI texts. These are the texts that HotCat displays on the page itself. Texts shown in edit summaries
-	// should be localized in /local_defaults above.
-	if ( conf.wgUserLanguage !== 'en' ) {
-		// Lupo: somebody thought it would be a good idea to add this. So the default is true, and you have to set it to false
-		// explicitly if you're not on Commons and don't want that.
-		if ( window.hotcat_translations_from_commons === undefined ) window.hotcat_translations_from_commons = true;
-
-		// Localization hook to localize HotCat messages, tooltips, and engine names for wgUserLanguage.
-		if ( window.hotcat_translations_from_commons && conf.wgServer.indexOf( '//commons' ) < 0 ) {
-			loadURI( 'i18n/' + conf.wgUserLanguage, loadTrigger.loaded );
-		} else {
-			// Load translations locally
-			loadJS( 'i18n/' + conf.wgUserLanguage, loadTrigger.loaded );
-		}
-	} else {
-		loadTrigger.loaded();
-	}
-
+	loadTrigger.loaded();
+	
 	// No further changes should be necessary here.
-
+ 
 	// The following regular expression strings are used when searching for categories in wikitext.
 	var wikiTextBlank = '[\\t _\\xA0\\u1680\\u180E\\u2000-\\u200A\\u2028\\u2029\\u202F\\u205F\\u3000]+';
 	var wikiTextBlankRE = new RegExp( wikiTextBlank, 'g' );
@@ -349,13 +314,12 @@ This code should run on any MediaWiki installation >= MW 1.27.
 		if ( !href ) return null;
 
 		var script = conf.wgScript + '?';
-		if ( href.indexOf( script ) === 0 || href.indexOf( conf.wgServer + script ) === 0 || conf.wgServer.substring( 0, 2 ) === '//' && href.indexOf( document.location.protocol + conf.wgServer + script ) === 0 ) {
+		if ( href.indexOf( script ) === 0 ) {
 			// href="/w/index.php?title=..."
 			return param( 'title', href );
 		} else {
 			// href="/wiki/..."
 			var prefix = conf.wgArticlePath.replace( '$1', '' );
-			if ( href.indexOf( prefix ) ) prefix = conf.wgServer + prefix; // Fully expanded URL?
 
 			if ( href.indexOf( prefix ) && prefix.substring( 0, 2 ) === '//' ) prefix = document.location.protocol + prefix; // Protocol-relative wgServer?
 
@@ -742,7 +706,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 
 		// Must use Ajax here to get the user options and the edit token.
 		$.getJSON(
-			conf.wgServer + conf.wgScriptPath + '/api.php?' +
+			conf.wgScriptPath + '/api.php?' +
 			'format=json&action=query&rawcontinue=&titles=' + encodeURIComponent( conf.wgPageName ) +
 			'&prop=info%7Crevisions%7Clanglinks&inprop=watched&rvprop=content%7Ctimestamp%7Cids%7Cuser&lllimit=500' +
 			'&rvlimit=2&rvdir=newer&rvstartid=' + conf.wgCurRevisionId + '&meta=siteinfo%7Cuserinfo%7Ctokens&type=csrf&uiprop=options',
@@ -787,7 +751,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 		if ( mw.msg( 'hotcat-messages-cat-keychange' ).indexOf( '$2' ) < 0 ) mw.msg( 'hotcat-messages-cat-keychange' ) += '"$2"';
 
 		// More backwards-compatibility with earlier HotCat versions:
-		if ( !HC.messages.short_catchange ) HC.messages.short_catchange = '[[' + HC.category_canonical + ':$1]]';
+		if ( !mw.msg( 'hotcat-messages-short-catchange' ) ) mw.msg( 'hotcat-messages-short-catchange' ) = '[[' + HC.category_canonical + ':$1]]';
 
 		// Create a form and submit it. We don't use the edit API (api.php?action=edit) because
 		// (a) sensibly reporting back errors like edit conflicts is always a hassle, and
@@ -886,35 +850,35 @@ This code should run on any MediaWiki installation >= MW 1.27.
 				var summary = [];
 				var shortSummary = [];
 				// Deleted
-				for ( i = 0; i < deleted.length; i++ ) summary.push( '−' + substitute( HC.messages.short_catchange, [ null, deleted[ i ] ] ) );
+				for ( i = 0; i < deleted.length; i++ ) summary.push( '−' + substitute( mw.msg( 'hotcat-messages-short-catchange' ), [ null, deleted[ i ] ] ) );
 
-				if ( deleted.length === 1 ) shortSummary.push( '−' + substitute( HC.messages.short_catchange, [ null, deleted[ 0 ] ] ) ); else if ( deleted.length ) shortSummary.push( '− ' + multiChangeMsg( deleted.length ) );
+				if ( deleted.length === 1 ) shortSummary.push( '−' + substitute( mw.msg( 'hotcat-messages-short-catchange' ), [ null, deleted[ 0 ] ] ) ); else if ( deleted.length ) shortSummary.push( '− ' + multiChangeMsg( deleted.length ) );
 
 				// Added
-				for ( i = 0; i < added.length; i++ ) summary.push( '+' + substitute( HC.messages.short_catchange, [ null, added[ i ] ] ) );
+				for ( i = 0; i < added.length; i++ ) summary.push( '+' + substitute( mw.msg( 'hotcat-messages-short-catchange' ), [ null, added[ i ] ] ) );
 
-				if ( added.length === 1 ) shortSummary.push( '+' + substitute( HC.messages.short_catchange, [ null, added[ 0 ] ] ) ); else if ( added.length ) shortSummary.push( '+ ' + multiChangeMsg( added.length ) );
+				if ( added.length === 1 ) shortSummary.push( '+' + substitute( mw.msg( 'hotcat-messages-short-catchange' ), [ null, added[ 0 ] ] ) ); else if ( added.length ) shortSummary.push( '+ ' + multiChangeMsg( added.length ) );
 
 				// Changed
 				var arrow = is_rtl ? '\u2190' : '\u2192'; // left and right arrows. Don't use ← and → in the code.
 				for ( i = 0; i < changed.length; i++ ) {
 					if ( changed[ i ].from !== changed[ i ].to ) {
 						summary.push(
-							'±' + substitute( HC.messages.short_catchange, [ null, changed[ i ].from ] ) + arrow +
-							substitute( HC.messages.short_catchange, [ null, changed[ i ].to ] )
+							'±' + substitute( mw.msg( 'hotcat-messages-short-catchange' ), [ null, changed[ i ].from ] ) + arrow +
+							substitute( mw.msg( 'hotcat-messages-short-catchange' ), [ null, changed[ i ].to ] )
 						);
 					} else {
-						summary.push( '±' + substitute( HC.messages.short_catchange, [ null, changed[ i ].from ] ) );
+						summary.push( '±' + substitute( mw.msg( 'hotcat-messages-short-catchange' ), [ null, changed[ i ].from ] ) );
 					}
 				}
 				if ( changed.length === 1 ) {
 					if ( changed[ 0 ].from !== changed[ 0 ].to ) {
 						shortSummary.push(
-							'±' + substitute( HC.messages.short_catchange, [ null, changed[ 0 ].from ] ) + arrow +
-							substitute( HC.messages.short_catchange, [ null, changed[ 0 ].to ] )
+							'±' + substitute( mw.msg( 'hotcat-messages-short-catchange' ), [ null, changed[ 0 ].from ] ) + arrow +
+							substitute( mw.msg( 'hotcat-messages-short-catchange' ), [ null, changed[ 0 ].to ] )
 						);
 					} else {
-						shortSummary.push( '±' + substitute( HC.messages.short_catchange, [ null, changed[ 0 ].from ] ) );
+						shortSummary.push( '±' + substitute( mw.msg( 'hotcat-messages-short-catchange' ), [ null, changed[ 0 ].from ] ) );
 					}
 				} else if ( changed.length ) {
 					shortSummary.push( '± ' + multiChangeMsg( changed.length ) );
@@ -951,7 +915,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 			// any entry here. If we have only one editor to resolve (the most common case, I presume), we may simply skip the check.
 			toResolve[ i ].currentHidden = is_hidden;
 			toResolve[ i ].inputExists = !is_missing;
-			toResolve[ i ].icon.src = ( is_missing ? existsNo : existsYes );
+			toResolve[ i ].icon = ( is_missing ? existsNo : existsYes );
 		}
 		if ( is_missing ) return;
 		if ( !is_redir && cats && ( HC.disambig_category || HC.redir_category ) ) {
@@ -991,7 +955,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 		for ( i = 0; i < toResolve.length; i++ ) {
 			if ( i && toResolve[ i ].dabInputCleaned !== page.title.substring( page.title.indexOf( ':' ) + 1 ) ) continue;
 			toResolve[ i ].inputExists = true; // Might actually be wrong if it's a redirect pointing to a non-existing category
-			toResolve[ i ].icon.src = existsYes;
+			toResolve[ i ].icon = existsYes;
 			if ( titles.length > 1 ) {
 				toResolve[ i ].dab = titles;
 			} else {
@@ -1029,7 +993,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 			args += encodeURIComponent( 'Category:' + v );
 			if ( i + 1 < toResolve.length ) args += '%7C';
 		}
-		$.getJSON( conf.wgServer + conf.wgScriptPath + '/api.php?' + args,
+		$.getJSON( conf.wgScriptPath + '/api.php?' + args,
 			function ( json ) {
 				resolveRedirects( toResolve, json );
 				callback( toResolve );
@@ -1137,17 +1101,12 @@ This code should run on any MediaWiki installation >= MW 1.27.
 
 	function setMultiInput() {
 		if ( commitButton || onUpload ) return;
-		/* var commitButton = OO.ui.ButtonWidget( {
-			label: 
+		var commitButton = OO.ui.ButtonWidget( {
+			label: mw.msg( 'hotcat-messages-commit' )
 		} ).on( "click", function() {
 			multiSubmit;
-			
-		} ) */
-		commitButton = make( 'input' );
-		commitButton.type = 'button';
-		commitButton.value = mw.msg( 'hotcat-messages-commit' );
-		commitButton.onclick = multiSubmit;
-		if ( multiSpan ) multiSpan.parentNode.replaceChild( commitButton, multiSpan ); else catLine.appendChild( commitButton );
+		} )
+		if ( multiSpan ) $( multiSpan ).parentNode.replaceChild( commitButton.$element, multiSpan ); else $( span ).empty().append( commitButton.$element );
 	}
 
 	function checkMultiInput() {
@@ -1477,9 +1436,9 @@ This code should run on any MediaWiki installation >= MW 1.27.
 			form.onsubmit = this.accept.bind( this );
 			this.form = form;
 			var self = this;
-			var text = make( 'input' );
-			text.type = 'text';
-			text.size = HC.editbox_width;
+			var text = new OO.ui.TextInputWidget();
+			$( span ).empty().append( text.$element );
+			//text.size = HC.editbox_width;
 			if ( !noSuggestions ) {
 				// Be careful here to handle IME input. This is browser/OS/IME dependent, but basically there are two mechanisms:
 				// - Modern (DOM Level 3) browsers use compositionstart/compositionend events to signal composition; if the
@@ -1649,32 +1608,19 @@ This code should run on any MediaWiki installation >= MW 1.27.
 			}
 
 			// Do not use type 'submit'; we cannot detect modifier keys if we do
-			/* var OK = new OO.ui.ButtonWidget( {
+			var OK = new OO.ui.ButtonWidget( {
 				label: mw.msg( 'hotcat-messages-ok' )
 			} ).on( 'click', function() {
 				this.accept.bind( this );
 				this.ok = OK;
-			} ) */
+			} )
 
-			var OK = make( 'input' );
-			OK.type = 'button';
-			OK.value = button_label( 'wpOkUploadLbl', mw.msg( 'hotcat-messages-ok' ) );
-			OK.onclick = this.accept.bind( this );
-			this.ok = OK;
-
-			/* var cancel = new OO.ui.ButtonWidget( {
+			var cancel = new OO.ui.ButtonWidget( {
 				label: mw.msg( 'hotcat-messages-cancel' )
 			} ).on( 'click', function() {
 				this.cancel.bind( this );
 				this.cancelButton = cancel;
-			} ) */
-
-			var cancel = make( 'input' );
-			cancel.type = 'button';
-			cancel.value = button_label( 'wpCancelUploadLbl', mw.msg( 'hotcat-messages-cancel' ) );
-			cancel.onclick = this.cancel.bind( this );
-			this.cancelButton = cancel;
-			
+			} )
 
 			var span = make( 'span' );
 			span.className = 'hotcatinput';
@@ -1694,8 +1640,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 
 			if ( !noSuggestions ) span.appendChild( this.icon );
 
-			span.appendChild( OK );
-			span.appendChild( cancel );
+			$( span ).empty().append( OK.$element, cancel.$element );
 			form.appendChild( span );
 			form.style.display = 'none';
 			this.span.appendChild( form );
@@ -1724,7 +1669,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 			this.currentExists = this.lastSavedExists;
 			this.currentHidden = this.lastSavedHidden;
 			this.currentKey = this.lastSavedKey;
-			this.icon.src = ( this.currentExists ? existsYes : existsNo );
+			this.icon = ( this.currentExists ? existsYes : existsNo );
 			this.text.value = this.currentCategory + ( this.currentKey !== null ? '|' + this.currentKey : '' );
 			this.originalState = this.state;
 			this.lastInput = this.currentCategory;
@@ -2191,7 +2136,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 		makeCalls: function ( engines, cb, v, cleanKey ) {
 			for ( var j = 0; j < engines.length; j++ ) {
 				var engine = suggestionEngines[ engines[ j ] ];
-				var url = conf.wgServer + conf.wgScriptPath + engine.uri.replace( /\$1/g, encodeURIComponent( cleanKey ) );
+				var url = conf.wgScriptPath + engine.uri.replace( /\$1/g, encodeURIComponent( cleanKey ) );
 				this.makeCall( url, cb, engine, v, cleanKey );
 			}
 		},
@@ -2299,7 +2244,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 			var completed = this.autoComplete( firstTitle, v, vNormalized, key, dontAutocomplete );
 			var existing = completed || knownToExist || firstTitle === replaceShortcuts( v, HC.shortcuts );
 			if ( engineName && suggestionConfigs[ engineName ] && !suggestionConfigs[ engineName ].temp ) {
-				this.icon.src = ( existing ? existsYes : existsNo );
+				this.icon = ( existing ? existsYes : existsNo );
 				this.inputExists = existing;
 			}
 			if ( completed ) {
@@ -2623,7 +2568,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 				}
 				this.lastInput = this.list.options[ tgt ].text;
 				this.inputExists = true; // Might be wrong if from a dab list...
-				if ( this.icon ) this.icon.src = existsYes;
+				if ( this.icon ) this.icon = existsYes;
 
 				this.state = CategoryEditor.CHANGE_PENDING;
 			}
@@ -3149,7 +3094,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 			pageTime = null;
 			setup( createCommitForm );
 		} else {
-			var url = conf.wgServer + conf.wgScriptPath + '/api.php?format=json&callback=HotCat.start&action=query&rawcontinue=&titles=' +
+			var url = conf.wgScriptPath + '/api.php?format=json&callback=HotCat.start&action=query&rawcontinue=&titles=' +
 			encodeURIComponent( conf.wgPageName ) +
 			'&prop=info%7Crevisions&rvprop=content%7Ctimestamp%7Cids&meta=siteinfo&rvlimit=1&rvstartid=' +
 			conf.wgCurRevisionId;
@@ -3241,21 +3186,6 @@ This code should run on any MediaWiki installation >= MW 1.27.
 		HC.started = true;
 		loadTrigger.register( really_run );
 	}
-
-	// Export legacy functions
-	window.hotcat_get_state = function () {
-		return getState();
-	};
-	window.hotcat_set_state = function ( state ) {
-		return setState( state );
-	};
-	window.hotcat_close_form = function () {
-		closeForm();
-	};
-	HC.runWhenReady = function ( callback ) {
-		// run user-registered code once HotCat is fully set up and ready.
-		mw.hook( 'hotcat.ready' ).add( callback );
-	};
 
 	// Make sure we don't get conflicts with AjaxCategories (core development that should one day
 	// replace HotCat).

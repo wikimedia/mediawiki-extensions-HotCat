@@ -21,5 +21,6 @@
 	"hotcat-tooltips-undo": "撤销变更",
 	"hotcat-tooltips-down": "打开以修改并显示子分类",
 	"hotcat-tooltips-up": "打开以修改并显示上层分类",
+	"hotcat-messages-short-catchange": null,
 	"hotcat-multi-tooltip": "修改多个分类"
 }
