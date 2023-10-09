@@ -706,7 +706,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 
 		// Must use Ajax here to get the user options and the edit token.
 		var ini = mw.Api();
-		ini.get( {
+		return ini.get( {
 			format: 'json',
 			action: 'query',
 			titles: encodeURIComponent(conf.wgPageName),
@@ -998,7 +998,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 			toResolve[i].dabInputCleaned = v;
 			titles[i]= encodeURIComponent('Category:' + v); 
 		}
-		resolve.get( {
+		return resolve.get( {
 			action: 'query',
 			prop: [ 'info', 'links', 'categories', 'categoryinfo' ],
 			plnamespace: 14,
@@ -1303,15 +1303,6 @@ This code should run on any MediaWiki installation >= MW 1.27.
 	CategoryEditor.CHANGE_PENDING = 2; // Open, some input made
 	CategoryEditor.CHANGED = 3;
 	CategoryEditor.DELETED = 4;
-
-	// Support: IE6
-	// IE6 sometimes forgets to redraw the list when editors are opened or closed.
-	// Adding/removing a dummy element helps, at least when opening editors.
-	var dummyElement = make('\xa0', true);
-
-	function forceRedraw() {
-		if (dummyElement.parentNode) document.body.removeChild(dummyElement); else document.body.appendChild(dummyElement);
-	}
 
 	// Event keyCodes that we handle in the text input field/suggestion list.
 	var BS = 8,
@@ -1630,33 +1621,13 @@ This code should run on any MediaWiki installation >= MW 1.27.
 			}
 			this.list = list;
 
-			function button_label(id, defaultText) {
-				var label = null;
-				if (
-					onUpload &&
-					window.UFUI !== undefined &&
-					window.UIElements !== undefined &&
-					UFUI.getLabel instanceof Function
-				) {
-					try {
-						label = UFUI.getLabel(id, true);
-						// Extract the plain text. IE doesn't know that Node.TEXT_NODE === 3
-						while (label && label.nodeType !== 3) label = label.firstChild;
-					} catch (ex) {
-						label = null;
-					}
-				}
-				if (!label || !label.data) return defaultText;
-
-				return label.data;
-			}
 
 			// Do not use type 'submit'; we cannot detect modifier keys if we do
 			var OK = new OO.ui.ButtonWidget({
 				label: mw.msg('hotcat-messages-ok')
 			}).on('click', function () {
 				this.accept.bind(this);
-				this.ok = OK;
+				this.OK = OK;
 			})
 
 			var cancel = new OO.ui.ButtonWidget({
@@ -1746,7 +1717,6 @@ This code should run on any MediaWiki installation >= MW 1.27.
 			this.text.readOnly = !!readOnly;
 			this.engine = engine;
 			this.textchange(false, true); // do autocompletion, force display of suggestions
-			forceRedraw();
 			return result;
 		},
 
@@ -1791,7 +1761,6 @@ This code should run on any MediaWiki installation >= MW 1.27.
 				}
 			}
 			checkMultiInput();
-			forceRedraw();
 		},
 
 		removeEditor: function () {
@@ -1952,7 +1921,6 @@ This code should run on any MediaWiki installation >= MW 1.27.
 			this.linkSpan.style.display = '';
 			this.state = CategoryEditor.CHANGED;
 			checkMultiInput();
-			forceRedraw();
 		},
 
 		commit: function () {
@@ -2097,7 +2065,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 			}
 
 			var call = new mw.Api();
-			call.get( arg ).done( function (url, json) {
+			return call.get( arg ).done( function (url, json) {
 				var titles = e.handler(json, z);
 				if (titles && titles.length) {
 					if (cb.allTitles === null) cb.allTitles = titles; else cb.allTitles = cb.allTitles.concat(titles);
@@ -3005,10 +2973,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 		}
 		// Find the category bar, or create an empty one if there isn't one. Then add -/+- links after
 		// each category, and add the + link.
-		catLine =
-			// Special:Upload
-			catLine ||
-			document.getElementById('mw-normal-catlinks');
+		catLine = catLine || document.getElementById('mw-normal-catlinks');
 		var hiddenCats = document.getElementById('mw-hidden-catlinks');
 		if (!catLine) {
 
@@ -3140,8 +3105,9 @@ This code should run on any MediaWiki installation >= MW 1.27.
 			pageTime = null;
 			setup(createCommitForm);
 		} else {
-			var s = new mw.Api();
-/* 			s.get( {
+			var s = make( 'script' );
+			var url = new mw.Api();
+ 			url.get( {
 				format: 'json',
 				callback: HotCat.start,
 				action: 'query',
@@ -3151,14 +3117,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 				meta: 'siteinfo',
 				rvlimit: 1,
 				rvstartid: conf.wgCurRevisionId
-			} ).done( function( data ) {
-				s.src = data;
-			} ) */
-			var url = conf.wgServer + conf.wgScriptPath + '/api.php?format=json&callback=HotCat.start&action=query&rawcontinue=&titles=' +
-			encodeURIComponent( conf.wgPageName ) +
-			'&prop=info%7Crevisions&rvprop=content%7Ctimestamp%7Cids&meta=siteinfo&rvlimit=1&rvstartid=' +
-			conf.wgCurRevisionId;
-			var s = make( 'script' );
+			} )
 			s.src = url;
 			HC.start = function (json) {
 				setPage(json);
@@ -3213,18 +3172,6 @@ This code should run on any MediaWiki installation >= MW 1.27.
 		return null;
 	}
 
-	function getState() {
-		var result = null;
-		for (var i = 0; i < editors.length; i++) {
-			var text = editors[i].currentCategory;
-			var key = editors[i].currentKey;
-			if (text && text.length) {
-				if (key !== null) text += '|' + key;
-				if (result === null) result = text; else result += '\n' + text;
-			}
-		}
-		return result;
-	}
 
 	function really_run() {
 		initialize();
