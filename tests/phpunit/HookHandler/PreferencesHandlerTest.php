@@ -12,7 +12,7 @@ use User;
 
 class PreferencesHandlerTest extends MediaWikiIntegrationTestCase {
 
-	private function GetPreferencesHandler( array $options = [] ): PreferencesHandler {
+	private function getPreferencesHandler( array $options = [] ): PreferencesHandler {
 		return new PreferencesHandler( ...array_values( array_merge(
 			[
 				'permissionManager' => $this->createMock( PermissionManager::class ),

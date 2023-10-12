@@ -43,6 +43,20 @@ This code should run on any MediaWiki installation >= MW 1.27.
 		label: 'Not exist'
 	});
 
+	var text = new OO.ui.TextInputWidget();
+
+	var ok = new OO.ui.ButtonWidget({
+		label: mw.msg('hotcat-messages-ok')
+	}).on('click', function () {
+		this.accept.bind(this);
+	})
+
+	var cancel = new OO.ui.ButtonWidget({
+		label: mw.msg('hotcat-messages-cancel')
+	}).on('click', function () {
+		this.cancel.bind(this);
+	})
+
 	// Configuration stuff.
 	var HC = window.HotCat = {
 		// Localize these messages to the main language of your wiki.
@@ -180,24 +194,26 @@ This code should run on any MediaWiki installation >= MW 1.27.
 	var cat_prefix = null;
 	var noSuggestions = false;
 
-	function LoadTrigger(needed) {
-		// Define methods in a closure so that self reference is available,
-		// also allows method calls to be detached.
-		var self = this;
-		self.queue = [];
-		self.needed = needed;
-		self.register = function (callback) {
-			if (self.needed <= 0) callback(); // Execute directly
-			else self.queue.push(callback);
-		};
-		self.loaded = function () {
-			self.needed--;
-			if (self.needed === 0) {
-				// Run queued callbacks once
-				for (var i = 0; i < self.queue.length; i++) self.queue[i]();
-				self.queue = [];
-			}
-		};
+	class LoadTrigger {
+		constructor(needed) {
+			// Define methods in a closure so that self reference is available,
+			// also allows method calls to be detached.
+			var self = this;
+			self.queue = [];
+			self.needed = needed;
+			self.register = function (callback) {
+				if (self.needed <= 0) callback(); // Execute directly
+				else self.queue.push(callback);
+			};
+			self.loaded = function () {
+				self.needed--;
+				if (self.needed === 0) {
+					// Run queued callbacks once
+					for (var i = 0; i < self.queue.length; i++) self.queue[i]();
+					self.queue = [];
+				}
+			};
+		}
 	}
 
 	// Used to delay running the HotCat setup until /local_defaults and localizations have been loaded.
@@ -236,8 +252,8 @@ This code should run on any MediaWiki installation >= MW 1.27.
 	var wikiTextBlank = '[\\t _\\xA0\\u1680\\u180E\\u2000-\\u200A\\u2028\\u2029\\u202F\\u205F\\u3000]+';
 	var wikiTextBlankRE = new RegExp(wikiTextBlank, 'g');
 	// Regexp for handling blanks inside a category title or namespace name.
-	// See http://svn.wikimedia.org/viewvc/mediawiki/trunk/phase3/includes/Title.php?revision=104051&view=markup#l2722
-	// See also http://www.fileformat.info/info/unicode/category/Zs/list.htm
+	// See https://phabricator.wikimedia.org/diffusion/?revision=104051&view=markup#l2722
+	// See also https://www.fileformat.info/info/unicode/category/Zs/list.htm
 	//   MediaWiki collapses several contiguous blanks inside a page title to one single blank. It also replace a
 	// number of special whitespace characters by simple blanks. And finally, blanks are treated as underscores.
 	// Therefore, when looking for page titles in wikitext, we must handle all these cases.
@@ -333,7 +349,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 	function capitalize(str) {
 		if (!str || !str.length) return str;
 
-		return str.substr(0, 1).toUpperCase() + str.substr(1);
+		return str.substring(0, 1).toUpperCase() + str.substring(1);
 	}
 	function wikiPagePath(pageName) {
 		// Note: do not simply use encodeURI, it doesn't encode '&', which might break if wgArticlePath actually has the $1 in
@@ -410,7 +426,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 			);
 		} else {
 			var cat_name = escapeRE(category);
-			var initial = cat_name.substr(0, 1);
+			var initial = cat_name.substring(0, 1);
 			cat_regex = new RegExp(
 				'\\[\\[' + wikiTextBlankOrBidi + '(' + HC.category_regexp + ')' + wikiTextBlankOrBidi + ':' + wikiTextBlankOrBidi +
 				(initial === '\\' || !HC.capitalizePageNames ?
@@ -506,10 +522,10 @@ This code should run on any MediaWiki installation >= MW 1.27.
 				// If we then have two linefeeds in a row, remove one. Otherwise, if we have two non-
 				// whitespace characters, insert a blank.
 				var i = before.length - 1;
-				while (i >= 0 && before.charAt(i) !== '\n' && before.substr(i, 1).search(/\s/) >= 0) i--;
+				while (i >= 0 && before.charAt(i) !== '\n' && before.substring(i, 1).search(/\s/) >= 0) i--;
 
 				var j = 0;
-				while (j < after.length && after.charAt(j) !== '\n' && after.substr(j, 1).search(/\s/) >= 0) j++;
+				while (j < after.length && after.charAt(j) !== '\n' && after.substring(j, 1).search(/\s/) >= 0) j++;
 
 				if (i >= 0 && before.charAt(i) === '\n' && (!after.length || j < after.length && after.charAt(j) === '\n')) i--;
 
@@ -519,13 +535,13 @@ This code should run on any MediaWiki installation >= MW 1.27.
 
 				if (
 					before.length && before.substring(before.length - 1).search(/\S/) >= 0 &&
-					after.length && after.substr(0, 1).search(/\S/) >= 0
+					after.length && after.substring(0, 1).search(/\S/) >= 0
 				) {
 					before += ' ';
 				}
 
 				cat_point = before.length;
-				if (cat_point === 0 && after.length && after.substr(0, 1) === '\n') after = after.substr(1);
+				if (cat_point === 0 && after.length && after.substring(0, 1) === '\n') after = after.substring(1);
 
 				wikitext = before + after;
 				if (!keyChange) {
@@ -557,15 +573,15 @@ This code should run on any MediaWiki installation >= MW 1.27.
 				if (cat_point >= 0) {
 					var suffix = wikitext.substring(cat_point);
 					wikitext = wikitext.substring(0, cat_point) + (cat_point > 0 ? '\n' : '') + newcatstring + (!onCat ? '\n' : '');
-					if (suffix.length && suffix.substr(0, 1) !== '\n') wikitext += '\n' + suffix; else wikitext += suffix;
+					if (suffix.length && suffix.substring(0, 1) !== '\n') wikitext += '\n' + suffix; else wikitext += suffix;
 				} else {
-					if (wikitext.length && wikitext.substr(wikitext.length - 1, 1) !== '\n') wikitext += '\n';
+					if (wikitext.length && wikitext.substring(wikitext.length - 1, 1) !== '\n') wikitext += '\n';
 
 					wikitext += (wikitext.length ? '\n' : '') + newcatstring;
 				}
 				if (keyChange) {
 					var k = key || '';
-					if (k.length) k = k.substr(1);
+					if (k.length) k = k.substring(1);
 
 					summary.push(substitute(mw.msg('hotcat-messages-cat-keychange', toAdd, k)));
 				} else {
@@ -740,7 +756,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 		var now = new Date();
 		var ts = String(now.getUTCFullYear());
 		function two(s) {
-			return s.substr(s.length - 2);
+			return s.substring(s.length - 2);
 		}
 		ts +=
 			two('0' + (now.getUTCMonth() + 1)) +
@@ -1113,7 +1129,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 
 	function setMultiInput() {
 		if (commitButton || onUpload) return;
-		var commitButton = OO.ui.ButtonWidget({
+		commitButton = OO.ui.ButtonWidget({
 			label: mw.msg('hotcat-messages-commit')
 		}).on("click", function () {
 			multiSubmit;
@@ -1373,7 +1389,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 				this.isAddCategory = false;
 				this.catLink = span.firstChild;
 				this.originalCategory = after;
-				this.originalKey = (key && key.length > 1) ? key.substr(1) : null; // > 1 because it includes the leading bar
+				this.originalKey = (key && key.length > 1) ? key.substring(1) : null; // > 1 because it includes the leading bar
 				this.originalExists = !hasClass(this.catLink, 'new');
 				// Create change and del links
 				this.makeLinkSpan();
@@ -1471,8 +1487,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 			form.onsubmit = this.accept.bind(this);
 			this.form = form;
 			var self = this;
-			var text = new OO.ui.TextInputWidget();
-			$(span).empty().append(text.$element);
+			$(form).empty().append(text.$element);
 			//text.size = HC.editbox_width;
 			if (!noSuggestions) {
 				// Be careful here to handle IME input. This is browser/OS/IME dependent, but basically there are two mechanisms:
@@ -1621,33 +1636,10 @@ This code should run on any MediaWiki installation >= MW 1.27.
 			}
 			this.list = list;
 
-
-			// Do not use type 'submit'; we cannot detect modifier keys if we do
-			var OK = new OO.ui.ButtonWidget({
-				label: mw.msg('hotcat-messages-ok')
-			}).on('click', function () {
-				this.accept.bind(this);
-				this.OK = OK;
-			})
-
-			var cancel = new OO.ui.ButtonWidget({
-				label: mw.msg('hotcat-messages-cancel')
-			}).on('click', function () {
-				this.cancel.bind(this);
-				this.cancelButton = cancel;
-			})
-
 			var span = make('span');
 			span.className = 'hotcatinput';
 			span.style.position = 'relative';
 			$( span ).empty().append( text.$element );
-
-			// Support: IE8, IE9
-			// Put some text into this span (a0 is nbsp) and make sure it always stays on the same
-			// line as the input field, otherwise, IE8/9 miscalculates the height of the span and
-			// then the engine selector may overlap the input field.
-			span.appendChild(make('\xa0', true));
-			span.style.whiteSpace = 'nowrap';
 
 			if (list) span.appendChild(list);
 
@@ -1655,7 +1647,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 
 			if (!noSuggestions) span.appendChild(this.icon);
 
-			$(span).empty().append(OK.$element, cancel.$element);
+			$(span).empty().append(ok.$element, cancel.$element);
 			form.appendChild(span);
 			form.style.display = 'none';
 			this.span.appendChild(form);
@@ -1684,7 +1676,10 @@ This code should run on any MediaWiki installation >= MW 1.27.
 			this.currentExists = this.lastSavedExists;
 			this.currentHidden = this.lastSavedHidden;
 			this.currentKey = this.lastSavedKey;
+			this.text = text;
 			this.icon = (this.currentExists ? existsYes : existsNo);
+			this.ok = ok;
+			this.cancel = cancel;
 			this.text.value = this.currentCategory + (this.currentKey !== null ? '|' + this.currentKey : '');
 			this.originalState = this.state;
 			this.lastInput = this.currentCategory;
@@ -1700,11 +1695,10 @@ This code should run on any MediaWiki installation >= MW 1.27.
 
 			this.linkSpan.style.display = 'none';
 			this.form.style.display = 'inline';
-			this.OK.setFlags( {disabled: false} );
+			this.ok.setFlags( {disabled: false} );
 			// Kill the event before focussing, otherwise IE will kill the onfocus event!
 			var result = evtKill(evt);
 			this.text.focus();
-			this.text.readOnly = false;
 			checkMultiInput();
 			return result;
 		},
@@ -2039,7 +2033,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 			if (this.text.value !== null && this.text.value !== v) this.text.value = v;
 		},
 
-		makeCall: function (url, callbackObj, engine, queryKey, cleanKey) {
+		makeCall: function (arg, callbackObj, engine, queryKey, cleanKey) {
 			var cb = callbackObj,
 				e = engine,
 				v = queryKey,
@@ -2065,7 +2059,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 			}
 
 			var call = new mw.Api();
-			return call.get( arg ).done( function (url, json) {
+			return call.get( arg ).done( function ( json ) {
 				var titles = e.handler(json, z);
 				if (titles && titles.length) {
 					if (cb.allTitles === null) cb.allTitles = titles; else cb.allTitles = cb.allTitles.concat(titles);
@@ -2150,8 +2144,13 @@ This code should run on any MediaWiki installation >= MW 1.27.
 		makeCalls: function (engines, cb, v, cleanKey) {
 			for (var j = 0; j < engines.length; j++) {
 				var engine = suggestionEngines[engines[j]];
-				var url = conf.wgScriptPath + engine.uri.replace(/\$1/g, encodeURIComponent(cleanKey));
-				this.makeCall(url, cb, engine, v, cleanKey);
+				var args = engine.arg;
+				for (var k = 0; k < args.length; k++) {
+					if (args[k].includes('$1')) {
+						args[k].replace(/\$1/g, encodeURIComponent(cleanKey));
+					}
+				}
+				this.makeCall(args, cb, engine, v, cleanKey);
 			}
 		},
 
@@ -2904,7 +2903,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 		var catTitle = title(span.firstChild.getAttribute('href'));
 		if (!catTitle) return null;
 
-		catTitle = catTitle.substr(catTitle.indexOf(':') + 1).replace(/_/g, ' ');
+		catTitle = catTitle.substring(catTitle.indexOf(':') + 1).replace(/_/g, ' ');
 		if (HC.blacklist && HC.blacklist.test(catTitle)) return null;
 
 		var result = {
