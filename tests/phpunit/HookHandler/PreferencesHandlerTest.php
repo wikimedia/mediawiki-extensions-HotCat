@@ -10,8 +10,16 @@ use MediaWiki\User\UserOptionsLookup;
 use MediaWikiIntegrationTestCase;
 use User;
 
+/**
+ * @group HotCat
+ * @covers \MediaWiki\HotCat\HookHandler\PreferencesHandler
+ */
 class PreferencesHandlerTest extends MediaWikiIntegrationTestCase {
 
+	/**
+	 * @param array $options
+	 * @return PreferencesHandler
+	 */
 	private function getPreferencesHandler( array $options = [] ): PreferencesHandler {
 		return new PreferencesHandler( ...array_values( array_merge(
 			[
@@ -23,6 +31,9 @@ class PreferencesHandlerTest extends MediaWikiIntegrationTestCase {
 		)));
 	}
 
+	/**
+	 * @dataProvider provideOnSaveUserOptionsNoAccessChange
+	 */
 	public function testOnSaveUserOptionsNoAccessChange( $originalOptions, $modifiedOptions ) {
 		$user = $this->createMock( UserIdentity::class );
 
@@ -67,6 +78,9 @@ class PreferencesHandlerTest extends MediaWikiIntegrationTestCase {
 		];
 	}
 
+	/**
+	 * @dataProvider provideOnSaveUserOptionsRestoreDefaultPreferences
+	 */
 	public function testOnSaveUserOptionsRestoreDefaultPreferences( $originalOptions, $modifiedOptions ) {
 		$user = $this->createMock( UserIdentity::class );
 

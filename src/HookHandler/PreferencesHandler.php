@@ -11,10 +11,18 @@ use MediaWiki\User\UserOptionsLookup;
 
 class PreferencesHandler implements GetPreferencesHook {
 
+    /** @var PermissionManager */
     private $permissionManager;
+    /** @var UserOptionsLookup */
     private $userOptionsLookup;
+    /** @var UserGroupManager */
     private $userGroupManager;
 
+    /**
+	 * @param PermissionManager $permissionManager
+	 * @param UserOptionsLookup $userOptionsLookup
+	 * @param UserGroupManager $userGroupManager
+	 */
     public function __construct(
         PermissionManager $permissionManager,
         UserOptionsLookup $userOptionsLookup,
@@ -25,6 +33,9 @@ class PreferencesHandler implements GetPreferencesHook {
         $this->userGroupManager = $userGroupManager;
     }
 
+    /**
+     * @inheritDoc
+     */
     public function onGetPreferences( $user, &$preferences ): void {
         if ( !$this->permissionManager->userHasRight( $user, 'edit' ) ) {
 			return;
@@ -44,14 +55,29 @@ class PreferencesHandler implements GetPreferencesHook {
         ];
     }
 
+    /**
+     * @param array $options
+	 * @param string $option
+	 * @return bool The option is set and truthy
+     */
     private function isTruthy( $options, $option ): bool {
         return !empty( $options[$option] );
     }
 
+    /**
+     * @param array $options
+	 * @param string $option
+	 * @return bool The option is set and falsey
+     */
     private function isFalsey( $options, $option ): bool {
         return isset( $options[$option] ) && !$options[$option];
     }
 
+    /**
+	 * @param UserIdentity $user
+	 * @param array &$modifiedOptions
+	 * @param array $originalOptions
+	 */
     public function onSaveUserOptions ( $user, &$modifiedOptions, $originalOptions ) {
         $betaFeatureIsEnabled = $this->isTruthy( $originalOptions, 'hotcat-beta-feature-enable' );
         $betaFeatureIsDisabled = !$betaFeatureIsEnabled;

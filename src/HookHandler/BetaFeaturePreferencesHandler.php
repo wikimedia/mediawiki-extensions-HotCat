@@ -7,9 +7,16 @@ use User;
 
 class BetaFeaturePreferencesHandler {
 
+    /** @var Config */
     private $config;
+
+    /** @var PermissionManager */
     private $permissionManager;
 
+    /**
+	 * @param Config $config
+	 * @param PermissionManager $permissionManager
+	 */
     public function __construct(
         Config $config,
         PermissionManager $permissionManager
@@ -18,6 +25,10 @@ class BetaFeaturePreferencesHandler {
         $this->permissionManager = $permissionManager;
     }
 
+    /**
+	 * @param User $user
+	 * @param array[] &$betaPrefs
+	 */
     public function onGetBetaFeaturePreferences ( $user, &$betaPrefs ) {
         $extensionAssetsPath = $this->config->get( 'ExtensionAssetsPath' );
 

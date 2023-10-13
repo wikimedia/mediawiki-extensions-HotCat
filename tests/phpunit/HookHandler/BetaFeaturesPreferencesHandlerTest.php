@@ -6,6 +6,10 @@ use MediaWiki\Permissions\PermissionManager;
 use MediaWikiIntegrationTestCase;
 use User;
 
+/**
+ * @group HotCat
+ * @covers \MediaWiki\HotCat\HookHandler\BetaFeaturePreferencesHandler
+ */
 class BetaFeaturePreferencesHandlerTest extends MediaWikiIntegrationTestCase {
     public function testOnGetBetaFeaturePreferences() {
         $this->overrideMwServices(
@@ -21,7 +25,7 @@ class BetaFeaturePreferencesHandlerTest extends MediaWikiIntegrationTestCase {
 
         $user = $this->createMock( User::class );
         $preferences = [];
-        $this->getServiceContainer()->getHookContainer()->run( 'GetBetaFeaturePreferences', [ $user, $preferences ] );
+        $this->getServiceContainer()->getHookContainer()->run( 'GetBetaFeaturePreferences', [ $user, &$preferences ] );
         $this->assertArrayHasKey( 'hotcat-beta-feature-enable', $preferences );
     }
 }
