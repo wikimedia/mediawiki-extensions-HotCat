@@ -6,7 +6,7 @@
 	"url": "https://www.mediawiki.org/wiki/Extension:HotCat",
 	"descriptionmsg": "hotcat-desc",
 	"version": "2.43",
-	"license-name": "GFDL",
+	"license-name": "MIT",
 	"type": "editor",
 	"MessagesDirs": {
 		"HotCat": [
