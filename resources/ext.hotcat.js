@@ -1487,6 +1487,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 			form.onsubmit = this.accept.bind(this);
 			this.form = form;
 			var self = this;
+			this.text = text;
 			$(form).empty().append(text.$element);
 			//text.size = HC.editbox_width;
 			if (!noSuggestions) {
@@ -1545,21 +1546,6 @@ This code should run on any MediaWiki installation >= MW 1.27.
 					// Inhibit default behavior of ESC (revert to last real input in FF: we do that ourselves)
 					return (key === ESC) ? evtKill(evt) : true;
 				};
-				// And handle continued pressing of arrow keys
-				text.onkeypress = function (evt) {
-					self.keyCount++;
-					return self.processKey(evt);
-				};
-				$(text).on('focus', function () {
-					makeActive(self);
-				});
-				// On IE, blur events are asynchronous, and may thus arrive after the element has lost the focus. Since IE
-				// can get the selection only while the element is active (has the focus), we may not always get the selection.
-				// Therefore, use an IE-specific synchronous event on IE...
-				// Don't test for text.selectionStart being defined;
-				$(text).on(
-					(text.onbeforedeactivate !== undefined && text.createTextRange) ? 'beforedeactivate' : 'blur',
-					this.saveView.bind(this));
 				// DOM Level 3 IME handling
 				try {
 					// Setting lastKey = IME provides a fake keyDown for Gecko's single keyUp after a cmposition. If we didn't do this,
@@ -1586,7 +1572,6 @@ This code should run on any MediaWiki installation >= MW 1.27.
 					self.ime = false;
 				});
 			}
-			this.text = text;
 
 			this.icon = make('img');
 
