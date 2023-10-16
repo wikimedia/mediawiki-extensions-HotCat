@@ -11,9 +11,15 @@ use MediaWiki\User\UserOptionsLookup;
 
 class PageDisplayHandler implements BeforePageDisplayHook {
 
+    /** @var PermissionManager */
     private $permissionManager;
+    /** @var UserOptionsLookup */
     private $userOptionsLookup;
 
+    /**
+     * @param PermissionManager $permissionManager
+     * @param UserOptionsLookup $userOptionsLookup
+     */
     public function __construct(
         PermissionManager $permissionManager,
         UserOptionsLookup $userOptionsLookup
@@ -22,6 +28,9 @@ class PageDisplayHandler implements BeforePageDisplayHook {
         $this->userOptionsLookup = $userOptionsLookup;
     }
 
+    /**
+     * @inheritDoc
+     */
     public function onBeforePageDisplay($out, $skin): void
     {
         $services = MediaWikiServices::getInstance();
@@ -31,7 +40,11 @@ class PageDisplayHandler implements BeforePageDisplayHook {
         $isBetaFeatureLoaded = $extensionRegistry->isLoaded( 'BetaFeatures' );
 
         if (
-            !$this->permissionManager->userHasRight($user, 'edit' )
+            !$this->permissionManager->userHasRight($user, 'edit' ) ||
+            !$this->userOptionsLookup->getOption( $user, 'hotcat-switch' ) ||
+            ( $isBetaFeatureLoaded &&
+                !$this->userOptionsLookup->getOption( $user, 'hotcat-beta-feature-enable' )
+            )
         ) {
             return;
         }
