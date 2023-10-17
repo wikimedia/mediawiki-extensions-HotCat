@@ -4,97 +4,96 @@ namespace MediaWiki\HotCat\HookHandler;
 use ExtensionRegistry;
 use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\Preferences\Hook\GetPreferencesHook;
-use Category;
 use MediaWiki\User\UserGroupManager;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\User\UserOptionsLookup;
 
 class PreferencesHandler implements GetPreferencesHook {
 
-    /** @var PermissionManager */
-    private $permissionManager;
-    /** @var UserOptionsLookup */
-    private $userOptionsLookup;
-    /** @var UserGroupManager */
-    private $userGroupManager;
+	/** @var PermissionManager */
+	private $permissionManager;
+	/** @var UserOptionsLookup */
+	private $userOptionsLookup;
+	/** @var UserGroupManager */
+	private $userGroupManager;
 
-    /**
+	/**
 	 * @param PermissionManager $permissionManager
 	 * @param UserOptionsLookup $userOptionsLookup
 	 * @param UserGroupManager $userGroupManager
 	 */
-    public function __construct(
-        PermissionManager $permissionManager,
-        UserOptionsLookup $userOptionsLookup,
-        UserGroupManager $userGroupManager
-    ) {
-        $this->permissionManager = $permissionManager;
-        $this->userOptionsLookup = $userOptionsLookup;
-        $this->userGroupManager = $userGroupManager;
-    }
+	public function __construct(
+		PermissionManager $permissionManager,
+		UserOptionsLookup $userOptionsLookup,
+		UserGroupManager $userGroupManager
+	) {
+		$this->permissionManager = $permissionManager;
+		$this->userOptionsLookup = $userOptionsLookup;
+		$this->userGroupManager = $userGroupManager;
+	}
 
-    /**
-     * @inheritDoc
-     */
-    public function onGetPreferences( $user, &$preferences ): void {
-        if ( !$this->permissionManager->userHasRight( $user, 'edit' ) ) {
+	/**
+	 * @inheritDoc
+	 */
+	public function onGetPreferences( $user, &$preferences ): void {
+		if ( !$this->permissionManager->userHasRight( $user, 'edit' ) ) {
 			return;
 		}
 
-        $isBetaFeatureLoaded = ExtensionRegistry::getInstance()->isLoaded( 'BetaFeatures' );
-        if (
-            $isBetaFeatureLoaded && !$this->userOptionsLookup->getOption( $user, 'hotcat-beta-feature-enable' )
-        ) {
-            return;
-        }
+		$isBetaFeatureLoaded = ExtensionRegistry::getInstance()->isLoaded( 'BetaFeatures' );
+		if (
+			$isBetaFeatureLoaded && !$this->userOptionsLookup->getOption( $user, 'hotcat-beta-feature-enable' )
+		) {
+			return;
+		}
 
-        $preferences['hotcat-switch'] = [
-            'type' => 'toggle',
-            'label-message' => 'tog-hotcat',
-            'section' => 'editing/editor'
-        ];
-    }
+		$preferences['hotcat-switch'] = [
+			'type' => 'toggle',
+			'label-message' => 'tog-hotcat',
+			'section' => 'editing/editor'
+		];
+	}
 
-    /**
-     * @param array $options
+	/**
+	 * @param array $options
 	 * @param string $option
 	 * @return bool The option is set and truthy
-     */
-    private function isTruthy( $options, $option ): bool {
-        return !empty( $options[$option] );
-    }
+	 */
+	private function isTruthy( $options, $option ): bool {
+		return !empty( $options[$option] );
+	}
 
-    /**
-     * @param array $options
+	/**
+	 * @param array $options
 	 * @param string $option
 	 * @return bool The option is set and falsey
-     */
-    private function isFalsey( $options, $option ): bool {
-        return isset( $options[$option] ) && !$options[$option];
-    }
+	 */
+	private function isFalsey( $options, $option ): bool {
+		return isset( $options[$option] ) && !$options[$option];
+	}
 
-    /**
+	/**
 	 * @param UserIdentity $user
 	 * @param array &$modifiedOptions
 	 * @param array $originalOptions
 	 */
-    public function onSaveUserOptions ( $user, &$modifiedOptions, $originalOptions ) {
-        $betaFeatureIsEnabled = $this->isTruthy( $originalOptions, 'hotcat-beta-feature-enable' );
-        $betaFeatureIsDisabled = !$betaFeatureIsEnabled;
+	public function onSaveUserOptions( $user, &$modifiedOptions, $originalOptions ) {
+		$betaFeatureIsEnabled = $this->isTruthy( $originalOptions, 'hotcat-beta-feature-enable' );
+		$betaFeatureIsDisabled = !$betaFeatureIsEnabled;
 
-        $betaFeatureWillEnable = $this->isTruthy( $modifiedOptions, 'hotcat-beta-feature-enable' );
-        $betaFeatureWillDisable = $this->isFalsey( $modifiedOptions, 'hotcat-beta-feature-enable' );
+		$betaFeatureWillEnable = $this->isTruthy( $modifiedOptions, 'hotcat-beta-feature-enable' );
+		$betaFeatureWillDisable = $this->isFalsey( $modifiedOptions, 'hotcat-beta-feature-enable' );
 
-        $autoEnrollIsEnabled = $this->isTruthy( $originalOptions, 'betafeatures-auto-enroll' );
-        $autoEnrollIsDisabled = !$autoEnrollIsEnabled;
-        $autoEnrollWillEnable = $this->isTruthy( $modifiedOptions, 'betafeatures-auto-enroll' );
+		$autoEnrollIsEnabled = $this->isTruthy( $originalOptions, 'betafeatures-auto-enroll' );
+		$autoEnrollIsDisabled = !$autoEnrollIsEnabled;
+		$autoEnrollWillEnable = $this->isTruthy( $modifiedOptions, 'betafeatures-auto-enroll' );
 
-        if (
-            ( $betaFeatureIsEnabled && $betaFeatureWillDisable ) ||
-            ( $betaFeatureIsDisabled && $betaFeatureWillEnable ) ||
-            ( $betaFeatureIsDisabled && $autoEnrollIsDisabled && $autoEnrollWillEnable )
-        ) {
-            $modifiedOptions[ 'hotcat-switch' ] = false;
-        }
-    }
+		if (
+			( $betaFeatureIsEnabled && $betaFeatureWillDisable ) ||
+			( $betaFeatureIsDisabled && $betaFeatureWillEnable ) ||
+			( $betaFeatureIsDisabled && $autoEnrollIsDisabled && $autoEnrollWillEnable )
+		) {
+			$modifiedOptions[ 'hotcat-switch' ] = false;
+		}
+	}
 }

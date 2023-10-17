@@ -28,7 +28,7 @@ class PreferencesHandlerTest extends MediaWikiIntegrationTestCase {
 				'userGroupManager' => $this->createMock( UserGroupManager::class ),
 			],
 			$options
-		)));
+		) ) );
 	}
 
 	/**
