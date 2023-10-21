@@ -2957,7 +2957,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 		}
 		// Find the category bar, or create an empty one if there isn't one. Then add -/+- links after
 		// each category, and add the + link.
-		catLine.id = 'mw-normal-catlinks';
+		catLine = catLine || document.getElementById('mw-normal-catlinks');
 		var hiddenCats = document.getElementById('mw-hidden-catlinks');
 		if (!catLine) {
 
