@@ -37,6 +37,6 @@
 	"hotcat-messages-separator": ", ",
 	"hotcat-messages-prefix": "",
 	"hotcat-messages-using": " using [[Help:Gadget-hotcat|hotcat]]",
-	"hotcat-messages-short-catchange": null,
+	"hotcat-messages-short-catchange": "",
 	"hotcat-messages-multi-change": "$1 categories"
 }
