@@ -2957,7 +2957,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 		}
 		// Find the category bar, or create an empty one if there isn't one. Then add -/+- links after
 		// each category, and add the + link.
-		catLine = catLine || document.getElementById('mw-normal-catlinks');
+		catLine.id = 'mw-normal-catlinks';
 		var hiddenCats = document.getElementById('mw-hidden-catlinks');
 		if (!catLine) {
 
@@ -2979,11 +2979,11 @@ This code should run on any MediaWiki installation >= MW 1.27.
 			var label = make('a');
 			label.href = conf.wgArticlePath.replace('$1', 'Special:Categories');
 			label.title = HC.categories;
-			label.appendChild(make(HC.categories, true));
-			catLine.appendChild(label);
-			catLine.appendChild(make(':', true));
+			label.append(make(HC.categories, true));
+			catLine.append(label);
+			catLine.append(make(':', true));
 			// Insert the new category line
-			var container = (hiddenCats ? hiddenCats.parentNode : document.getElementById('catlinks'));
+			var container = hiddenCats ? hiddenCats.parentNode : document.querySelector('#catlinks');
 			if (!container) {
 				container = make('div');
 				container.id = 'catlinks';
@@ -2991,7 +2991,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 			}
 			container.className = 'catlinks noprint';
 			container.style.display = '';
-			if (!hiddenCats) container.appendChild(catLine); else container.insertBefore(catLine, hiddenCats);
+			if (!hiddenCats) container.append(catLine); else hiddenCats.before(catLine);
 		} // end if catLine exists
 		if (is_rtl) catLine.dir = 'rtl';
 
@@ -3056,27 +3056,8 @@ This code should run on any MediaWiki installation >= MW 1.27.
 		if (commitForm) return;
 		var formContainer = make('div');
 		formContainer.style.display = 'none';
-		document.body.appendChild(formContainer);
-		formContainer.innerHTML =
-			'<form id="hotcatCommitForm" method="post" enctype="multipart/form-data" action="' +
-			conf.wgScript + '?title=' + encodeURIComponent(conf.wgPageName) + '&action=submit">' +
-			'<input type="hidden" name="wpTextbox1">' +
-			'<input type="hidden" name="model" value="' + conf.wgPageContentModel + '">' +
-			'<input type="hidden" name="format" value="text/x-wiki">' +
-			'<input type="hidden" name="wpSummary" value="">' +
-			'<input type="checkbox" name="wpMinoredit" value="1">' +
-			'<input type="checkbox" name="wpWatchthis" value="1">' +
-			'<input type="hidden" name="wpAutoSummary" value="d41d8cd98f00b204e9800998ecf8427e">' +
-			'<input type="hidden" name="wpEdittime">' +
-			'<input type="hidden" name="wpStarttime">' +
-			'<input type="hidden" name="wpDiff" value="wpDiff">' +
-			'<input type="hidden" name="oldid" value="0">' +
-			'<input type="submit" name="hcCommit" value="hcCommit">' +
-			'<input type="hidden" name="wpEditToken">' +
-			'<input type="hidden" name="wpUltimateParam" value="1">' +
-			'<input type="hidden" name="wpChangeTags">' +
-			'<input type="hidden" value="ℳ𝒲♥𝓊𝓃𝒾𝒸ℴ𝒹ℯ" name="wpUnicodeCheck">' +
-			'</form>';
+		document.body.append(formContainer);
+		formContainer.innerHTML = "".concat("<form id=\"hotcatCommitForm\" method=\"post\" enctype=\"multipart/form-data\" action=\"".concat(conf.wgScript, "?title=").concat(encodeURIComponent(conf.wgPageName), "&action=submit\">"), "<input type=\"hidden\" name=\"wpTextbox1\">", "<input type=\"hidden\" name=\"model\" value=\"".concat(conf.wgPageContentModel, "\">"), "<input type=\"hidden\" name=\"format\" value=\"text/x-wiki\"><input type=\"hidden\" name=\"wpSummary\" value=\"\"><input type=\"checkbox\" name=\"wpMinoredit\" value=\"1\"><input type=\"checkbox\" name=\"wpWatchthis\" value=\"1\"><input type=\"hidden\" name=\"wpAutoSummary\" value=\"d41d8cd98f00b204e9800998ecf8427e\"><input type=\"hidden\" name=\"wpEdittime\"><input type=\"hidden\" name=\"wpStarttime\"><input type=\"hidden\" name=\"wpDiff\" value=\"wpDiff\"><input type=\"hidden\" name=\"oldid\" value=\"0\"><input type=\"submit\" name=\"hcCommit\" value=\"hcCommit\"><input type=\"hidden\" name=\"wpEditToken\"><input type=\"hidden\" name=\"wpUltimateParam\" value=\"1\"><input type=\"hidden\" name=\"wpChangeTags\"><input type=\"hidden\" value=\"ℳ𝒲♥𝓊𝓃𝒾𝒸ℴ𝒹ℯ\" name=\"wpUnicodeCheck\"></form>");
 		commitForm = document.getElementById('hotcatCommitForm');
 	}
 
