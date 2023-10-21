@@ -23,6 +23,6 @@
 	"hotcat-tooltips-undo": "撤銷變更",
 	"hotcat-tooltips-down": "開啟以變更並顯示子分類",
 	"hotcat-tooltips-up": "開啟以變更並顯示上層分類",
-	"hotcat-messages-short-catchange": null,
+	"hotcat-messages-short-catchange": "-",
 	"hotcat-multi-tooltip": "變更多個分類"
 }

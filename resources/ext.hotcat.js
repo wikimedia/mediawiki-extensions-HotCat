@@ -773,10 +773,10 @@ This code should run on any MediaWiki installation >= MW 1.27.
 			return;
 		}
 		// Backwards compatibility after message change (added $2 to cat_keychange)
-		if (mw.msg('hotcat-messages-cat-keychange').indexOf('$2') < 0) mw.msg('hotcat-messages-cat-keychange') += '"$2"';
+		if (mw.msg('hotcat-messages-cat-keychange').indexOf('$2') < 0) mw.messages.values['hotcat-messages-cat-keychange'] += '"$2"';
 
 		// More backwards-compatibility with earlier HotCat versions:
-		if (!mw.msg('hotcat-messages-short-catchange')) mw.msg('hotcat-messages-short-catchange') = '[[' + HC.category_canonical + ':$1]]';
+		if (!mw.msg('hotcat-messages-short-catchange').exists()) mw.messages.values['hotcat-messages-short-catchange'] = '[[' + HC.category_canonical + ':$1]]';
 
 		// Create a form and submit it. We don't use the edit API (api.php?action=edit) because
 		// (a) sensibly reporting back errors like edit conflicts is always a hassle, and
