@@ -105,7 +105,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 		},
 		// A regexp matching a templates used to mark uncategorized pages, if your wiki does have that.
 		// If not, set it to null.
-		uncat_regexp: /\{\{\s*[Uu]ncategorized\s*[^}]*\}\}\s*(<!--.*?-->\s*)?/g,
+		uncat_regexp: /\{\{\s*[Uu]ncategorized\s*[^}]*}}\s*(<!--.*?-->\s*)?/g,
 		// The images used for the little indication icon. Should not need changing.
 
 		// a list of categories which can be removed by removing a template
@@ -168,23 +168,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 		// the user has the "Add pages I edit to my watchlist" or the "Add pages I create to my watchlist"
 		// options in his or her preferences set.
 		dont_add_to_watchlist: false,
-		shortcuts: null,
-		addShortcuts: function (map) {
-			if (!map) return;
-			window.HotCat.shortcuts = window.HotCat.shortcuts || {};
-			for (var k in map) {
-				if (!map.hasOwnProperty(k) || typeof k !== 'string') continue;
-
-				var v = map[k];
-				if (typeof v !== 'string') continue;
-
-				k = k.replace(/^\s+|\s+$/g, '');
-				v = v.replace(/^\s+|\s+$/g, '');
-				if (!k.length || !v.length) continue;
-
-				window.HotCat.shortcuts[k] = v;
-			}
-		}
+		shortcuts: null
 	};
 
 	// More backwards compatibility. We have a few places where we test for the browser: once for
@@ -416,7 +400,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 	}
 
 	function find_category(wikitext, category, once) {
-		var cat_regex = null;
+		var cat_regex;
 		if (HC.template_categories[category]) {
 			cat_regex = new RegExp(
 				'\\{\\{' + wikiTextBlankOrBidi + '(' + HC.template_regexp + '(?=' + wikiTextBlankOrBidi + ':))?' + wikiTextBlankOrBidi +
@@ -468,12 +452,12 @@ This code should run on any MediaWiki installation >= MW 1.27.
 
 			if (index < 0) {
 				// Find the index of the first interlanguage link...
-				var match = null;
+				var match;
 				if (!interlanguageRE) {
 					// Approximation without API: interlanguage links start with 2 to 3 lower case letters, optionally followed by
 					// a sequence of groups consisting of a dash followed by one or more lower case letters. Exceptions are "simple"
 					// and "tok".
-					match = /((^|\n\r?)(\[\[\s*(([a-z]{2,3}(-[a-z]+)*)|simple|tok)\s*:[^\]]+\]\]\s*))+$/.exec(copiedtext);
+					match = /((^|\n\r?)(\[\[\s*(([a-z]{2,3}(-[a-z]+)*)|simple|tok)\s*:[^\]]+]]\s*))+$/.exec(copiedtext);
 				} else {
 					match = interlanguageRE.exec(copiedtext);
 				}
@@ -561,7 +545,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 					error: mw.msg('hotcat-messages-cat-exists', toAdd)
 				};
 			} else {
-				var onCat = false;
+				var onCat;
 				if (cat_point < 0) {
 					var point = find_insertionpoint(wikitext);
 					cat_point = point.idx;
@@ -2283,7 +2267,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 			this.list.style.position = 'absolute';
 			// Compute initial list position. First the height.
 			var anchor = is_rtl ? 'right' : 'left';
-			var listh = 0;
+			var listh;
 			if (this.list.style.display === 'none') {
 				// Off-screen display to get the height
 				this.list.style.top = this.text.offsetTop + 'px';
@@ -2349,7 +2333,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 
 			var textPos = position(this.text),
 				nl = 0,
-				nt = 0,
+				nt,
 				offset = 0,
 				// Opera 9.5 somehow has offsetWidth = 0 here?? Use the next best value...
 				textBoxWidth = this.text.offsetWidth || this.text.clientWidth;
@@ -2463,43 +2447,6 @@ This code should run on any MediaWiki installation >= MW 1.27.
 				new_selection.moveEnd('character', to - from);
 				new_selection.select();
 			}
-		},
-
-		getSelection: function () {
-			var from = 0,
-				to = 0;
-			// this.text must be focused (at least on IE)
-			if (!this.text.value) {
-				// No text.
-			} else if (this.text.selectionStart !== undefined) {
-				from = this.text.selectionStart;
-				to = this.text.selectionEnd;
-			} else if (document.selection && document.selection.createRange) { // IE
-				var rng = document.selection.createRange().duplicate();
-				if (rng.parentElement() === this.text) {
-					try {
-						var textRng = this.text.createTextRange();
-						textRng.move('character', 0);
-						textRng.setEndPoint('EndToEnd', rng);
-						// We're in a single-line input box: no need to care about IE's strange
-						// handling of line ends
-						to = textRng.text.length;
-						textRng.setEndPoint('EndToStart', rng);
-						from = textRng.text.length;
-					} catch (notFocused) {
-						from = this.text.value.length;
-						to = from; // At end of text
-					}
-				}
-			}
-			return {
-				start: from,
-				end: to
-			};
-		},
-
-		saveView: function () {
-			this.lastSelection = this.getSelection();
 		},
 
 		processKey: function (evt) {
@@ -2872,7 +2819,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 					}
 					if (addedOne) {
 						// Remove "subst:unc" added by Flinfo if it didn't find categories
-						eb.value = eb.value.replace(/\{\{subst:unc\}\}/g, '');
+						eb.value = eb.value.replace(/\{\{subst:unc}}/g, '');
 					}
 					return true;
 				};
