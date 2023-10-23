@@ -126,7 +126,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 		// capitalising the title in the user input text if the wiki has case-sensitive page names.
 		// Basically, this will make an API query to check the MediaWiki configuration and HotCat then sets
 		// this to true for most wikis, and to false on Wiktionary.
-		// 
+		//
 		// You can set this directly if there is a problem with it. For example, Georgian Wikipedia (kawiki),
 		// is known to have different capitalisation logic between MediaWiki PHP and JavaScript. As such, automatic
 		// case changes in JavaScript by HotCat would be wrong.
@@ -862,8 +862,8 @@ This code should run on any MediaWiki installation >= MW 1.27.
 			if (action && action.value === 'wpSave') {
 				if (HC.changeTag) {
 					commitForm.wpChangeTags.value = HC.changeTag;
-					mw.msg('hotcat-messages-using') = '';
-					mw.msg('hotcat-messages-prefix') = '';
+					mw.messages.values['hotcat-messages-using'] = '';
+					mw.messages.values['hotcat-messages-prefix'] = '';
 				}
 			} else {
 				commitForm.wpAutoSummary.value = HC.changeTag;
@@ -1012,7 +1012,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 			var v = toResolve[i].dabInput;
 			v = replaceShortcuts(v, HC.shortcuts);
 			toResolve[i].dabInputCleaned = v;
-			titles[i]= encodeURIComponent('Category:' + v); 
+			titles[i]= encodeURIComponent('Category:' + v);
 		}
 		return resolve.get( {
 			action: 'query',
@@ -2083,7 +2083,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 
 			// Mark blacklisted inputs.
 			this.ok.disabled = v.length && HC.blacklist && HC.blacklist.test(v);
-			
+
 
 			if (noSuggestions) {
 				// No Ajax: just make sure the list is hidden
