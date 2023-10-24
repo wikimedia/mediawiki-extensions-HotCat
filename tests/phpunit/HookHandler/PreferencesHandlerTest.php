@@ -32,53 +32,6 @@ class PreferencesHandlerTest extends MediaWikiIntegrationTestCase {
 	}
 
 	/**
-	 * @dataProvider provideOnSaveUserOptionsNoAccessChange
-	 */
-	public function testOnSaveUserOptionsNoAccessChange( $originalOptions, $modifiedOptions ) {
-		$user = $this->createMock( UserIdentity::class );
-
-		$handler = $this->getPreferencesHandler( [] );
-		$handler->onSaveUserOptions( $user, $modifiedOptions, $originalOptions );
-	}
-
-	public static function provideOnSaveUserOptionsNoAccessChange() {
-		return [
-			'Enabled to begin with, then not set' => [
-				[
-					'hotcat-switch' => true,
-				],
-				[],
-			],
-			'Enabled to begin with, then both option set to truthy' => [
-				[
-					'hotcat-switch' => true,
-				],
-				[
-					'hotcat-switch' => '1',
-				],
-			],
-			'Disabled to begin with, then not set' => [
-				[
-					'hotcat-switch' => false,
-				],
-				[],
-			],
-			'Disabled to begin with, then set to falsey' => [
-				[
-					'hotcat-switch' => 0,
-				],
-				[
-					'hotcat-switch' => false,
-				],
-			],
-			'No options set to begin with, then no options set' => [
-				[],
-				[],
-			],
-		];
-	}
-
-	/**
 	 * @dataProvider provideOnSaveUserOptionsRestoreDefaultPreferences
 	 */
 	public function testOnSaveUserOptionsRestoreDefaultPreferences( $originalOptions, $modifiedOptions ) {
