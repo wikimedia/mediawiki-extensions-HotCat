@@ -206,7 +206,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 	function load(uri, callback) {
 		var s = document.createElement('script');
 		s.src = uri;
-		var called = false;
+		let called = false;
 
 		s.onload = s.onerror = function () {
 			if (!called && callback) {
@@ -233,8 +233,8 @@ This code should run on any MediaWiki installation >= MW 1.27.
 	// No further changes should be necessary here.
 
 	// The following regular expression strings are used when searching for categories in wikitext.
-	var wikiTextBlank = '[\\t _\\xA0\\u1680\\u180E\\u2000-\\u200A\\u2028\\u2029\\u202F\\u205F\\u3000]+';
-	var wikiTextBlankRE = new RegExp(wikiTextBlank, 'g');
+	const wikiTextBlank = '[\\t _\\xA0\\u1680\\u180E\\u2000-\\u200A\\u2028\\u2029\\u202F\\u205F\\u3000]+';
+	const wikiTextBlankRE = new RegExp(wikiTextBlank, 'g');
 	// Regexp for handling blanks inside a category title or namespace name.
 	// See https://phabricator.wikimedia.org/diffusion/?revision=104051&view=markup#l2722
 	// See also https://www.fileformat.info/info/unicode/category/Zs/list.htm
@@ -243,7 +243,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 	// Therefore, when looking for page titles in wikitext, we must handle all these cases.
 	//   Note: we _do_ include the horizontal tab in the above list, even though the MediaWiki software for some reason
 	// appears to not handle it. The zero-width space \u200B is _not_ handled as a space inside titles by MW.
-	var wikiTextBlankOrBidi = '[\\t _\\xA0\\u1680\\u180E\\u2000-\\u200B\\u200E\\u200F\\u2028-\\u202F\\u205F\\u3000]*';
+	const wikiTextBlankOrBidi = '[\\t _\\xA0\\u1680\\u180E\\u2000-\\u200B\\u200E\\u200F\\u2028-\\u202F\\u205F\\u3000]*';
 	// Whitespace regexp for handling whitespace between link components. Including the horizontal tab, but not \n\r\f\v:
 	// a link must be on one single line.
 	//   MediaWiki also removes Unicode bidi override characters in page titles (and namespace names) completely.
@@ -253,8 +253,9 @@ This code should run on any MediaWiki installation >= MW 1.27.
 	// or adjacent to and inside of "[[" and "]]").
 
 	// First auto-localize the regexps for the category and the template namespaces.
-	var formattedNamespaces = conf.wgFormattedNamespaces;
-	var namespaceIds = conf.wgNamespaceIds;
+	const formattedNamespaces = conf.wgFormattedNamespaces;
+	const namespaceIds = conf.wgNamespaceIds;
+
 	function autoLocalize(namespaceNumber, fallback) {
 		function createRegexpStr(name) {
 			if (!name || !name.length) return '';
@@ -346,11 +347,11 @@ This code should run on any MediaWiki installation >= MW 1.27.
 
 	function substituteFactory(options) {
 		options = options || {};
-		var lead = options.indicator || '$';
-		var indicator = escapeRE(lead);
-		var lbrace = escapeRE(options.lbrace || '{');
-		var rbrace = escapeRE(options.rbrace || '}');
-		var re;
+		const lead = options.indicator || '$';
+		const indicator = escapeRE(lead);
+		const lbrace = escapeRE(options.lbrace || '{');
+		const rbrace = escapeRE(options.rbrace || '}');
+		let re;
 
 		re = new RegExp(
 			// $$
@@ -490,7 +491,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 					error: mw.msg('hotcat-messages-cat-notFound', toRemove)
 				};
 			} else {
-				var before = wikitext.substring(0, matches[0].match.index),
+				let before = wikitext.substring(0, matches[0].match.index),
 					after = wikitext.substring(matches[0].match.index + matches[0].match[0].length);
 				if (matches.length > 1) {
 					// Remove all occurrences in after
@@ -545,7 +546,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 					error: mw.msg('hotcat-messages-cat-exists', toAdd)
 				};
 			} else {
-				var onCat;
+				let onCat;
 				if (cat_point < 0) {
 					var point = find_insertionpoint(wikitext);
 					cat_point = point.idx;
@@ -553,9 +554,9 @@ This code should run on any MediaWiki installation >= MW 1.27.
 				} else {
 					onCat = true;
 				}
-				var newcatstring = '[[' + nameSpace + ':' + toAdd + (key || '') + ']]';
+				const newcatstring = '[[' + nameSpace + ':' + toAdd + (key || '') + ']]';
 				if (cat_point >= 0) {
-					var suffix = wikitext.substring(cat_point);
+					const suffix = wikitext.substring(cat_point);
 					wikitext = wikitext.substring(0, cat_point) + (cat_point > 0 ? '\n' : '') + newcatstring + (!onCat ? '\n' : '');
 					if (suffix.length && suffix.substring(0, 1) !== '\n') wikitext += '\n' + suffix; else wikitext += suffix;
 				} else {
@@ -688,7 +689,8 @@ This code should run on any MediaWiki installation >= MW 1.27.
 		}
 	}
 
-	var saveInProgress = false;
+	let saveInProgress = false;
+
 	function initiateEdit(doEdit, failure) {
 		if (saveInProgress) return;
 		saveInProgress = true;
@@ -911,7 +913,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 	}
 
 	function resolveOne(page, toResolve) {
-		var cats = page.categories,
+		let cats = page.categories,
 			lks = page.links,
 			is_dab = false,
 			is_redir = typeof page.redirect === 'string', // Hard redirect?
@@ -929,7 +931,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 		if (is_missing) return;
 		if (!is_redir && cats && (HC.disambig_category || HC.redir_category)) {
 			for (var c = 0; c < cats.length; c++) {
-				var cat = cats[c].title;
+				let cat = cats[c].title;
 				// Strip namespace prefix
 				if (cat) {
 					cat = cat.substring(cat.indexOf(':') + 1).replace(/_/g, ' ');
@@ -945,7 +947,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 		}
 		if (!is_redir && !is_dab) return;
 		if (!lks || !lks.length) return;
-		var titles = [];
+		const titles = [];
 		for (i = 0; i < lks.length; i++) {
 			if (
 				// Category namespace -- always true since we ask only for the category links
@@ -954,7 +956,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 				lks[i].title && lks[i].title.length
 			) {
 				// Internal link to existing thingy. Extract the page name and remove the namespace.
-				var match = lks[i].title;
+				let match = lks[i].title;
 				match = match.substring(match.indexOf(':') + 1);
 				// Exclude blacklisted categories.
 				if (!HC.blacklist || !HC.blacklist.test(match)) titles.push(match);
@@ -980,7 +982,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 	}
 
 	function resolveMulti(toResolve, callback) {
-		var i;
+		let i;
 		for (i = 0; i < toResolve.length; i++) {
 			toResolve[i].dab = null;
 			toResolve[i].dabInput = toResolve[i].lastInput;
@@ -991,9 +993,9 @@ This code should run on any MediaWiki installation >= MW 1.27.
 		}
 		// Use %7C instead of |, otherwise Konqueror insists on re-encoding the arguments, resulting in doubly encoded
 		// category names. (That is a bug in Konqueror. Other browsers don't have this problem.)
-		var resolve = new mw.Api();
+		const resolve = new mw.Api();
 		for (i = 0; i < toResolve.length; i++) {
-			var v = toResolve[i].dabInput;
+			let v = toResolve[i].dabInput;
 			v = replaceShortcuts(v, HC.shortcuts);
 			toResolve[i].dabInputCleaned = v;
 			titles[i]= encodeURIComponent('Category:' + v);
@@ -1026,13 +1028,13 @@ This code should run on any MediaWiki installation >= MW 1.27.
 			showDab(which);
 		} else {
 			// Check for programmatic value changes.
-			var expectedInput = which.lastRealInput || which.lastInput || '';
-			var actualValue = which.text.value || '';
+			const expectedInput = which.lastRealInput || which.lastInput || '';
+			const actualValue = which.text.value || '';
 			if (!expectedInput.length && actualValue.length || expectedInput.length && actualValue.indexOf(expectedInput)) {
 				// Somehow the field's value appears to have changed, and which.lastSelection therefore is no longer valid. Try to set the
 				// cursor at the end of the category, and do not display the old suggestion list.
 				which.showsList = false;
-				var v = actualValue.split('|');
+				const v = actualValue.split('|');
 				which.lastRealInput = which.lastInput = v[0];
 				if (v.length > 1) which.currentKey = v[1];
 
@@ -1071,7 +1073,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 	}
 
 	function multiSubmit() {
-		var toResolve = [];
+		const toResolve = [];
 		for (var i = 0; i < editors.length; i++)
 			if (editors[i].state === CategoryEditor.CHANGE_PENDING || editors[i].state === CategoryEditor.OPEN) toResolve.push(editors[i]);
 
@@ -1084,8 +1086,8 @@ This code should run on any MediaWiki installation >= MW 1.27.
 			return;
 		}
 		resolveMulti(toResolve, function (resolved) {
-			var firstDab = null;
-			var dontChange = false;
+			let firstDab = null;
+			let dontChange = false;
 			for (var i = 0; i < resolved.length; i++) {
 				if (resolved[i].lastInput !== resolved[i].dabInput) {
 					// We didn't disable all the open editors, but we did asynchronous calls. It is
@@ -1116,14 +1118,14 @@ This code should run on any MediaWiki installation >= MW 1.27.
 		commitButton = OO.ui.ButtonWidget({
 			label: mw.msg('hotcat-messages-commit')
 		}).on("click", function () {
-			multiSubmit;
+			multiSubmit();
 		})
 		if (multiSpan) $(multiSpan).parentNode.replaceChild(commitButton.$element, multiSpan); else $(span).empty().append(commitButton.$element);
 	}
 
 	function checkMultiInput() {
 		if (!commitButton) return;
-		var hasChanges = false;
+		let hasChanges = false;
 		for (var i = 0; i < editors.length; i++) {
 			if (editors[i].state !== CategoryEditor.UNCHANGED) {
 				hasChanges = true;
@@ -1145,9 +1147,9 @@ This code should run on any MediaWiki installation >= MW 1.27.
 			// Function to convert result of uri into an array of category names
 			handler: function (queryResult, queryKey) {
 				if (queryResult && queryResult.length >= 2) {
-					var key = queryResult[0].substring(queryResult[0].indexOf(':') + 1);
-					var titles = queryResult[1];
-					var exists = false;
+					const key = queryResult[0].substring(queryResult[0].indexOf(':') + 1);
+					const titles = queryResult[1];
+					let exists = false;
 					if (!cat_prefix) cat_prefix = new RegExp('^(' + HC.category_regexp + '):');
 
 					for (var i = 0; i < titles.length; i++) {
@@ -1200,9 +1202,9 @@ This code should run on any MediaWiki installation >= MW 1.27.
 				if (queryResult && queryResult.query && queryResult.query.pages && !queryResult.query.pages[-1]) {
 					// Should have exactly 1
 					for (var p in queryResult.query.pages) {
-						var title = queryResult.query.pages[p].title;
+						let title = queryResult.query.pages[p].title;
 						title = title.substring(title.indexOf(':') + 1);
-						var titles = [title];
+						const titles = [title];
 						titles.exists = true;
 						if (queryKey !== title) titles.normalized = title;
 						// NFC
@@ -1223,7 +1225,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 			},
 			handler: function (queryResult) {
 				if (queryResult && queryResult.query && queryResult.query.categorymembers) {
-					var titles = queryResult.query.categorymembers;
+					const titles = queryResult.query.categorymembers;
 					for (var i = 0; i < titles.length; i++) titles[i] = titles[i].title.substring(titles[i].title.indexOf(':') + 1); // rm namespace
 
 					return titles;
@@ -1305,7 +1307,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 	CategoryEditor.DELETED = 4;
 
 	// Event keyCodes that we handle in the text input field/suggestion list.
-	var BS = 8,
+	const BS = 8,
 		TAB = 9,
 		RET = 13,
 		ESC = 27,
@@ -2112,8 +2114,8 @@ This code should run on any MediaWiki installation >= MW 1.27.
 
 		makeCalls: function (engines, cb, v, cleanKey) {
 			for (var j = 0; j < engines.length; j++) {
-				var engine = suggestionEngines[engines[j]];
-				var args = engine.arg;
+				const engine = suggestionEngines[engines[j]];
+				const args = engine.arg;
 				for (var k = 0; k < args.length; k++) {
 					if (args[k].includes('$1')) {
 						args[k].replace(/\$1/g, encodeURIComponent(cleanKey));
@@ -2151,18 +2153,18 @@ This code should run on any MediaWiki installation >= MW 1.27.
 			this.lastQuery = queryKey;
 
 			// Get current input text
-			var v = this.text.value.split('|');
-			var key = v.length > 1 ? '|' + v[1] : '';
+			let v = this.text.value.split('|');
+			const key = v.length > 1 ? '|' + v[1] : '';
 			v = (HC.capitalizePageNames ? capitalize(v[0]) : v[0]);
-			var vNormalized = v;
-			var knownToExist = titles && titles.exists;
-			var i;
+			let vNormalized = v;
+			const knownToExist = titles && titles.exists;
+			let i;
 			if (titles) {
 				if (titles.normalized && v.indexOf(queryKey) === 0) {
 					// We got back a different normalization than what is in the input field
 					vNormalized = titles.normalized + v.substring(queryKey.length);
 				}
-				var vLow = vNormalized.toLowerCase();
+				const vLow = vNormalized.toLowerCase();
 				// Strip blacklisted categories
 				if (HC.blacklist) {
 					for (i = 0; i < titles.length; i++) {
@@ -2376,12 +2378,12 @@ This code should run on any MediaWiki installation >= MW 1.27.
 				return;
 			}
 			// If the list is wider than the textbox: make sure it fits horizontally into the browser window
-			var scroll = scroll_offset('Left');
-			var view_w = viewport('Width');
-			var w = this.list.offsetWidth;
+			const scroll = scroll_offset('Left');
+			const view_w = viewport('Width');
+			let w = this.list.offsetWidth;
 			var l_pos = position(this.list);
-			var left = l_pos.x;
-			var right = left + w;
+			let left = l_pos.x;
+			let right = left + w;
 			if (left < scroll || right > scroll + view_w) {
 				if (w > view_w) {
 					w = view_w;
@@ -2442,7 +2444,7 @@ This code should run on any MediaWiki installation >= MW 1.27.
 					this.text.selectionEnd = to;
 				}
 			} else if (this.text.createTextRange) { // IE
-				var new_selection = this.text.createTextRange();
+				const new_selection = this.text.createTextRange();
 				new_selection.move('character', from);
 				new_selection.moveEnd('character', to - from);
 				new_selection.select();
@@ -2488,8 +2490,8 @@ This code should run on any MediaWiki installation >= MW 1.27.
 		highlightSuggestion: function (dir) {
 			if (noSuggestions || !this.list || this.list.style.display === 'none') return false;
 
-			var curr = this.list.selectedIndex;
-			var tgt = -1;
+			const curr = this.list.selectedIndex;
+			let tgt = -1;
 			if (dir === 0) {
 				if (curr < 0 || curr >= this.list.options.length) return false;
 
@@ -2504,9 +2506,9 @@ This code should run on any MediaWiki installation >= MW 1.27.
 
 				this.list.options[tgt].selected = true;
 				// Get current input text
-				var v = this.text.value.split('|');
-				var key = v.length > 1 ? '|' + v[1] : '';
-				var completed = this.autoComplete(this.list.options[tgt].text, this.lastRealInput, null, key, false);
+				const v = this.text.value.split('|');
+				const key = v.length > 1 ? '|' + v[1] : '';
+				const completed = this.autoComplete(this.list.options[tgt].text, this.lastRealInput, null, key, false);
 				if (!completed || this.list.options[tgt].text === this.lastRealInput) {
 					this.text.value = this.list.options[tgt].text + key;
 					if (this.canSelect()) this.setSelection(this.list.options[tgt].text.length, this.list.options[tgt].text.length);
@@ -2527,11 +2529,11 @@ This code should run on any MediaWiki installation >= MW 1.27.
 			if (curr >= 0 && curr < this.list.options.length) {
 				this.list.options[curr].selected = false;
 				// Get current input text
-				var v = this.text.value.split('|');
-				var key = v.length > 1 ? '|' + v[1] : '';
+				const v = this.text.value.split('|');
+				const key = v.length > 1 ? '|' + v[1] : '';
 				// ESC is handled strangely by some browsers (e.g., FF); somehow it resets the input value before
 				// our event handlers ever get a chance to run.
-				var result = v[0] !== this.lastInput;
+				let result = v[0] !== this.lastInput;
 				if (v[0] !== this.lastRealInput) {
 					this.text.value = this.lastRealInput + key;
 					result = true;
@@ -2592,14 +2594,14 @@ This code should run on any MediaWiki installation >= MW 1.27.
 				oldTxt;
 			// Returns true if minor change
 			var isMinorChange = function () {
-				var newTxt = eForm.wpTextbox1;
+				let newTxt = eForm.wpTextbox1;
 				if (!newTxt) return;
 				newTxt = newTxt.value;
-				var oldLines = oldTxt.match(/^.*$/gm),
+				let oldLines = oldTxt.match(/^.*$/gm),
 					newLines = newTxt.match(/^.*$/gm),
 					cArr; // changes
-				var except = function (aArr, bArr) {
-					var result = [],
+				const except = function (aArr, bArr) {
+					let result = [],
 						lArr, // larger
 						sArr; // smaller
 					if (aArr.length < bArr.length) {
@@ -2610,8 +2612,8 @@ This code should run on any MediaWiki installation >= MW 1.27.
 						sArr = bArr;
 					}
 					for (var i = 0; i < lArr.length; i++) {
-						var item = lArr[i];
-						var ind = $.inArray(item, sArr);
+						const item = lArr[i];
+						const ind = $.inArray(item, sArr);
 						if (ind === -1) result.push(item);
 						else sArr.splice(ind, 1); // don't check this item again
 					}
