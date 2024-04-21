@@ -34,7 +34,7 @@
 	"hotcat-messages-cat-exists": "Category \"$1\" already exists, not added.",
 	"hotcat-messages-cat-resolved": " (redirect [[Category:$1]] resolved)",
 	"hotcat-messages-uncat-removed": "removed {{uncategorized}}",
-	"hotcat-messages-separator": ", ",
+	"hotcat-messages-separator": ",&#32;",
 	"hotcat-messages-prefix": "",
 	"hotcat-messages-using": " using [[Help:Gadget-hotcat|hotcat]]",
 	"hotcat-messages-short-catchange": "",
