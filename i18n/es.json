@@ -1,12 +1,12 @@
 {
 	"@metadata": {
-	"authors": [
-		"Bachinchi",
-		"Common Good",
-		"Lupo",
-		"Manuelt15",
-		"MarcoAurelio"
-	]
+		"authors": [
+			"Bachinchi",
+			"Common Good",
+			"Lupo",
+			"Manuelt15",
+			"MarcoAurelio"
+		]
 	},
 	"hotcat-messages-cat-notFound": "Categoría \"$1\" no encontrada",
 	"hotcat-messages-cat-exists": "Categoría \"$1\" ya existe, no ha sido añadida.",

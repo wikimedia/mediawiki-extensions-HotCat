@@ -1,8 +1,9 @@
-{"@metadata": {
-	"authors": [
-		"Jon Harald Søby",
-		"Lupo"
-	]
+{
+	"@metadata": {
+		"authors": [
+			"Jon Harald Søby",
+			"Lupo"
+		]
 	},
 	"hotcat-messages-commit": "Lagre",
 	"hotcat-messages-ok": "OK",

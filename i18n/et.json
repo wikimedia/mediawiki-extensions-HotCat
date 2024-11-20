@@ -1,8 +1,8 @@
 {
 	"@metadata": {
-	"authors": [
-		"Lupo"
-	]
+		"authors": [
+			"Lupo"
+		]
 	},
 	"hotcat-messages-cat-notFound": "Kategooriat \"$1\" ei leidu",
 	"hotcat-messages-cat-exists": "Kategooria \"$1\" on juba olemas, ei lisatud",

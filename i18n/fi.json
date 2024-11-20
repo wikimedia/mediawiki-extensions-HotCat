@@ -1,8 +1,8 @@
 {
 	"@metadata": {
-	"authors": [
-		"Str4nd"
-	]
+		"authors": [
+			"Str4nd"
+		]
 	},
 	"hotcat-messages-cat-notFound": "Luokkaa ”$1” ei löytynyt",
 	"hotcat-messages-cat-exists": "Luokka ”$1” on jo olemassa, ei lisätty.",

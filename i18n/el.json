@@ -1,13 +1,13 @@
 {
 	"@metadata": {
-	"authors": [
-		"Lupo"
-	]
+		"authors": [
+			"Lupo"
+		]
 	},
 	"hotcat-messages-commit": "Αποθήκευση",
 	"hotcat-messages-ok": "OK",
 	"hotcat-messages-cancel": "Άκυρο",
-	"hotcat-messages-multi-error":  "Could not retrieve the page text from the server. Therefore, your category changes cannot be saved. We apologize for the inconvenience.",
+	"hotcat-messages-multi-error": "Could not retrieve the page text from the server. Therefore, your category changes cannot be saved. We apologize for the inconvenience.",
 	"hotcat-categories": "Κατηγορίες",
 	"hotcat-engine-names-searchindex": "Ευρετήριο αναζήτησης",
 	"hotcat-engine-names-pagelist": "Κατάλογος σελίδων",

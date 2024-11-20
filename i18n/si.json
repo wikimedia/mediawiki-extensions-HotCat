@@ -4,8 +4,8 @@
 			"Lupo"
 		]
 	},
-	"hotcat-messages-cat-notFound":  "ප්‍රවර්ගය\"$1\" සොයා ගැනීමට නොහැකි විය.",
-	"hotcat-messages-cat-exists":  "ප්‍රවර්ගය\"$1\"  දැනටමත් ඇත, නැවත එක් නොකරන ලදී.",
+	"hotcat-messages-cat-notFound": "ප්‍රවර්ගය\"$1\" සොයා ගැනීමට නොහැකි විය.",
+	"hotcat-messages-cat-exists": "ප්‍රවර්ගය\"$1\"  දැනටමත් ඇත, නැවත එක් නොකරන ලදී.",
 	"hotcat-messages-commit": "සුරකින්න",
 	"hotcat-messages-ok": "එක් කරන්න",
 	"hotcat-messages-cancel": "අත් හරින්න",
