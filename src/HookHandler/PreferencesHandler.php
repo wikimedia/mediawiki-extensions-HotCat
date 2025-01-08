@@ -10,18 +10,10 @@ use MediaWiki\User\UserOptionsLookup;
 
 class PreferencesHandler implements GetPreferencesHook {
 
-	/** @var PermissionManager */
-	private $permissionManager;
-	/** @var UserOptionsLookup */
-	private $userOptionsLookup;
-	/** @var UserGroupManager */
-	private $userGroupManager;
+	private PermissionManager $permissionManager;
+	private UserOptionsLookup $userOptionsLookup;
+	private UserGroupManager $userGroupManager;
 
-	/**
-	 * @param PermissionManager $permissionManager
-	 * @param UserOptionsLookup $userOptionsLookup
-	 * @param UserGroupManager $userGroupManager
-	 */
 	public function __construct(
 		PermissionManager $permissionManager,
 		UserOptionsLookup $userOptionsLookup,
@@ -55,20 +47,16 @@ class PreferencesHandler implements GetPreferencesHook {
 	}
 
 	/**
-	 * @param array $options
-	 * @param string $option
 	 * @return bool The option is set and truthy
 	 */
-	private function isTruthy( $options, $option ): bool {
+	private function isTruthy( array $options, string $option ): bool {
 		return !empty( $options[$option] );
 	}
 
 	/**
-	 * @param array $options
-	 * @param string $option
 	 * @return bool The option is set and falsey
 	 */
-	private function isFalsey( $options, $option ): bool {
+	private function isFalsey( array $options, string $option ): bool {
 		return isset( $options[$option] ) && !$options[$option];
 	}
 

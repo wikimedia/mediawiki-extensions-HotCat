@@ -7,16 +7,9 @@ use User;
 
 class BetaFeaturePreferencesHandler {
 
-	/** @var Config */
-	private $config;
+	private Config $config;
+	private PermissionManager $permissionManager;
 
-	/** @var PermissionManager */
-	private $permissionManager;
-
-	/**
-	 * @param Config $config
-	 * @param PermissionManager $permissionManager
-	 */
 	public function __construct(
 		Config $config,
 		PermissionManager $permissionManager

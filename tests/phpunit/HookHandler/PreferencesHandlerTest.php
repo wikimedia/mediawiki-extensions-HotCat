@@ -16,10 +16,6 @@ use User;
  */
 class PreferencesHandlerTest extends MediaWikiIntegrationTestCase {
 
-	/**
-	 * @param array $options
-	 * @return PreferencesHandler
-	 */
 	private function getPreferencesHandler( array $options = [] ): PreferencesHandler {
 		return new PreferencesHandler( ...array_values( array_merge(
 			[

@@ -16,26 +16,26 @@ use User;
  */
 class PageDisplayHandlerTest extends MediaWikiIntegrationTestCase {
 
-	private function getPermissionManager() {
+	private function getPermissionManager(): PermissionManager {
 		$permissionManager = $this->createMock( PermissionManager::class );
 		$permissionManager->method( 'userHasRight' )->willReturn( true );
 		return $permissionManager;
 	}
 
-	private function getUserOptionsLookup() {
+	private function getUserOptionsLookup(): UserOptionsLookup {
 		$userOptionsLookup = $this->createMock( UserOptionsLookup::class );
 		$userOptionsLookup->method( 'getOption' )->willReturn( true );
 		return $userOptionsLookup;
 	}
 
-	private function getPageDisplayHandler( $overrides = null ) {
+	private function getPageDisplayHandler( array $overrides = [] ): PageDisplayHandler {
 		return new PageDisplayHandler(
 			$overrides[ 'PermissionManager' ] ?? $this->getPermissionManager(),
 			$overrides[ 'UserOptionsLookup' ] ?? $this->getUserOptionsLookup()
 		);
 	}
 
-	private function getOutputPage( $overrides = null ) {
+	private function getOutputPage( array $overrides = [] ): OutputPage {
 		$out = $this->getMockBuilder( OutputPage::class )
 			->disableOriginalConstructor()
 			->setMethodsExcept( [
