@@ -4,7 +4,6 @@ namespace MediaWiki\HotCat\HookHandler;
 
 use ExtensionRegistry;
 use MediaWiki\Hook\BeforePageDisplayHook;
-use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\User\UserOptionsLookup;
 
@@ -31,7 +30,6 @@ class PageDisplayHandler implements BeforePageDisplayHook {
 	 * @inheritDoc
 	 */
 	public function onBeforePageDisplay( $out, $skin ): void {
-		$services = MediaWikiServices::getInstance();
 		$extensionRegistry = ExtensionRegistry::getInstance();
 
 		$user = $out->getUser();
