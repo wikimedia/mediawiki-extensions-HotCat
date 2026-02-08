@@ -3,8 +3,8 @@
 namespace MediaWiki\HotCat\Test\Integration\HookHandler;
 
 use MediaWiki\Permissions\PermissionManager;
+use MediaWiki\User\User;
 use MediaWikiIntegrationTestCase;
-use User;
 
 /**
  * @group HotCat

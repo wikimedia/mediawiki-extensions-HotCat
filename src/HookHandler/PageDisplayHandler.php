@@ -2,10 +2,10 @@
 
 namespace MediaWiki\HotCat\HookHandler;
 
-use ExtensionRegistry;
-use MediaWiki\Hook\BeforePageDisplayHook;
+use MediaWiki\Output\Hook\BeforePageDisplayHook;
 use MediaWiki\Permissions\PermissionManager;
-use MediaWiki\User\UserOptionsLookup;
+use MediaWiki\Registration\ExtensionRegistry;
+use MediaWiki\User\Options\UserOptionsLookup;
 
 class PageDisplayHandler implements BeforePageDisplayHook {
 

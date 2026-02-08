@@ -3,12 +3,12 @@
 namespace MediaWiki\HotCat\Test\Integration\HookHandler;
 
 use MediaWiki\HotCat\HookHandler\PageDisplayHandler;
+use MediaWiki\Output\OutputPage;
 use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\Title\Title;
-use MediaWiki\User\UserOptionsLookup;
+use MediaWiki\User\Options\UserOptionsLookup;
+use MediaWiki\User\User;
 use MediaWikiIntegrationTestCase;
-use OutputPage;
-use User;
 
 /**
  * @group HotCat

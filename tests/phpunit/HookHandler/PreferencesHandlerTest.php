@@ -4,11 +4,11 @@ namespace MediaWiki\HotCat\Test\Unit\HookHandler;
 
 use MediaWiki\HotCat\HookHandler\PreferencesHandler;
 use MediaWiki\Permissions\PermissionManager;
+use MediaWiki\User\Options\UserOptionsLookup;
+use MediaWiki\User\User;
 use MediaWiki\User\UserGroupManager;
 use MediaWiki\User\UserIdentity;
-use MediaWiki\User\UserOptionsLookup;
 use MediaWikiIntegrationTestCase;
-use User;
 
 /**
  * @group HotCat
