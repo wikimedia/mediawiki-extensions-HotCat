@@ -7,15 +7,10 @@ use MediaWiki\User\User;
 
 class BetaFeaturePreferencesHandler {
 
-	private Config $config;
-	private PermissionManager $permissionManager;
-
 	public function __construct(
-		Config $config,
-		PermissionManager $permissionManager
+		private readonly Config $config,
+		private readonly PermissionManager $permissionManager,
 	) {
-		$this->config = $config;
-		$this->permissionManager = $permissionManager;
 	}
 
 	/**

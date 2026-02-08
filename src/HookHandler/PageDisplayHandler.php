@@ -9,15 +9,10 @@ use MediaWiki\User\Options\UserOptionsLookup;
 
 class PageDisplayHandler implements BeforePageDisplayHook {
 
-	private PermissionManager $permissionManager;
-	private UserOptionsLookup $userOptionsLookup;
-
 	public function __construct(
-		PermissionManager $permissionManager,
-		UserOptionsLookup $userOptionsLookup
+		private readonly PermissionManager $permissionManager,
+		private readonly UserOptionsLookup $userOptionsLookup,
 	) {
-		$this->permissionManager = $permissionManager;
-		$this->userOptionsLookup = $userOptionsLookup;
 	}
 
 	/**

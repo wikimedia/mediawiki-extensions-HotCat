@@ -10,18 +10,11 @@ use MediaWiki\User\UserIdentity;
 
 class PreferencesHandler implements GetPreferencesHook {
 
-	private PermissionManager $permissionManager;
-	private UserOptionsLookup $userOptionsLookup;
-	private UserGroupManager $userGroupManager;
-
 	public function __construct(
-		PermissionManager $permissionManager,
-		UserOptionsLookup $userOptionsLookup,
-		UserGroupManager $userGroupManager
+		private readonly PermissionManager $permissionManager,
+		private readonly UserOptionsLookup $userOptionsLookup,
+		private readonly UserGroupManager $userGroupManager,
 	) {
-		$this->permissionManager = $permissionManager;
-		$this->userOptionsLookup = $userOptionsLookup;
-		$this->userGroupManager = $userGroupManager;
 	}
 
 	/**
