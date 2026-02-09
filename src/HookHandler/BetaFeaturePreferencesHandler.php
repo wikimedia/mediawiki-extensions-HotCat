@@ -2,6 +2,7 @@
 namespace MediaWiki\HotCat\HookHandler;
 
 use MediaWiki\Config\Config;
+use MediaWiki\MainConfigNames;
 use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\User\User;
 
@@ -18,7 +19,7 @@ class BetaFeaturePreferencesHandler {
 	 * @param array[] &$betaPrefs
 	 */
 	public function onGetBetaFeaturePreferences( $user, &$betaPrefs ) {
-		$extensionAssetsPath = $this->config->get( 'ExtensionAssetsPath' );
+		$extensionAssetsPath = $this->config->get( MainConfigNames::ExtensionAssetsPath );
 
 		if (
 			$this->permissionManager->userHasRight( $user, 'edit' )
