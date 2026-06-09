@@ -38,9 +38,9 @@ class PageDisplayHandlerTest extends MediaWikiIntegrationTestCase {
 	private function getOutputPage( array $overrides = [] ): OutputPage {
 		$out = $this->getMockBuilder( OutputPage::class )
 			->disableOriginalConstructor()
-			->setMethodsExcept( [
-				'addModules',
-				'getModules',
+			->onlyMethods( [
+				'getUser',
+				'getTitle',
 			] )
 			->getMock();
 		$out->method( 'getUser' )->willReturn( $overrides['user'] ?? $this->createMock( User::class ) );
